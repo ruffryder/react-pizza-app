@@ -1,0 +1,16 @@
+.Menu-Item {
+  border-radius: 12px;
+}
+
+.Pizza-Menu {
+  background-color: rgba(252, 5, 0, 0.5);
+}
+.Pasta-Menu {
+  background-color: rgba(229, 189, 10, 0.5);
+}
+.Salad-Menu {
+  background-color: rgba(0, 84, 3, 0.5);
+}
+.Dessert-Menu {
+  background-color: rgba(255, 204, 204, 0.5);
+}

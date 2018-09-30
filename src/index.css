@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Rockwell Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/ROCC____.TTF) format("ttf");
+}
+@font-face {
+  font-family: "Rockwell Condensed Bold";
+  font-style: bold;
+  font-weight: 700;
+  src: url(./assets/fonts/ROCCB___.TTF) format("ttf");
+}
+@font-face {
+  font-family: "Gill Sans MT Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/GillSansMTCondensed.ttf) format("ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.Heading {
+  font-family: "Rockwell Condensed" !important;
+}
+
+.Subheading {
+  font-family: "Gill Sans MT Condensed" !important;
+}
+
+/* Addition to bootstrap classes for centering text based on screen size */
+@media (max-width: 575px) {
+  .text-left-not-sm,
+  .text-center-not-sm,
+  .text-right-not-sm,
+  .text-justify-not-sm {
+    text-align: inherit;
+  }
+  .text-left-sm {
+    text-align: left;
+  }
+  .text-center-sm {
+    text-align: center;
+  }
+  .text-right-sm {
+    text-align: right;
+  }
+  .text-justify-sm {
+    text-align: justify;
+  }
+}
