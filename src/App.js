@@ -15,7 +15,7 @@ class App extends Component {
       {
         _id: 1,
         title: "Pizza Neapolitana",
-        price: 2200,
+        price: 2400,
         description: "Some very delicious description"
       },
       {
