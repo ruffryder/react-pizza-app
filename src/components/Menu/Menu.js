@@ -2,59 +2,38 @@ import React from "react";
 import "./Menu.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarMinus } from "@fortawesome/free-solid-svg-icons";
+import Header from "../Header/Header";
+import MenuList from "../MenuList/MenuList";
 
-const Menu = () => (
+const Menu = ({ dishes }) => (
   <section id="Menu">
-    <h1 className="Heading display-2 text-center">
-      {" "}
-      Menu
+    <Header title="Menu">
       <FontAwesomeIcon
         color="#e5bd0a"
         className="display-3 ml-4 pb-2"
         icon={faCalendarMinus}
       />
-    </h1>
+    </Header>
     <div className="container-fluid px-5 py-5">
       <div className="row justify-content-center">
         <div className="col-sm-12 col-md-6 col-lg-2 mx-lg-3 Pizza-Menu Menu-Item">
-          <h3 className="text-center mt-4">Pizza</h3>
-          <div className="container mt-4">
-            <div className="row text-left">
-              <div className="col-10 offset-md-1">
-                <p>Marinara</p>
-                <hr className="text-center w-75" />
-                <p>Margherita</p>
-                <hr className="text-center w-75" />
-                <p>Romana</p>
-                <hr className="text-center w-75" />
-                <p>Siciliana</p>
-                <hr className="text-center w-75" />
-                <p>Prosciutto e funghi</p>
-                <hr className="text-center w-75" />
-                <p>Capricciosa</p>
-                <hr className="text-center w-75" />
-                <p>Tirolese</p>
-                <hr className="text-center w-75" />
-                <p>Quattro stagioni</p>
-              </div>
-            </div>
-          </div>
+          <MenuList title="Pizza" dishes={dishes} />
         </div>
         <div className="col-sm-12 col-md-6 col-lg-2 mx-lg-3 Pasta-Menu Menu-Item">
           <h3 className="text-center mt-4">Pasta</h3>
           <div className="container mt-4">
             <div className="row text-left">
-              <div className="col-10 offset-md-1">
-                <p>Four Cheese Pasta</p>
+              <ul className="col-10 offset-md-1">
+                <li className="list-unstyled">Four Cheese Pasta</li>
                 <hr className="text-center w-75" />
-                <p>Pasta Carbonara</p>
+                <li className="list-unstyled">Pasta Carbonara</li>
                 <hr className="text-center w-75" />
-                <p>Gnocchi with Tomato Sauce</p>
+                <li className="list-unstyled">Gnocchi with Tomato Sauce</li>
                 <hr className="text-center w-75" />
-                <p>Pasta Con Pomodoro E Basilico</p>
+                <li className="list-unstyled">Pasta Con Pomodoro E Basilico</li>
                 <hr className="text-center w-75" />
-                <p>Home-Style Baked Pasta</p>
-              </div>
+                <li className="list-unstyled">Home-Style Baked Pasta</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -62,23 +41,33 @@ const Menu = () => (
           <h3 className="text-center mt-4">Salads</h3>
           <div className="container mt-4">
             <div className="row text-left">
-              <div className="col-10 offset-md-1">
-                <p>Antipasto Salad with Bocconcini and Green-Olive Tapenade</p>
+              <ul className="col-10 offset-md-1">
+                <li className="list-unstyled">
+                  Antipasto Salad with Bocconcini and Green-Olive Tapenade
+                </li>
                 <hr className="text-center w-75" />
-                <p>Chopped Italian Salad</p>
+                <li className="list-unstyled">Chopped Italian Salad</li>
                 <hr className="text-center w-75" />
-                <p>Summer Farro Salad</p>
+                <li className="list-unstyled">Summer Farro Salad</li>
                 <hr className="text-center w-75" />
-                <p>Warm Castelfranco with Vincotto and Blu di Bufala</p>
+                <li className="list-unstyled">
+                  Warm Castelfranco with Vincotto and Blu di Bufala
+                </li>
                 <hr className="text-center w-75" />
-                <p>Anchovy and Roasted-Pepper Salad with Goat Cheese</p>
+                <li className="list-unstyled">
+                  Anchovy and Roasted-Pepper Salad with Goat Cheese
+                </li>
                 <hr className="text-center w-75" />
-                <p>Garlicky Caesar Salad</p>
+                <li className="list-unstyled">Garlicky Caesar Salad</li>
                 <hr className="text-center w-75" />
-                <p>Fennel and Red-Onion Salad with Parmesan</p>
+                <li className="list-unstyled">
+                  Fennel and Red-Onion Salad with Parmesan
+                </li>
                 <hr className="text-center w-75" />
-                <p>Shaved Raw Asparagus with Parmesan Dressing</p>
-              </div>
+                <li className="list-unstyled">
+                  Shaved Raw Asparagus with Parmesan Dressing
+                </li>
+              </ul>
             </div>
           </div>
         </div>

@@ -14,31 +14,49 @@ class App extends Component {
     dishes: [
       {
         _id: 1,
-        title: "Pizza Neapolitana",
+        title: "Marinara",
         price: 2200,
         description: "Some very delicious description"
       },
       {
         _id: 2,
-        title: "Pizza Margherita",
+        title: "Margherita",
         price: 1800,
         description: "Some very delicious description"
       },
       {
         _id: 3,
-        title: "Volcano Cake",
+        title: "Romana",
         price: 2000,
         description: "Some very delicious description"
       },
       {
         _id: 4,
-        title: "Pizza Neapolitana",
+        title: "Siciliana",
         price: 2200,
         description: "Some very delicious description"
       },
       {
         _id: 5,
-        title: "Pizza Neapolitana",
+        title: "Prosciutto e funghi",
+        price: 2200,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 6,
+        title: "Capricciosa",
+        price: 2200,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 7,
+        title: "Tirolese",
+        price: 2200,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 8,
+        title: "Quattro stagioni",
         price: 2200,
         description: "Some very delicious description"
       }
@@ -51,7 +69,7 @@ class App extends Component {
         <div className="App">
           <NavBar />
           {/* <Jumbotron /> */}
-          <Content dishesData={this.state.dishes} />
+          <Content dishes={this.state.dishes} />
           {/* <Layout>
           <PizzaBuilder />
         </Layout> */}

@@ -7,7 +7,7 @@ import bgImage from "../../assets/img/1.jpg";
 import bgImage2 from "../../assets/img/2.jpg";
 import bgImage3 from "../../assets/img/3.jpg";
 
-const Content = ({ dishesData }) => {
+const Content = ({ dishes }) => {
   return (
     <Aux>
       <Header
@@ -23,7 +23,7 @@ const Content = ({ dishesData }) => {
         subtitle="Our pizza is made with hand-tossed dough & real milk cheese. Choose between regular or thin crust. Create your own pizza."
       />
       <img src={bgImage2} className="img-fluid w-100" alt="delicious pizza" />
-      <Menu />
+      <Menu dishes={dishes} />
       <Header title="We deliver. 24/7." />
       <img src={bgImage3} className="img-fluid w-100" alt="slicing pizza" />
       {/* <DishCardList dishesData={dishesData} /> */}
