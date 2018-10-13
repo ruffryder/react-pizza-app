@@ -4,8 +4,9 @@ import Jumbotron from "../Jumbotron/Jumbotron";
 import "./NavBar.css";
 import OrderButton from "../../assets/img/btn_order.png";
 import OrderButtonFocus from "../../assets/img/btn_order_focus.png";
+import CategoryList from "../CategoryList/CategoryList";
 
-const NavBar = () => {
+const NavBar = ({ categories, handleOrderClick, showCategories }) => {
   return (
     <Jumbotron>
       <nav className="navbar navbar-expand-sm navbar-light">
@@ -66,13 +67,14 @@ const NavBar = () => {
             </div>
           </div>
           <div className="w-15">
-            <button id="" className="mt-3">
+            <button onClick={handleOrderClick} id="order_btn" className="mt-3">
               <img className="a" src={OrderButton} />
               <img className="b" src={OrderButtonFocus} />
             </button>
           </div>
         </div>
       </nav>
+      {showCategories && <CategoryList categories={categories} />}
     </Jumbotron>
   );
 };
