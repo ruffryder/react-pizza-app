@@ -5,9 +5,9 @@ import Content from "./components/Content/Content";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter } from "react-router-dom";
 import PizzaCatUrl from "./assets/img/1.jpg";
-import PastaCatUrl from "./assets/img/1.jpg";
-import SaladCatUrl from "./assets/img/1.jpg";
-import DessertCatUrl from "./assets/img/1.jpg";
+import PastaCatUrl from "./assets/img/pasta.jpg";
+import SaladCatUrl from "./assets/img/salads.jpg";
+import DessertCatUrl from "./assets/img/desserts.jpg";
 
 class App extends Component {
   state = {
