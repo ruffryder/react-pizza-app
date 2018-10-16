@@ -1,0 +1,8 @@
+.LargeMenuItem {
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.ItemTitle {
+  display: inline-block;
+}

@@ -1,6 +1,7 @@
 .CardItem {
   margin-top: 25px;
   background: rgba(248, 249, 250, 0.85) !important;
+  cursor: pointer;
 }
 
 .card-body img {

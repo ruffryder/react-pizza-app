@@ -1,5 +1,4 @@
 import React from "react";
-// import { Route } from "react-router-dom";
 import Aux from "../../hoc/Auxiliary";
 import Header from "../Header/Header";
 import Menu from "../Menu/Menu";

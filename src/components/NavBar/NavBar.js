@@ -29,7 +29,7 @@ const NavBar = ({ handleOrderClick, ...props }) => {
             >
               <ul className="navbar-nav ">
                 <li className="nav-item  align-self-center active mt-4 BorderRight">
-                  <a className="nav-link text-uppercase" href="#">
+                  <a className="nav-link text-uppercase" href="#Home">
                     Home <span className="sr-only">(current)</span>
                   </a>
                 </li>
@@ -58,7 +58,7 @@ const NavBar = ({ handleOrderClick, ...props }) => {
                 </li>
 
                 <li className="nav-item align-self-center mt-4 ">
-                  <a className="nav-link text-uppercase" href="#">
+                  <a className="nav-link text-uppercase" href="#About">
                     About
                   </a>
                 </li>
