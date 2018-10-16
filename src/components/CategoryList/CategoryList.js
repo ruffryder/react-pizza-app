@@ -2,7 +2,7 @@ import React from "react";
 import CardItem from "../CardItem/CardItem";
 import "./CategoryList.css";
 
-const CategoryList = ({ categories }) => {
+const CategoryList = ({ categories, handleCloseClick }) => {
   return (
     <div className="container-fluid">
       {" "}
@@ -14,6 +14,15 @@ const CategoryList = ({ categories }) => {
             </div>
           );
         })}
+      </div>
+      <div className="text-right">
+        <button
+          onClick={handleCloseClick}
+          className="btn btn-danger mt-4"
+          type="button"
+        >
+          Close
+        </button>
       </div>
     </div>
   );

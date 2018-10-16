@@ -4,9 +4,8 @@ import Jumbotron from "../Jumbotron/Jumbotron";
 import "./NavBar.css";
 import OrderButton from "../../assets/img/btn_order.png";
 import OrderButtonFocus from "../../assets/img/btn_order_focus.png";
-import CategoryList from "../CategoryList/CategoryList";
 
-const NavBar = ({ categories, handleOrderClick, showCategories }) => {
+const NavBar = ({ handleOrderClick, ...props }) => {
   return (
     <Jumbotron>
       <nav className="navbar navbar-expand-sm navbar-light">
@@ -74,7 +73,7 @@ const NavBar = ({ categories, handleOrderClick, showCategories }) => {
           </div>
         </div>
       </nav>
-      {showCategories && <CategoryList categories={categories} />}
+      {props.children}
     </Jumbotron>
   );
 };

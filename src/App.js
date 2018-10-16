@@ -8,6 +8,7 @@ import PizzaCatUrl from "./assets/img/1.jpg";
 import PastaCatUrl from "./assets/img/pasta.jpg";
 import SaladCatUrl from "./assets/img/salads.jpg";
 import DessertCatUrl from "./assets/img/desserts.jpg";
+import CategoryList from "./components/CategoryList/CategoryList";
 
 class App extends Component {
   state = {
@@ -67,11 +68,15 @@ class App extends Component {
         description: "Some very delicious description"
       }
     ],
-    showCategories: false
+    showCategories: true
   };
 
   handleOrderClick = () => {
     this.setState({ showCategories: true });
+  };
+
+  handleCloseClick = () => {
+    this.setState({ showCategories: false });
   };
 
   render() {
@@ -79,11 +84,17 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <NavBar
-            categories={this.state.categories}
             handleOrderClick={this.handleOrderClick}
-            showCategories={this.state.showCategories}
             dishes={this.state.dishes}
-          />
+          >
+            {this.state.showCategories && (
+              <CategoryList
+                handleCloseClick={this.handleCloseClick}
+                categories={this.state.categories}
+              />
+            )}
+          </NavBar>
+
           {/* <Jumbotron /> */}
           <Content dishes={this.state.dishes} />
           {/* <Layout>

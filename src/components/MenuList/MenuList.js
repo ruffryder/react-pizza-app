@@ -10,7 +10,7 @@ const MenuList = ({ title, dishes }) => (
       <div className="row text-left">
         <ul className="col-10 offset-md-1">
           {dishes.map(dish => {
-            return <MenuItem dish={dish} />;
+            return <MenuItem key={dish._id} dish={dish} />;
           })}
           {/* <li className="list-unstyled">Marinara</li>
           <hr className="text-center w-75" />
