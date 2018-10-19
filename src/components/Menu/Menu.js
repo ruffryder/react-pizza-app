@@ -20,7 +20,7 @@ const Menu = ({ dishes }) => (
           <MenuList title="Pizza" dishes={dishes} />
         </div>
         <div className="col-sm-12 col-md-6 col-lg-2 mx-lg-3 Pasta-Menu Menu-Item">
-          <h3 className="text-center mt-4">Pasta</h3>
+          <h2 className="text-center mt-4">Pasta</h2>
           <div className="container mt-4">
             <div className="row text-left">
               <ul className="col-10 offset-md-1">
@@ -38,7 +38,7 @@ const Menu = ({ dishes }) => (
           </div>
         </div>
         <div className="col-sm-12 col-md-6 col-lg-2 mx-lg-3 Salad-Menu Menu-Item">
-          <h3 className="text-center mt-4">Salads</h3>
+          <h2 className="text-center mt-4">Salads</h2>
           <div className="container mt-4">
             <div className="row text-left">
               <ul className="col-10 offset-md-1">
@@ -72,7 +72,7 @@ const Menu = ({ dishes }) => (
           </div>
         </div>
         <div className="col-sm-12 col-md-6 col-lg-2 mx-lg-3 Dessert-Menu Menu-Item">
-          <h3 className="text-center mt-4">Desserts</h3>
+          <h2 className="text-center mt-4">Desserts</h2>
           <div className="container mt-4">
             <div className="row text-left">
               <div className="col-10 offset-md-1">

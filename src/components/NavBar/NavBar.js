@@ -29,13 +29,13 @@ const NavBar = ({ handleOrderClick, ...props }) => {
             >
               <ul className="navbar-nav ">
                 <li className="nav-item  align-self-center active mt-4 BorderRight">
-                  <a className="nav-link text-uppercase" href="#Home">
+                  <a className="nav-link mr-1 text-uppercase" href="#Home">
                     Home <span className="sr-only">(current)</span>
                   </a>
                 </li>
 
                 <li className="nav-item  align-self-center mt-4">
-                  <a className="nav-link text-uppercase" href="#">
+                  <a className="nav-link ml-1 text-uppercase" href="#">
                     Pricing
                   </a>
                 </li>
@@ -52,13 +52,13 @@ const NavBar = ({ handleOrderClick, ...props }) => {
             >
               <ul className="navbar-nav">
                 <li className="nav-item  align-self-center mt-4 BorderRight">
-                  <a className="nav-link text-uppercase" href="#Menu">
+                  <a className="nav-link mr-1 text-uppercase" href="#Menu">
                     Menu
                   </a>
                 </li>
 
                 <li className="nav-item align-self-center mt-4 ">
-                  <a className="nav-link text-uppercase" href="#About">
+                  <a className="nav-link ml-1 text-uppercase" href="#About">
                     About
                   </a>
                 </li>

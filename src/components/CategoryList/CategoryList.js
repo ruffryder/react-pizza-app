@@ -8,7 +8,7 @@ const CategoryList = ({
   handleCategoryClick
 }) => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid CategoryList">
       {" "}
       <div className="row justify-content-around">
         {categories.map(item => {
@@ -25,7 +25,7 @@ const CategoryList = ({
       <div className="text-right">
         <button
           onClick={handleCloseClick}
-          className="btn btn-danger mt-4"
+          className="btn btn-danger mt-4 mb-3"
           type="button"
         >
           Close

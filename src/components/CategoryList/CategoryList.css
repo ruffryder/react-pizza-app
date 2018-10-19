@@ -3,3 +3,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+.CategoryList {
+  background: rgba(248, 249, 250, 0.85);
+}
