@@ -2,7 +2,7 @@ import React from "react";
 import "./MenuList.css";
 import MenuItem from "./MenuItem/MenuItem";
 
-const MenuList = ({ large, title, dishes, theme }) => {
+const MenuList = ({ large, title, dishes, category_id, theme }) => {
   if (large)
     return (
       <div className={theme}>
@@ -10,9 +10,13 @@ const MenuList = ({ large, title, dishes, theme }) => {
         <div className="container mt-4">
           <div className="row">
             <ul className="col-10 offset-md-1">
-              {dishes.map(dish => {
-                return <MenuItem large={large} key={dish._id} dish={dish} />;
-              })}
+              {dishes
+                .filter(dish => {
+                  return dish.category_id === category_id;
+                })
+                .map(dish => {
+                  return <MenuItem large={large} key={dish._id} dish={dish} />;
+                })}
             </ul>
           </div>
         </div>

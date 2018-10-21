@@ -14,6 +14,8 @@ import bgImage from "./assets/img/1.jpg";
 import bgImage2 from "./assets/img/2.jpg";
 import bgImage3 from "./assets/img/3.jpg";
 import MenuList from "./components/MenuList/MenuList";
+import Backdrop from "./components/Backdrop/Backdrop";
+import Aux from "./hoc/Auxiliary";
 
 class App extends Component {
   state = {
@@ -79,11 +81,158 @@ class App extends Component {
         title: "Quattro stagioni",
         price: 2200,
         description: "Some very delicious description"
+      },
+      {
+        _id: 9,
+        category_id: 2,
+        title: "Four Cheese Pasta",
+        price: 2100,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 10,
+        category_id: 2,
+        title: "Pasta Carbonara",
+        price: 1900,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 11,
+        category_id: 2,
+        title: "Gnocchi with Tomato Sauce",
+        price: 2100,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 12,
+        category_id: 2,
+        title: "Pasta Con Pomodoro E Basilico",
+        price: 2500,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 13,
+        category_id: 2,
+        title: "Home-Style Baked Pasta",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 14,
+        category_id: 3,
+        title: "Antipasto Salad with Bocconcini and Green-Olive Tapenade",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 15,
+        category_id: 3,
+        title: "Chopped Italian Salad",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 16,
+        category_id: 3,
+        title: "Summer Farro Salad",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 17,
+        category_id: 3,
+        title: "  Warm Castelfranco with Vincotto and Blu di Bufala",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 18,
+        category_id: 3,
+        title: "Anchovy and Roasted-Pepper Salad with Goat Cheese",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 19,
+        category_id: 3,
+        title: "Garlicky Caesar Salad",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 20,
+        category_id: 3,
+        title: " Fennel and Red-Onion Salad with Parmesan",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 21,
+        category_id: 3,
+        title: "   Shaved Raw Asparagus with Parmesan Dressing",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 22,
+        category_id: 4,
+        title: "Gelato",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 23,
+        category_id: 4,
+        title: "Tiramisu",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 24,
+        category_id: 4,
+        title: "Panna Cotta",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 25,
+        category_id: 4,
+        title: "Baba au Rhum or Rum Baba ",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 26,
+        category_id: 4,
+        title: "Sicilian Cassata",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 27,
+        category_id: 4,
+        title: "Cannoli",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 28,
+        category_id: 4,
+        title: "Semi-Freddo",
+        price: 2000,
+        description: "Some very delicious description"
+      },
+      {
+        _id: 29,
+        category_id: 4,
+        title: "Torta Caprese",
+        price: 2000,
+        description: "Some very delicious description"
       }
     ],
-    showCategories: true,
-    showMenuList: true,
-    selectedCategory: { _id: 1, title: "Pizza", imageUrl: PizzaCatUrl }
+    showCategories: false,
+    showMenuList: false,
+    selectedCategory: null
   };
 
   handleOrderClick = () => {
@@ -106,10 +255,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <NavBar
-            handleOrderClick={this.handleOrderClick}
-            dishes={this.state.dishes}
-          >
+          <NavBar handleOrderClick={this.handleOrderClick}>
             {this.state.showCategories && (
               <CategoryList
                 handleCategoryClick={this.handleCategoryClick}
@@ -121,6 +267,7 @@ class App extends Component {
               <MenuList
                 large={true}
                 title={this.state.selectedCategory.title}
+                category_id={this.state.selectedCategory._id}
                 dishes={this.state.dishes}
                 theme="Basic"
               />
@@ -144,7 +291,7 @@ class App extends Component {
             className="img-fluid w-100"
             alt="delicious pizza"
           />
-          <Menu dishes={this.state.dishes} />
+          <Menu dishes={this.state.dishes} categories={this.state.categories} />
           <Header title="We deliver. 24/7." />
           <img src={bgImage3} className="img-fluid w-100" alt="slicing pizza" />
           <Footer />
