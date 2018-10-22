@@ -236,7 +236,7 @@ class App extends Component {
   };
 
   handleOrderClick = () => {
-    this.setState({ showCategories: true });
+    this.setState({ showCategories: true, showMenuList: false });
   };
 
   handleCloseClick = () => {
@@ -248,7 +248,11 @@ class App extends Component {
   };
 
   handleCategoryClick = category => {
-    this.setState({ showMenuList: true, selectedCategory: category });
+    this.setState({
+      showMenuList: true,
+      showCategories: false,
+      selectedCategory: category
+    });
   };
 
   render() {
