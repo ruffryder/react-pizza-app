@@ -255,6 +255,14 @@ class App extends Component {
     });
   };
 
+  handleMenuListBackClick = () => {
+    this.setState({
+      showMenuList: false,
+      showCategories: true,
+      selectedCategory: null
+    });
+  };
+
   render() {
     return (
       <BrowserRouter>
@@ -274,6 +282,7 @@ class App extends Component {
                 category_id={this.state.selectedCategory._id}
                 dishes={this.state.dishes}
                 theme="Basic"
+                handleMenuListBackClick={this.handleMenuListBackClick}
               />
             )}
           </NavBar>
