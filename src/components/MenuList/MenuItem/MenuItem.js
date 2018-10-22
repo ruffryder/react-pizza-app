@@ -15,7 +15,7 @@ const MenuItem = ({ large, dish }) => {
   } else {
     return (
       <Auxiliary>
-        <li className="list-unstyled">{dish.title}</li>
+        <li className="list-unstyled MenuItem">{dish.title}</li>
         <hr className="text-center w-75" />
       </Auxiliary>
     );

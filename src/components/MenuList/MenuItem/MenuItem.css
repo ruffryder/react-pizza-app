@@ -6,3 +6,7 @@
 .ItemTitle {
   display: inline-block;
 }
+
+.MenuItem {
+  font-size: 1.75rem;
+}

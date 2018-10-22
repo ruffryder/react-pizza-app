@@ -1,6 +1,7 @@
 import React from "react";
 import "./MenuList.css";
 import MenuItem from "./MenuItem/MenuItem";
+import Aux from "../../hoc/Auxiliary";
 
 const MenuList = ({ large, title, dishes, category_id, theme }) => {
   if (large)
@@ -24,8 +25,8 @@ const MenuList = ({ large, title, dishes, category_id, theme }) => {
     );
   else {
     return (
-      <div className={theme}>
-        <h2 className="text-center mt-4">{title}</h2>
+      <Aux>
+        <h2 className="text-center mt-4 display-3">{title}</h2>
         <div className="container mt-4">
           <div className="row text-left">
             <ul className="col-10 offset-md-1">
@@ -35,7 +36,7 @@ const MenuList = ({ large, title, dishes, category_id, theme }) => {
             </ul>
           </div>
         </div>
-      </div>
+      </Aux>
     );
   }
 };

@@ -19,20 +19,19 @@ const Menu = ({ dishes, categories }) => (
       <div className="row justify-content-center">
         {categories.map(category => {
           return (
-            <Aux>
-              <div
-                className={`col-sm-12 col-md-6 col-lg-2 mx-lg-3 ${
-                  category.title
-                }-Menu Menu-Item`}
-              >
-                <MenuList
-                  title={category.title}
-                  dishes={dishes.filter(dish => {
-                    return dish.category_id === category._id;
-                  })}
-                />
-              </div>
-            </Aux>
+            <div
+              key={category._id}
+              className={`col-sm-12 col-md-6 col-lg-2 mx-lg-3 ${
+                category.title
+              }-Menu Menu-Item`}
+            >
+              <MenuList
+                title={category.title}
+                dishes={dishes.filter(dish => {
+                  return dish.category_id === category._id;
+                })}
+              />
+            </div>
           );
         })}
       </div>
