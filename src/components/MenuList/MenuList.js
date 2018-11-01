@@ -32,16 +32,15 @@ const MenuList = ({
 
         <div className="container mt-4">
           <div className="row">
-            <ul className="col-10 offset-md-1">
-              {dishes
-                .filter(dish => {
-                  return dish.category_id === category_id;
-                })
-                .map(dish => {
-                  return <MenuItem large={large} key={dish._id} dish={dish} />;
-                })}
-            </ul>
+            {dishes
+              .filter(dish => {
+                return dish.category_id === category_id;
+              })
+              .map(dish => {
+                return <MenuItem large={large} key={dish._id} dish={dish} />;
+              })}
           </div>
+          <p className="text-right">Total price:</p>
         </div>
       </div>
     );

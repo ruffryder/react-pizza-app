@@ -42,7 +42,7 @@ const NavBar = ({ handleOrderClick, ...props }) => {
               </ul>
             </div>
             <div className="col-sm-4 col-md-3 px-sm-0 mx-1 align-self-center">
-              <a className="display-md-none" href="#">
+              <a className="display-md-none logo-link" href="#">
                 <img src={logo} className="Logo align-top" alt="pizza logo" />
               </a>
             </div>
@@ -67,8 +67,8 @@ const NavBar = ({ handleOrderClick, ...props }) => {
           </div>
           <div className="w-15">
             <button onClick={handleOrderClick} id="order_btn" className="mt-3">
-              <img className="a" src={OrderButton} />
-              <img className="b" src={OrderButtonFocus} />
+              <img className="full" src={OrderButton} />
+              <img className="empty" src={OrderButtonFocus} />
             </button>
           </div>
         </div>

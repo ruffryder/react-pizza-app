@@ -87,7 +87,8 @@ class App extends Component {
         category_id: 2,
         title: "Four Cheese Pasta",
         price: 2100,
-        description: "Some very delicious description"
+        description:
+          "Some very delicious description Some very delicious description"
       },
       {
         _id: 10,
