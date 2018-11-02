@@ -3,11 +3,17 @@ import "./CardItem.css";
 
 const CardItem = ({ handleCategoryClick, item }) => {
   return (
-    <div onClick={() => handleCategoryClick(item)} className="CardItem card">
-      <h2 className="card-title">{item.title}</h2>
+    <div
+      onClick={() => handleCategoryClick(item)}
+      className="card-item card"
+      tabIndex="0"
+    >
+      <h2 className="card-title pt-3 mb-0">
+        <span className="span-title">{item.title}</span>
+      </h2>
 
       <div className="card-body">
-        <img src={item.imageUrl} alt="Category Image" />
+        <img className="card-image" src={item.imageUrl} alt={item.title} />
       </div>
     </div>
   );

@@ -14,8 +14,6 @@ import bgImage from "./assets/img/1.jpg";
 import bgImage2 from "./assets/img/2.jpg";
 import bgImage3 from "./assets/img/3.jpg";
 import MenuList from "./components/MenuList/MenuList";
-import Backdrop from "./components/Backdrop/Backdrop";
-import Aux from "./hoc/Auxiliary";
 
 class App extends Component {
   state = {
@@ -282,7 +280,7 @@ class App extends Component {
                 title={this.state.selectedCategory.title}
                 category_id={this.state.selectedCategory._id}
                 dishes={this.state.dishes}
-                theme="Basic"
+                theme="basic"
                 handleMenuListBackClick={this.handleMenuListBackClick}
               />
             )}

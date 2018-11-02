@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarMinus } from "@fortawesome/free-solid-svg-icons";
 import Header from "../Header/Header";
 import MenuList from "../MenuList/MenuList";
-import Aux from "../../hoc/Auxiliary";
 
 const Menu = ({ dishes, categories }) => (
   <section id="Menu">

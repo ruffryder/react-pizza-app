@@ -1,7 +1,16 @@
-.Pizza {
+.pizza {
   background-color: rgba(252, 5, 0);
 }
 
-.Basic {
+.basic {
   background: rgba(248, 249, 250, 0.85);
+}
+
+.close-button > * {
+  max-width: 120px;
+  transition: 0.3s;
+}
+
+.close-button:hover > * {
+  transform: scale(1.15);
 }

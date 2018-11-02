@@ -35,14 +35,14 @@ const NavBar = ({ handleOrderClick, ...props }) => {
                 </li>
 
                 <li className="nav-item  align-self-center mt-4">
-                  <a className="nav-link ml-1 text-uppercase" href="#">
+                  <a className="nav-link ml-1 text-uppercase" href="#Pricing">
                     Pricing
                   </a>
                 </li>
               </ul>
             </div>
             <div className="col-sm-4 col-md-3 px-sm-0 mx-1 align-self-center">
-              <a className="display-md-none logo-link" href="#">
+              <a className="display-md-none logo-link" href="/">
                 <img src={logo} className="Logo align-top" alt="pizza logo" />
               </a>
             </div>
@@ -67,8 +67,16 @@ const NavBar = ({ handleOrderClick, ...props }) => {
           </div>
           <div className="w-15">
             <button onClick={handleOrderClick} id="order_btn" className="mt-3">
-              <img className="full" src={OrderButton} />
-              <img className="empty" src={OrderButtonFocus} />
+              <img
+                className="full"
+                src={OrderButton}
+                alt="Order Button Active"
+              />
+              <img
+                className="empty"
+                src={OrderButtonFocus}
+                alt="Order Button"
+              />
             </button>
           </div>
         </div>

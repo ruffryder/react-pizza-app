@@ -2,6 +2,8 @@ import React from "react";
 import "./MenuList.css";
 import MenuItem from "./MenuItem/MenuItem";
 import Aux from "../../hoc/Auxiliary";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const MenuList = ({
   handleMenuListBackClick,
@@ -18,10 +20,14 @@ const MenuList = ({
           <div className="row align-items-center">
             <div className="col-2 text-right">
               <button
-                className="btn btn-lg btn-danger"
+                className="btn btn-lg p-0 close-button"
                 onClick={handleMenuListBackClick}
               >
-                Back
+                <FontAwesomeIcon
+                  color="#4B3114 "
+                  className="display-4 ml-2 pt-2"
+                  icon={faTimes}
+                />
               </button>
             </div>
             <div className="col-8 text-center">

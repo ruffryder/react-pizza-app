@@ -8,9 +8,9 @@ const Footer = () => {
         <div className="row">
           <div className="col-lg-4">
             <span>
-              <a href="#">Terms and conditions</a>
+              <a href="/">Terms and conditions</a>
               <br />
-              <a href="#">Contact Us</a>
+              <a href="/">Contact Us</a>
             </span>
           </div>
           <div className="col-lg-8 text-right pr-5">
