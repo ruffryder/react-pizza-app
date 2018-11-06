@@ -18,9 +18,9 @@ const MenuList = ({
       <div className={theme}>
         <div className="container-fluid">
           <div className="row align-items-center">
-            <div className="col-2 text-right">
+            <div className="col-1 text-left">
               <button
-                className="btn btn-lg p-0 close-button"
+                className="btn btn-lg  pr-4 p-0 close-button"
                 onClick={handleMenuListBackClick}
               >
                 <FontAwesomeIcon
@@ -36,7 +36,7 @@ const MenuList = ({
           </div>
         </div>
 
-        <div className="container mt-4">
+        <div className="container-fluid mt-4 pb-4">
           <div className="row">
             {dishes
               .filter(dish => {

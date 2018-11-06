@@ -4,7 +4,7 @@ button {
   border: none;
   background-color: transparent;
   width: 100%;
-  max-width: 150px;
+  max-width: 15rem;
 }
 
 button img {
@@ -54,8 +54,8 @@ button:focus .empty {
 }
 
 .nav-link {
-  font-size: 1.5rem;
-  letter-spacing: 1px;
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
   padding-bottom: 0 !important;
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
@@ -94,25 +94,25 @@ li.nav-item.active {
 
 @media (max-width: 991.98px) {
   .nav-link {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 768px) {
   .link-logo {
     padding: 0;
-    width: 145px;
+    width: 14rem;
   }
   #OrderNowButton {
-    width: 100px;
-    margin-left: 2.5rem;
+    width: 10rem;
+    margin-left: 3rem;
   }
   .navbar {
     padding: 0 !important;
   }
   .nav-link {
-    font-size: 0.7rem;
-    padding-left: 10px !important;
+    font-size: 0.9rem;
+    padding-left: 1rem !important;
   }
 }
 
@@ -132,6 +132,6 @@ li.nav-item.active {
 
   #order_btn .full,
   #order_btn .empty {
-    top: -50px;
+    top: -10rem;
   }
 }

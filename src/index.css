@@ -17,9 +17,16 @@
   src: url(./assets/fonts/GillSansMTCondensed.ttf) format("ttf");
 }
 
+html {
+  /* This defines what 1rem is. (in this case, it is 10px)*/
+  font-size: 62.5%;
+}
+
 body {
+  font-size: 1.6rem !important;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .Heading {

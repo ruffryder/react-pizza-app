@@ -1,6 +1,6 @@
 .LargeMenuItem {
-  font-size: 1.5em;
-  padding: 10px;
+  font-size: 2.2rem;
+  padding: 1rem;
 }
 
 .ItemTitle {
@@ -8,9 +8,10 @@
 }
 
 .MenuItem {
-  font-size: 1.75rem;
+  font-size: 2.3rem;
 }
 
-.responsive-font {
-  font-size: 1rem !important;
+.btn {
+  max-width: 100% !important;
+  font-size: 1.8rem !important;
 }

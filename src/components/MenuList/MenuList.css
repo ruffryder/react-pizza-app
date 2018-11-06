@@ -7,7 +7,7 @@
 }
 
 .close-button > * {
-  max-width: 120px;
+  max-width: 12rem;
   transition: 0.3s;
 }
 

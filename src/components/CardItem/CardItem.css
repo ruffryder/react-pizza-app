@@ -1,5 +1,5 @@
 .card-item {
-  margin-top: 25px;
+  margin-top: 2.5rem;
   cursor: pointer;
   transition: 0.2s ease-in;
 }
@@ -18,8 +18,8 @@
 }
 
 .card-item:hover .card-image {
-  transform: scale(1.1);
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .card-item:focus {

@@ -16,12 +16,12 @@ const CategoryList = ({
         <div className="col-1 pr-4 pl-0 text-left">
           <button
             onClick={handleCloseClick}
-            className="btn btn-lg  p-0 close-button"
+            className="btn btn-lg p-0 close-button"
             type="button"
           >
             <FontAwesomeIcon
               color="#4B3114 "
-              className="display-4 ml-2 pt-2"
+              className="display-3 ml-2 pt-2"
               icon={faTimes}
             />
           </button>

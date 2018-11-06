@@ -1,9 +1,12 @@
-.btn {
-  font-size: 1.2rem !important;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
 .CategoryList {
   background: rgba(248, 249, 250, 0.85);
+}
+
+.close-button > * {
+  max-width: 12rem;
+  transition: 0.3s;
+}
+
+.close-button:hover > * {
+  transform: scale(1.15);
 }

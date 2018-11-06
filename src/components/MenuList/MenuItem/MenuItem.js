@@ -13,12 +13,10 @@ const MenuItem = ({ large, dish }) => {
               <span className="col-4 pl-4">{dish.description}</span>
               <span className="col-1 pl-4">{dish.price}</span>
               <div className="col-2">
-                <button className="btn btn-success responsive-font">Add</button>
+                <button className="btn btn-success">Add</button>
               </div>
               <div className="col-2">
-                <button className="btn btn-danger responsive-font">
-                  Remove
-                </button>
+                <button className="btn btn-danger">Remove</button>
               </div>
             </div>
             <hr className="" />

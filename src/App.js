@@ -293,7 +293,9 @@ class App extends Component {
         put them together in just that perfect way to create some great tasting
         food"
           />
+
           <img src={bgImage} className="img-fluid w-100" alt="kneading dough" />
+
           <Header
             title="You can choose."
             subtitle="Our pizza is made with hand-tossed dough & real milk cheese. Choose between regular or thin crust. Create your own pizza."
