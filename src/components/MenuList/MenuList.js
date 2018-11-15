@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const MenuList = ({
+  handleMenuItemClick,
   handleMenuListBackClick,
   large,
   title,
@@ -25,13 +26,13 @@ const MenuList = ({
               >
                 <FontAwesomeIcon
                   color="#4B3114 "
-                  className="display-4 ml-2 pt-2"
+                  className="display-3 ml-2 pt-2"
                   icon={faTimes}
                 />
               </button>
             </div>
             <div className="col-8 text-center">
-              <h2 className="text-center mt-4 display-4">{title}</h2>
+              <h1 className="text-center mt-4 category_title">{title}</h1>
             </div>
           </div>
         </div>
@@ -45,8 +46,10 @@ const MenuList = ({
               .map(dish => {
                 return <MenuItem large={large} key={dish._id} dish={dish} />;
               })}
+            <div className="col-8 p-4">
+              <p className="text-right total-price">Total price:</p>
+            </div>
           </div>
-          <p className="text-right">Total price:</p>
         </div>
       </div>
     );
@@ -58,7 +61,13 @@ const MenuList = ({
           <div className="row text-left">
             <ul className="col-10 offset-md-1">
               {dishes.map(dish => {
-                return <MenuItem key={dish._id} dish={dish} />;
+                return (
+                  <MenuItem
+                    handleMenuItemClick={handleMenuItemClick}
+                    key={dish._id}
+                    dish={dish}
+                  />
+                );
               })}
             </ul>
           </div>

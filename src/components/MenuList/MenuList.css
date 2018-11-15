@@ -6,6 +6,14 @@
   background: rgba(248, 249, 250, 0.85);
 }
 
+.category_title {
+  letter-spacing: 4px;
+}
+
+.total-price {
+  font-size: 3rem;
+}
+
 .close-button > * {
   max-width: 12rem;
   transition: 0.3s;

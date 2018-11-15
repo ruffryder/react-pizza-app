@@ -14,3 +14,9 @@
 .Desserts-Menu {
   background-color: rgba(255, 204, 204, 0.5);
 }
+
+@media screen and (min-width: 992px) {
+  .menu-col-lg {
+    flex: 0 0 22% !important;
+  }
+}

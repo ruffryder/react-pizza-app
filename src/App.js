@@ -254,6 +254,14 @@ class App extends Component {
     });
   };
 
+  handleMenuItemClick = dish => {
+    console.log("it works");
+    this.setState({
+      showItemDetails: true,
+      selectedItem: dish
+    });
+  };
+
   handleMenuListBackClick = () => {
     this.setState({
       showMenuList: false,
@@ -305,7 +313,11 @@ class App extends Component {
             className="img-fluid w-100"
             alt="delicious pizza"
           />
-          <Menu dishes={this.state.dishes} categories={this.state.categories} />
+          <Menu
+            dishes={this.state.dishes}
+            categories={this.state.categories}
+            handleMenuItemClick={this.handleMenuItemClick}
+          />
           <Header title="We deliver. 24/7." />
           <img src={bgImage3} className="img-fluid w-100" alt="slicing pizza" />
           <Footer />

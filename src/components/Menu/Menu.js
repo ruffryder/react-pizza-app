@@ -5,26 +5,27 @@ import { faCalendarMinus } from "@fortawesome/free-solid-svg-icons";
 import Header from "../Header/Header";
 import MenuList from "../MenuList/MenuList";
 
-const Menu = ({ dishes, categories }) => (
+const Menu = ({ handleMenuItemClick, dishes, categories }) => (
   <section id="Menu">
     <Header title="Menu">
       <FontAwesomeIcon
         color="#e5bd0a"
-        className="display-3 ml-4 pb-2"
+        className="display-2 ml-4 pb-2"
         icon={faCalendarMinus}
       />
     </Header>
     <div className="container-fluid px-5 py-5">
-      <div className="row justify-content-center">
+      <div className="row justify-content-around">
         {categories.map(category => {
           return (
             <div
               key={category._id}
-              className={`col-sm-12 col-md-6 col-lg-2 mx-lg-3 ${
+              className={`col-sm-12 col-md-6 menu-col-lg ${
                 category.title
               }-Menu Menu-Item`}
             >
               <MenuList
+                handleMenuItemClick={handleMenuItemClick}
                 title={category.title}
                 dishes={dishes.filter(dish => {
                   return dish.category_id === category._id;

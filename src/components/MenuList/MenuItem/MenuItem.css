@@ -1,17 +1,66 @@
-.LargeMenuItem {
-  font-size: 2.2rem;
+/*------------------LARGE MENU ITEM----------------------*/
+.large-menu-item {
+  font-size: 2.5rem;
   padding: 1rem;
 }
 
-.ItemTitle {
+/*-----------------HOVER EFFECT MENU ITEM THAT DRAWS BORDER BOTTOM FROM LEFT TO RIGHT--------------------------*/
+
+.box {
+  position: relative;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+
+.box::before,
+.box::after {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  -webkit-transform: scale(0);
+  transition: 0.5s;
+}
+
+.box:hover::after,
+.box:hover::before {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.menu-item {
   display: inline-block;
-}
-
-.MenuItem {
   font-size: 2.3rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
 }
 
+.menu-item::before {
+  border-bottom: 2px solid #212529;
+  -webkit-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+
+.menu-item::after {
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+/*-----------------END OF HOVER EFFECT------------------*/
+
+/*----------------- BUTTON STYLES ----------------------*/
 .btn {
   max-width: 100% !important;
   font-size: 1.8rem !important;
+}
+
+@media screen and (min-width: 1200px) {
+  .menu-item-container {
+    max-width: 125rem !important;
+  }
 }
