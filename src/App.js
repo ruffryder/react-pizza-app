@@ -14,6 +14,7 @@ import bgImage from "./assets/img/1.jpg";
 import bgImage2 from "./assets/img/2.jpg";
 import bgImage3 from "./assets/img/3.jpg";
 import MenuList from "./components/MenuList/MenuList";
+import Backdrop from "./components/Backdrop/Backdrop";
 
 class App extends Component {
   state = {
@@ -231,7 +232,9 @@ class App extends Component {
     ],
     showCategories: false,
     showMenuList: false,
-    selectedCategory: null
+    selectedCategory: null,
+    showItemDetails: false,
+    selectedItem: null
   };
 
   handleOrderClick = () => {
@@ -255,10 +258,16 @@ class App extends Component {
   };
 
   handleMenuItemClick = dish => {
-    console.log("it works");
     this.setState({
       showItemDetails: true,
       selectedItem: dish
+    });
+  };
+
+  handleBackdropClick = () => {
+    this.setState({
+      showItemDetails: false,
+      selectedItem: null
     });
   };
 
@@ -312,6 +321,10 @@ class App extends Component {
             src={bgImage2}
             className="img-fluid w-100"
             alt="delicious pizza"
+          />
+          <Backdrop
+            show={this.state.showItemDetails}
+            clicked={this.handleBackdropClick}
           />
           <Menu
             dishes={this.state.dishes}
