@@ -14,12 +14,21 @@
 }
 
 .card-item .card-image {
+  padding-top: 2rem;
   transition: 0.3s;
 }
 
+.card-body {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+}
+
 .card-item:hover .card-image {
-  transform: scale(1.05);
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
 }
 
 .card-item:focus {
