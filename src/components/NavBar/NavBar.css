@@ -44,6 +44,11 @@ button:focus .empty {
   display: block;
 }
 
+.logo-link:hover,
+.logo-link:focus {
+  border: none;
+}
+
 .logo-link:focus {
   outline: none;
   border: 2px solid #4b3114;

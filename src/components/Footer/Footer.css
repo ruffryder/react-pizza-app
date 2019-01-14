@@ -1,33 +1,41 @@
-.BlogFooter {
+.Footer {
+  font-size: 2rem;
   padding: 3.2rem 0;
-  background-color: black;
+  background-color: #4b3114;
   color: white;
   border-top: 0.05rem solid #e5e5e5;
-  margin-top: 6rem;
+  margin-top: 3rem;
+  min-height: 25vh;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 1px;
 }
 
 .LinkFacebook,
 .LinkInsta {
-  width: 6%;
+  width: 15%;
   height: 100%;
 }
 
 .LinkInsta {
   background: url("../../assets/img/insta-empty.svg") no-repeat;
-  background-size: cover;
-}
-
-.LinkInsta:hover {
-  background: url("../../assets/img/insta-hover.svg") no-repeat;
-  background-size: cover;
 }
 
 .LinkFacebook {
   background: url("../../assets/img/facebook-empty.svg") no-repeat;
+}
+
+.LinkFacebook:hover,
+.LinkInsta:hover {
+  border: none;
   background-size: cover;
 }
 
 .LinkFacebook:hover {
   background: url("../../assets/img/facebook-hover.svg") no-repeat;
-  background-size: cover;
+}
+
+.LinkInsta:hover {
+  background: url("../../assets/img/insta-hover.svg") no-repeat;
 }

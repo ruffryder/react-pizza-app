@@ -15,6 +15,13 @@ import bgImage2 from "./assets/img/2.jpg";
 import bgImage3 from "./assets/img/3.jpg";
 import MenuList from "./components/MenuList/MenuList";
 import Backdrop from "./components/Backdrop/Backdrop";
+import { configureAnchors } from "react-scrollable-anchor";
+
+configureAnchors({
+  offset: 0,
+  scrollDuration: 1200,
+  keepLastAnchorHash: false
+});
 
 class App extends Component {
   state = {
