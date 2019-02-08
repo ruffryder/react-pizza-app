@@ -1,7 +1,8 @@
 .jumbotron {
-  background: url("../../assets/img/jumbo-bg.jpg") no-repeat center center fixed;
+  background: url("../../assets/img/pizza-bg.jpg") no-repeat center center fixed;
   background-size: cover;
-  min-height: 80vh;
+  min-height: 50vh;
+  height: auto;
   width: 100%;
   padding: 3rem 1.5rem !important;
 }

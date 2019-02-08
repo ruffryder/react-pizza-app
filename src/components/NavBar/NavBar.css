@@ -46,12 +46,12 @@ button:focus .empty {
 
 .logo-link:hover,
 .logo-link:focus {
-  border: none;
+  border: 2px solid #4b3114;
+  border-radius: 35%;
 }
 
 .logo-link:focus {
   outline: none;
-  border: 2px solid #4b3114;
 }
 
 .w-15 {

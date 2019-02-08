@@ -5,10 +5,18 @@ import { faCalendarMinus } from "@fortawesome/free-solid-svg-icons";
 import Header from "../Header/Header";
 import MenuList from "../MenuList/MenuList";
 import ScrollableAnchor from "react-scrollable-anchor";
+import Backdrop from "../Backdrop/Backdrop";
 
-const Menu = ({ handleMenuItemClick, dishes, categories }) => (
+const Menu = ({
+  showItemDetails,
+  handleBackdropClick,
+  handleMenuItemClick,
+  dishes,
+  categories
+}) => (
   <ScrollableAnchor id={"Menu"}>
     <section>
+      <Backdrop show={showItemDetails} clicked={handleBackdropClick} />
       <Header title="Menu">
         <FontAwesomeIcon
           color="#e5bd0a"

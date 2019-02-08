@@ -55,12 +55,23 @@
 
 /*----------------- BUTTON STYLES ----------------------*/
 .btn {
+  color: #fdeef2;
   max-width: 100% !important;
   font-size: 1.8rem !important;
+}
+.btn-add {
+  background-color: #009432;
+}
+
+.btn-remove {
+  background-color: #ea2027;
 }
 
 @media screen and (min-width: 1200px) {
   .menu-item-container {
     max-width: 125rem !important;
   }
+}
+
+@media screen and (max-width: 776px) {
 }

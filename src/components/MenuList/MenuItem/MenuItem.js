@@ -12,11 +12,17 @@ const MenuItem = ({ handleMenuItemClick, large, dish }) => {
               <span className="col-3">{dish.title}</span>
               <span className="col-4 pl-4">{dish.description}</span>
               <span className="col-1 pl-4">{dish.price}</span>
-              <div className="col-2">
-                <button className="btn btn-success">Add</button>
-              </div>
-              <div className="col-2">
-                <button className="btn btn-danger">Remove</button>
+              <div className="col-4">
+                <div className="container">
+                  <div className="row">
+                    <div className="p-0 col-5">
+                      <button className="btn btn-add">Add</button>
+                    </div>
+                    <div className="p-0 col-5">
+                      <button className="btn btn-remove">Remove</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <hr className="" />

@@ -2,19 +2,14 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import { BrowserRouter } from "react-router-dom";
-import PizzaCatUrl from "./assets/img/1.jpg";
+import PizzaCatUrl from "./assets/img/pizza-cat-img.jpg";
 import PastaCatUrl from "./assets/img/pasta.jpg";
 import SaladCatUrl from "./assets/img/salads.jpg";
 import DessertCatUrl from "./assets/img/desserts.jpg";
 import CategoryList from "./components/CategoryList/CategoryList";
-import Header from "./components/Header/Header";
-import Menu from "./components/Menu/Menu";
-import bgImage from "./assets/img/1.jpg";
-import bgImage2 from "./assets/img/2.jpg";
-import bgImage3 from "./assets/img/3.jpg";
 import MenuList from "./components/MenuList/MenuList";
-import Backdrop from "./components/Backdrop/Backdrop";
+import Main from "./components/Main/Main";
+
 import { configureAnchors } from "react-scrollable-anchor";
 
 configureAnchors({
@@ -245,7 +240,9 @@ class App extends Component {
   };
 
   handleOrderClick = () => {
-    this.setState({ showCategories: true, showMenuList: false });
+    this.setState(prevState => {
+      return { showCategories: !prevState.showCategories, showMenuList: false };
+    });
   };
 
   handleCloseClick = () => {
@@ -288,61 +285,35 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          <NavBar handleOrderClick={this.handleOrderClick}>
-            {this.state.showCategories && (
-              <CategoryList
-                handleCategoryClick={this.handleCategoryClick}
-                handleCloseClick={this.handleCloseClick}
-                categories={this.state.categories}
-              />
-            )}
-            {this.state.showMenuList && (
-              <MenuList
-                large={true}
-                title={this.state.selectedCategory.title}
-                category_id={this.state.selectedCategory._id}
-                dishes={this.state.dishes}
-                theme="basic"
-                handleMenuListBackClick={this.handleMenuListBackClick}
-              />
-            )}
-          </NavBar>
-
-          <Header
-            title="We love food"
-            subtitle=" We pride ourselves on producing great pizzas, pastas, salads. Quality
-        ingredients is where it all starts. We then take those ingredients and
-        put them together in just that perfect way to create some great tasting
-        food"
-          />
-
-          <img src={bgImage} className="img-fluid w-100" alt="kneading dough" />
-
-          <Header
-            title="You can choose."
-            subtitle="Our pizza is made with hand-tossed dough & real milk cheese. Choose between regular or thin crust. Create your own pizza."
-          />
-          <img
-            src={bgImage2}
-            className="img-fluid w-100"
-            alt="delicious pizza"
-          />
-          <Backdrop
-            show={this.state.showItemDetails}
-            clicked={this.handleBackdropClick}
-          />
-          <Menu
-            dishes={this.state.dishes}
-            categories={this.state.categories}
-            handleMenuItemClick={this.handleMenuItemClick}
-          />
-          <Header title="We deliver. 24/7." />
-          <img src={bgImage3} className="img-fluid w-100" alt="slicing pizza" />
-          <Footer />
-        </div>
-      </BrowserRouter>
+      <div className="App">
+        <NavBar handleOrderClick={this.handleOrderClick}>
+          {this.state.showCategories && (
+            <CategoryList
+              handleCategoryClick={this.handleCategoryClick}
+              handleCloseClick={this.handleCloseClick}
+              categories={this.state.categories}
+            />
+          )}
+          {this.state.showMenuList && (
+            <MenuList
+              large={true}
+              title={this.state.selectedCategory.title}
+              category_id={this.state.selectedCategory._id}
+              dishes={this.state.dishes}
+              theme="basic"
+              handleMenuListBackClick={this.handleMenuListBackClick}
+            />
+          )}
+        </NavBar>
+        <Main
+          showItemDetails={this.state.showItemDetails}
+          handleBackdropClick={this.handleBackdropClick}
+          handleMenuItemClick={this.handleMenuItemClick}
+          dishes={this.state.dishes}
+          categories={this.state.categories}
+        />
+        <Footer />
+      </div>
     );
   }
 }

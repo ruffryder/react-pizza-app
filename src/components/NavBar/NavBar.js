@@ -4,6 +4,7 @@ import Jumbotron from "../Jumbotron/Jumbotron";
 import "./NavBar.css";
 import OrderButton from "../../assets/img/btn_order.png";
 import OrderButtonFocus from "../../assets/img/btn_order_focus.png";
+import { NavLink } from "react-router-dom";
 
 const NavBar = ({ handleOrderClick, ...props }) => {
   return (
@@ -29,22 +30,22 @@ const NavBar = ({ handleOrderClick, ...props }) => {
             >
               <ul className="navbar-nav ">
                 <li className="nav-item  align-self-center active mt-4 BorderRight">
-                  <a className="nav-link mr-3 text-uppercase" href="#Home">
+                  <NavLink to="/" className="nav-link mr-3 text-uppercase">
                     Home <span className="sr-only">(current)</span>
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item  align-self-center mt-4">
                   <a className="nav-link ml-3 text-uppercase" href="#Pricing">
-                    Pricing
+                    Catering
                   </a>
                 </li>
               </ul>
             </div>
             <div className="col-sm-4 col-md-3 px-sm-0 mx-1 align-self-center">
-              <a className="display-md-none logo-link" href="/">
+              <NavLink to="/" className="display-md-none logo-link">
                 <img src={logo} className="Logo align-top" alt="pizza logo" />
-              </a>
+              </NavLink>
             </div>
             <div
               className="col-sm-3 col-md-3 px-sm-0 collapse navbar-collapse"
@@ -52,15 +53,15 @@ const NavBar = ({ handleOrderClick, ...props }) => {
             >
               <ul className="navbar-nav">
                 <li className="nav-item  align-self-center mt-4 BorderRight">
-                  <a className="nav-link mr-3 text-uppercase" href="#Menu">
+                  <NavLink to="/menu" className="nav-link mr-3 text-uppercase">
                     Menu
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item align-self-center mt-4 ">
-                  <a className="nav-link ml-3 text-uppercase" href="#About">
+                  <NavLink to="/about" className="nav-link ml-3 text-uppercase">
                     About
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
