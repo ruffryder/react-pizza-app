@@ -58,21 +58,33 @@ button:focus .empty {
   width: 15%;
 }
 
+.nav-link:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #4b3114;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.nav-link:hover:after {
+  width: 100%;
+  left: 0;
+}
+
 .nav-link {
   font-size: 2.5rem;
   letter-spacing: 0.1rem;
   padding-bottom: 0 !important;
-  border-bottom: 2px solid transparent;
   transition: all 0.2s;
-}
-
-.nav-link:hover {
-  border-bottom: 2px solid #4b3114;
+  position: relative;
 }
 
 .nav-link:focus {
   outline: none;
-  border-bottom: 2px solid #4b3114;
 }
 
 li.nav-item.active {

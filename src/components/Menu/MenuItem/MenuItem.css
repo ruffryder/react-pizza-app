@@ -54,7 +54,8 @@
 /*-----------------END OF HOVER EFFECT------------------*/
 
 /*----------------- BUTTON STYLES ----------------------*/
-.btn {
+.btn-add,
+.btn-remove {
   color: #fdeef2;
   max-width: 100% !important;
   font-size: 1.8rem !important;

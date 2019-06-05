@@ -4,7 +4,7 @@ import Aux from "../../hoc/Auxiliary";
 const Header = props => {
   return (
     <div className="container-fluid">
-      <h1 className="Heading display-1 pt-5 px-5 text-center">
+      <h1 className="position-relative display-1 pt-5 px-5 text-center">
         {props.title}
         {props.children}
       </h1>

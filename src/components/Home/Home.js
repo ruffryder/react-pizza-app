@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../Header/Header";
+import Heading from "../Heading/Heading";
 import Aux from "../../hoc/Auxiliary";
 import bgImage from "../../assets/img/1.jpg";
 import bgImage2 from "../../assets/img/2.jpg";
@@ -8,7 +8,7 @@ import bgImage3 from "../../assets/img/3.jpg";
 const Home = () => {
   return (
     <Aux>
-      <Header
+      <Heading
         title="We love food"
         subtitle=" We pride ourselves on producing great pizzas, pastas, salads. Quality
         ingredients is where it all starts. We then take those ingredients and
@@ -18,12 +18,14 @@ const Home = () => {
 
       <img src={bgImage} className="img-fluid w-100" alt="kneading dough" />
 
-      <Header
+      <Heading
         title="You can choose."
         subtitle="Our pizza is made with hand-tossed dough & real milk cheese. Choose between regular or thin crust. Create your own pizza."
-      />
+      >
+        <button className="btn btn-pizza">Start making</button>
+      </Heading>
       <img src={bgImage2} className="img-fluid w-100" alt="delicious pizza" />
-      <Header title="We deliver. 24/7." />
+      <Heading title="We deliver. 24/7." />
       <img src={bgImage3} className="img-fluid w-100" alt="slicing pizza" />
     </Aux>
   );

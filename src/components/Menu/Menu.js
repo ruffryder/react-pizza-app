@@ -2,7 +2,7 @@ import React from "react";
 import "./Menu.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarMinus } from "@fortawesome/free-solid-svg-icons";
-import Header from "../Header/Header";
+import Header from "../Heading/Heading";
 import MenuList from "./MenuList/MenuList";
 import ScrollableAnchor from "react-scrollable-anchor";
 import Backdrop from "../Backdrop/Backdrop";
