@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import Home from "../Home/Home";
 import About from "../About/About";
 import Menu from "../Menu/Menu";
+import Catering from "../Catering/Catering";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 const Main = props => {
   let properties = props;
@@ -29,6 +31,8 @@ const Main = props => {
             />
           )}
         />
+        <Route path="/catering" component={Catering} />
+        <Route component={PageNotFound} />
       </Switch>
     </main>
   );

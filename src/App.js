@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import Marinara from "./assets/img/menu-products/marinara.jpg";
 import PizzaCatUrl from "./assets/img/pizza-cat-img.jpg";
 import PastaCatUrl from "./assets/img/pasta.jpg";
 import SaladCatUrl from "./assets/img/salads.jpg";
 import DessertCatUrl from "./assets/img/desserts.jpg";
 import CategoryList from "./components/CategoryList/CategoryList";
-import MenuList from "./components/MenuList/MenuList";
+import MenuList from "./components/Menu/MenuList/MenuList";
 import Main from "./components/Main/Main";
+import Modal from "./components/UI/Modal/Modal";
+import MenuItemDetails from "./components/Menu/MenuItemDetails/MenuItemDetails";
 
 import { configureAnchors } from "react-scrollable-anchor";
 
@@ -32,56 +35,64 @@ class App extends Component {
         category_id: 1,
         title: "Marinara",
         price: 2200,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 2,
         category_id: 1,
         title: "Margherita",
         price: 1800,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 3,
         category_id: 1,
         title: "Romana",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 4,
         category_id: 1,
         title: "Siciliana",
         price: 2200,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 5,
         category_id: 1,
         title: "Prosciutto e funghi",
         price: 2200,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 6,
         category_id: 1,
         title: "Capricciosa",
         price: 2200,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 7,
         category_id: 1,
         title: "Tirolese",
         price: 2200,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 8,
         category_id: 1,
         title: "Quattro stagioni",
         price: 2200,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 9,
@@ -89,147 +100,168 @@ class App extends Component {
         title: "Four Cheese Pasta",
         price: 2100,
         description:
-          "Some very delicious description Some very delicious description"
+          "Some very delicious description Some very delicious description",
+        image: Marinara
       },
       {
         _id: 10,
         category_id: 2,
         title: "Pasta Carbonara",
         price: 1900,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 11,
         category_id: 2,
         title: "Gnocchi with Tomato Sauce",
         price: 2100,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 12,
         category_id: 2,
         title: "Pasta Con Pomodoro E Basilico",
         price: 2500,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 13,
         category_id: 2,
         title: "Home-Style Baked Pasta",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 14,
         category_id: 3,
         title: "Antipasto Salad with Bocconcini and Green-Olive Tapenade",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 15,
         category_id: 3,
         title: "Chopped Italian Salad",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 16,
         category_id: 3,
         title: "Summer Farro Salad",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 17,
         category_id: 3,
         title: "  Warm Castelfranco with Vincotto and Blu di Bufala",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 18,
         category_id: 3,
         title: "Anchovy and Roasted-Pepper Salad with Goat Cheese",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 19,
         category_id: 3,
         title: "Garlicky Caesar Salad",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 20,
         category_id: 3,
         title: " Fennel and Red-Onion Salad with Parmesan",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 21,
         category_id: 3,
         title: "   Shaved Raw Asparagus with Parmesan Dressing",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 22,
         category_id: 4,
         title: "Gelato",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 23,
         category_id: 4,
         title: "Tiramisu",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 24,
         category_id: 4,
         title: "Panna Cotta",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 25,
         category_id: 4,
         title: "Baba au Rhum or Rum Baba ",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 26,
         category_id: 4,
         title: "Sicilian Cassata",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 27,
         category_id: 4,
         title: "Cannoli",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 28,
         category_id: 4,
         title: "Semi-Freddo",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       },
       {
         _id: 29,
         category_id: 4,
         title: "Torta Caprese",
         price: 2000,
-        description: "Some very delicious description"
+        description: "Some very delicious description",
+        image: Marinara
       }
     ],
     showCategories: false,
@@ -312,6 +344,11 @@ class App extends Component {
           dishes={this.state.dishes}
           categories={this.state.categories}
         />
+        {this.state.selectedItem && this.state.showItemDetails && (
+          <Modal>
+            <MenuItemDetails item={this.state.selectedItem} />
+          </Modal>
+        )}
         <Footer />
       </div>
     );

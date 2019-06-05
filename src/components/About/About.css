@@ -1,0 +1,30 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.story h2,
+.team h2 {
+  margin-bottom: 5rem;
+}
+
+.story p {
+  font-size: 1.8rem;
+}
+
+.team {
+  margin: 10rem auto 12rem;
+}
+
+.profile img {
+  border-radius: 50%;
+}
+
+.btn-profile {
+  background-color: #4b3114;
+}
+
+.btn-profile:hover,
+.btn-profile:focus {
+  color: #e5bd0a;
+}

@@ -29,16 +29,25 @@ const NavBar = ({ handleOrderClick, ...props }) => {
               id="navbarNavDropdown"
             >
               <ul className="navbar-nav ">
-                <li className="nav-item  align-self-center active mt-4 BorderRight">
-                  <NavLink to="/" className="nav-link mr-3 text-uppercase">
+                <li className="nav-item align-self-center mt-4 BorderRight">
+                  <NavLink
+                    exact
+                    activeClassName="active"
+                    to="/"
+                    className="nav-link mr-3 text-uppercase"
+                  >
                     Home <span className="sr-only">(current)</span>
                   </NavLink>
                 </li>
 
-                <li className="nav-item  align-self-center mt-4">
-                  <a className="nav-link ml-3 text-uppercase" href="#Pricing">
+                <li className="nav-item align-self-center mt-4">
+                  <NavLink
+                    activeClassName="active"
+                    to="/catering"
+                    className="nav-link ml-3 text-uppercase"
+                  >
                     Catering
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -53,13 +62,21 @@ const NavBar = ({ handleOrderClick, ...props }) => {
             >
               <ul className="navbar-nav">
                 <li className="nav-item  align-self-center mt-4 BorderRight">
-                  <NavLink to="/menu" className="nav-link mr-3 text-uppercase">
+                  <NavLink
+                    to="/menu"
+                    activeClassName="active"
+                    className="nav-link mr-3 text-uppercase"
+                  >
                     Menu
                   </NavLink>
                 </li>
 
                 <li className="nav-item align-self-center mt-4 ">
-                  <NavLink to="/about" className="nav-link ml-3 text-uppercase">
+                  <NavLink
+                    to="/about"
+                    activeClassName="active"
+                    className="nav-link ml-3 text-uppercase"
+                  >
                     About
                   </NavLink>
                 </li>
