@@ -1,6 +1,7 @@
 .Footer {
   font-size: 2rem;
   padding: 3.2rem 0;
+  padding-bottom: 0;
   background-color: #4b3114;
   color: white;
   border-top: 0.05rem solid #e5e5e5;
@@ -14,8 +15,8 @@
 
 .LinkFacebook,
 .LinkInsta {
-  width: 15%;
-  height: 100%;
+  width: 8rem;
+  height: 8rem;
 }
 
 .LinkInsta {
@@ -29,7 +30,6 @@
 .LinkFacebook:hover,
 .LinkInsta:hover {
   border: none;
-  background-size: cover;
 }
 
 .LinkFacebook:hover {
@@ -38,4 +38,12 @@
 
 .LinkInsta:hover {
   background: url("../../assets/img/insta-hover.svg") no-repeat;
+}
+
+@media (max-width: 768px) {
+  .LinkFacebook,
+  .LinkInsta {
+    width: 6rem;
+    height: 6rem;
+  }
 }

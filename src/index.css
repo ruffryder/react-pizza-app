@@ -49,6 +49,14 @@ a:hover {
   font-family: "Gill Sans MT Condensed" !important;
 }
 
+.pl-10 {
+  padding-left: 6rem;
+}
+
+.pr-10 {
+  padding-right: 6rem;
+}
+
 /* Make your own pizza button styles */
 
 .btn-pizza {
@@ -95,5 +103,9 @@ a:hover {
   }
   .text-justify-sm {
     text-align: justify;
+  }
+
+  .mt-xs-5 {
+    margin-top: 3rem;
   }
 }

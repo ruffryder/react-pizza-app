@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import Marinara from "./assets/img/menu-products/marinara.jpg";
+import Marinara from "./assets/img/menu-products/pizza1.jpg";
 import PizzaCatUrl from "./assets/img/pizza-cat-img.jpg";
 import PastaCatUrl from "./assets/img/pasta.jpg";
 import SaladCatUrl from "./assets/img/salads.jpg";
