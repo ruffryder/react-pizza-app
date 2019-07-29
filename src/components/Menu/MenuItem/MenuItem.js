@@ -2,14 +2,25 @@ import React from "react";
 import "./MenuItem.css";
 import Auxiliary from "../../../hoc/Auxiliary";
 
-const MenuItem = ({ handleMenuItemClick, large, dish }) => {
+const MenuItem = ({
+  showItemDetails,
+  handleBackdropClick,
+  handleMenuItemClick,
+  large,
+  dish
+}) => {
   if (large) {
     return (
       <Auxiliary>
         <div className="col-12 large-menu-item list-unstyled">
           <div className="container menu-item-container">
             <div className="row ">
-              <span className="col-3">{dish.title}</span>
+              <span
+                onClick={() => handleMenuItemClick(dish)}
+                className="pointer col-3"
+              >
+                {dish.title}
+              </span>
               <span className="col-4 pl-4">{dish.description}</span>
               <span className="col-1 pl-4">{dish.price}</span>
               <div className="col-4">

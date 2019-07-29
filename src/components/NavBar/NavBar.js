@@ -6,9 +6,13 @@ import OrderButton from "../../assets/img/btn_order.png";
 import OrderButtonFocus from "../../assets/img/btn_order_focus.png";
 import { NavLink } from "react-router-dom";
 
-const NavBar = ({ handleOrderClick, ...props }) => {
+const NavBar = ({ handleCloseClick, handleOrderClick, ...props }) => {
+  let classes = "";
+  if (props.jumboBackground && props.jumboBackground !== "") {
+    classes = props.jumboBackground.substring(1);
+  }
   return (
-    <Jumbotron>
+    <Jumbotron classes={classes}>
       <nav className="navbar navbar-expand-sm navbar-light">
         <div className="container-fluid text-center ">
           <button
@@ -31,6 +35,7 @@ const NavBar = ({ handleOrderClick, ...props }) => {
               <ul className="navbar-nav ">
                 <li className="nav-item align-self-center mt-4 BorderRight">
                   <NavLink
+                    onClick={handleCloseClick}
                     exact
                     activeClassName="active"
                     to="/"
@@ -42,6 +47,7 @@ const NavBar = ({ handleOrderClick, ...props }) => {
 
                 <li className="nav-item align-self-center mt-4">
                   <NavLink
+                    onClick={handleCloseClick}
                     activeClassName="active"
                     to="/catering"
                     className="nav-link ml-3 text-uppercase"
@@ -52,7 +58,11 @@ const NavBar = ({ handleOrderClick, ...props }) => {
               </ul>
             </div>
             <div className="col-sm-4 col-md-3 px-sm-0 mx-1 align-self-center">
-              <NavLink to="/" className="display-md-none logo-link">
+              <NavLink
+                to="/"
+                className="display-md-none logo-link"
+                onClick={handleCloseClick}
+              >
                 <img src={logo} className="Logo align-top" alt="pizza logo" />
               </NavLink>
             </div>
@@ -63,6 +73,7 @@ const NavBar = ({ handleOrderClick, ...props }) => {
               <ul className="navbar-nav">
                 <li className="nav-item  align-self-center mt-4 BorderRight">
                   <NavLink
+                    onClick={handleCloseClick}
                     to="/menu"
                     activeClassName="active"
                     className="nav-link mr-3 text-uppercase"
@@ -73,6 +84,7 @@ const NavBar = ({ handleOrderClick, ...props }) => {
 
                 <li className="nav-item align-self-center mt-4 ">
                   <NavLink
+                    onClick={handleCloseClick}
                     to="/about"
                     activeClassName="active"
                     className="nav-link ml-3 text-uppercase"

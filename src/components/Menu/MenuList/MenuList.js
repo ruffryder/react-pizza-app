@@ -3,9 +3,11 @@ import "./MenuList.css";
 import MenuItem from "../MenuItem/MenuItem";
 import Aux from "../../../hoc/Auxiliary";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faShare } from "@fortawesome/free-solid-svg-icons";
 
 const MenuList = ({
+  showItemDetails,
+  handleBackdropClick,
   handleMenuItemClick,
   handleMenuListBackClick,
   large,
@@ -26,8 +28,10 @@ const MenuList = ({
               >
                 <FontAwesomeIcon
                   color="#4B3114 "
-                  className="display-3 ml-2 pt-2"
-                  icon={faTimes}
+                  className="ml-2 pt-2"
+                  icon={faShare}
+                  size="5x"
+                  transform="rotate-180"
                 />
               </button>
             </div>
@@ -44,7 +48,16 @@ const MenuList = ({
                 return dish.category_id === category_id;
               })
               .map(dish => {
-                return <MenuItem large={large} key={dish._id} dish={dish} />;
+                return (
+                  <MenuItem
+                    showItemDetails={showItemDetails}
+                    handleBackdropClick={handleBackdropClick}
+                    handleMenuItemClick={handleMenuItemClick}
+                    large={large}
+                    key={dish._id}
+                    dish={dish}
+                  />
+                );
               })}
             <div className="col-8 p-4">
               <p className="text-right total-price">Total price:</p>

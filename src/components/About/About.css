@@ -21,10 +21,12 @@
 }
 
 .btn-profile {
+  color: #e5bd0a;
   background-color: #4b3114;
 }
 
 .btn-profile:hover,
 .btn-profile:focus {
-  color: #e5bd0a;
+  background-color: #e5bd0a;
+  color: #4b3114;
 }

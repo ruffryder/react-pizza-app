@@ -8,34 +8,15 @@ import PageNotFound from "../PageNotFound/PageNotFound";
 
 const Main = props => {
   let properties = props;
-  return (
-    <main>
-      <Switch>
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <Home {...properties} categories={properties.categories} />
-          )}
-        />
-        <Route path="/about" component={About} />
-        <Route
-          path="/menu"
-          render={() => (
-            <Menu
-              dishes={props.dishes}
-              categories={props.categories}
-              handleMenuItemClick={props.handleMenuItemClick}
-              handleBackdropClick={props.handleBackdropClick}
-              showItemDetails={props.showItemDetails}
-            />
-          )}
-        />
-        <Route path="/catering" component={Catering} />
-        <Route component={PageNotFound} />
-      </Switch>
-    </main>
-  );
+  return <main />;
 };
 
 export default Main;
+
+// <Main
+//   showItemDetails={this.state.showItemDetails}
+//   handleBackdropClick={this.handleBackdropClick}
+//   handleMenuItemClick={this.handleMenuItemClick}
+//   dishes={this.state.dishes}
+//   categories={this.state.categories}
+// />

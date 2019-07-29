@@ -21,8 +21,9 @@ const CategoryList = ({
           >
             <FontAwesomeIcon
               color="#4B3114 "
-              className="display-3 ml-2 pt-2"
+              className="ml-2 pt-2"
               icon={faTimes}
+              size="4x"
             />
           </button>
         </div>
