@@ -19,6 +19,7 @@ import Menu from "./components/Menu/Menu";
 import Catering from "./components/Catering/Catering";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import { withRouter } from "react-router-dom";
+import Contact from "./components/Contact/Contact";
 
 configureAnchors({
   offset: 0,
@@ -136,6 +137,7 @@ class App extends Component {
             )}
           />
           <Route path="/catering" component={Catering} />
+          <Route path="/contact" component={Contact} />
           <Route component={PageNotFound} />
         </Switch>
         {this.state.selectedItem && this.state.showItemDetails && (

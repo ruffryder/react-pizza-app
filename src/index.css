@@ -2,19 +2,29 @@
   font-family: "Rockwell Condensed";
   font-style: normal;
   font-weight: 400;
-  src: url(./assets/fonts/ROCC____.TTF) format("ttf");
+  src: url(./assets/fonts/ROCC____.TTF) format("ttf"),
+    url(./assets/fonts/Rockwell-Condensed.woff) format("woff"),
+    url(./assets/fonts/Rockwell-Condensed.woff2) format("woff2"),
+    url(./assets/fonts/Rockwell-Condensed.eot) format("eot");
 }
 @font-face {
   font-family: "Rockwell Condensed Bold";
   font-style: bold;
   font-weight: 700;
-  src: url(./assets/fonts/ROCCB___.TTF) format("ttf");
+  src: url(./assets/fonts/ROCCB___.TTF) format("ttf"),
+    url(./assets/fonts/Rockwell-CondensedBold.woff) format("woff"),
+    url(./assets/fonts/Rockwell-CondensedBold.woff2) format("woff2"),
+    url(./assets/fonts/Rockwell-CondensedBold.eot) format("eot");
 }
+
 @font-face {
   font-family: "Gill Sans MT Condensed";
   font-style: normal;
   font-weight: 400;
-  src: url(./assets/fonts/GillSansMTCondensed.ttf) format("ttf");
+  src: url(./assets/fonts/GillSansMTCondensed.ttf) format("ttf"),
+    url(./assets/fonts/GillSansMT-Condensed.woff) format("woff"),
+    url(./assets/fonts/GillSansMT-Condensed.woff2) format("woff2"),
+    url(./assets/fonts/GillSansMT-Condensed.eot) format("eot");
 }
 
 html {
@@ -23,6 +33,7 @@ html {
 }
 
 body {
+  font-family: "Gill Sans MT Condensed", Calibri, "Trebuchet MS", sans-serif !important;
   font-size: 1.6rem !important;
   margin: 0;
   padding: 0;
@@ -85,13 +96,17 @@ a:hover {
   font-size: 20rem !important;
 }
 
+.display-2 {
+  font-size: 5.5rem !important;
+}
+
 /* Make your own pizza button styles */
 
 .btn-pizza {
   text-decoration: none;
   position: absolute;
   right: 10rem;
-
+  font-size: 2.5rem !important;
   background: #4b3114;
   color: #e5bd0a;
   font-weight: bold;

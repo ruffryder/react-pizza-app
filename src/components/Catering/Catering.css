@@ -11,6 +11,10 @@
   margin-top: 1.8rem;
 }
 
+.border-color-brown {
+  border-color: #4b3114;
+}
+
 .sample-menu {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../../assets/img/pizza.jpg") no-repeat;
@@ -21,4 +25,38 @@
 
 .sample-menu-title {
   color: #e5bd0a;
+}
+
+.icon {
+  position: relative;
+}
+
+.icon-container {
+  background: #4b3114;
+  width: 8rem !important;
+  height: 8rem !important;
+  line-height: 8rem;
+  position: relative;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 992px) {
+  .icon.first::before {
+    left: 50%;
+    width: 50%;
+  }
+
+  .icon.last::before {
+    width: 50%;
+  }
+
+  .icon::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    background: #4b3114;
+  }
 }

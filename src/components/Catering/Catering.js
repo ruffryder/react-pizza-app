@@ -1,6 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircle,
+  faCalendar,
+  faPhone,
+  faTruck,
+  faUtensils
+} from "@fortawesome/free-solid-svg-icons";
 import wedding from "../../assets/img/wedding3.jpg";
 import corporate from "../../assets/img/corporate.jpg";
 import social from "../../assets/img/social2.jpg";
@@ -205,6 +211,77 @@ const Catering = () => {
               Special combination of different dishes in one tasty and exciting
               menu! Menu that will please you and your guests.
             </p>
+          </div>
+        </div>
+        <h2 className="mt-15 mb-5 display-2 text-center">The Process</h2>
+        <div className="row">
+          <div className="col-md-3 col-sm-6 px-0">
+            <div className="text-center icon first">
+              <FontAwesomeIcon
+                className="icon-container fa-w-20 border-color-brown"
+                color="#e5bd0a"
+                icon={faPhone}
+                border
+                size="4x"
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <h3>Contact Us</h3>
+              <p className="w-50 mx-auto">
+                Reach out to us - we'd love to know how we can help.
+              </p>
+            </div>
+          </div>
+          <div className="col-md-3 col-sm-6 px-0">
+            <div className="text-center icon">
+              <FontAwesomeIcon
+                className="icon-container fa-w-20 border-color-brown"
+                color="#e5bd0a"
+                icon={faCalendar}
+                border
+                size="4x"
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <h3>Event Details</h3>
+              <p className="w-50 mx-auto">
+                Once we have the details of your event, we will begin prep.
+              </p>
+            </div>
+          </div>
+          <div className="col-md-3 col-sm-6 px-0">
+            <div className=" text-center icon">
+              <FontAwesomeIcon
+                className="icon-container fa-w-20 border-color-brown"
+                color="#e5bd0a"
+                icon={faTruck}
+                border
+                size="4x"
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <h3>Delivery</h3>
+              <p className="w-50 mx-auto">
+                We'll be there for you at your gig, ready to impress the guests.
+              </p>
+            </div>
+          </div>
+          <div className="col-md-3 col-sm-6 px-0">
+            <div className="text-center icon last">
+              <FontAwesomeIcon
+                className="icon-container fa-w-20 border-color-brown"
+                color="#e5bd0a"
+                icon={faUtensils}
+                border
+                size="4x"
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <h3>Enjoy</h3>
+              <p className="w-50 mx-auto">
+                Enjoy delicious food and world class service!
+              </p>
+            </div>
           </div>
         </div>
       </div>
