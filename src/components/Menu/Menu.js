@@ -4,17 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarMinus } from "@fortawesome/free-solid-svg-icons";
 import Header from "../Heading/Heading";
 import MenuList from "./MenuList/MenuList";
-import ScrollableAnchor from "react-scrollable-anchor";
 import Backdrop from "../Backdrop/Backdrop";
+import { connect } from "react-redux";
 
 const Menu = ({
   showItemDetails,
   handleBackdropClick,
   handleMenuItemClick,
-  dishes,
   categories
-}) => (
-  <ScrollableAnchor id={"Menu"}>
+}) => {
+  return (
     <section>
       <Backdrop show={showItemDetails} clicked={handleBackdropClick} />
       <Header title="Menu">
@@ -30,16 +29,11 @@ const Menu = ({
             return (
               <div
                 key={category._id}
-                className={`col-sm-12 col-md-6 menu-col-lg ${
-                  category.title
-                }-Menu Menu-Item`}
+                className={`col-sm-12 col-md-6 menu-col-lg ${category.title}-Menu Menu-Item`}
               >
                 <MenuList
                   handleMenuItemClick={handleMenuItemClick}
                   title={category.title}
-                  dishes={dishes.filter(dish => {
-                    return dish.category_id === category._id;
-                  })}
                 />
               </div>
             );
@@ -47,7 +41,11 @@ const Menu = ({
         </div>
       </div>
     </section>
-  </ScrollableAnchor>
-);
+  );
+};
 
-export default Menu;
+const mapStateToProps = state => ({
+  categories: state.data.categories
+});
+
+export default connect(mapStateToProps)(Menu);

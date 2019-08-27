@@ -128,12 +128,46 @@ a:hover {
 }
 
 .btn {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   padding: 0.7rem 1.6rem;
+}
+
+.btn-general {
+  color: #e5bd0a;
+  background-color: #4b3114;
+}
+
+.btn-general:hover,
+.btn-general:focus {
+  background-color: #e5bd0a;
+  color: #4b3114;
+}
+
+.btn-general-inverted {
+  color: #4b3114;
+  background-color: #e5bd0a;
+}
+
+.btn-general-inverted:hover,
+.btn-general-inverted:focus {
+  background-color: #4b3114;
+  color: #e5bd0a;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.resize-none {
+  resize: none;
 }
 
 /* Addition to bootstrap classes for centering text based on screen size */
@@ -159,5 +193,36 @@ a:hover {
 
   .mt-xs-5 {
     margin-top: 3rem;
+  }
+}
+
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/**
+ * ----------------------------------------
+ * Slide-bottom Animation
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }

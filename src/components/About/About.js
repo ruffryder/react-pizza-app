@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./About.css";
 import john_img from "../../assets/img/person1.jpg";
 import jack_img from "../../assets/img/person2.jpg";
 import jake_img from "../../assets/img/person3.jpg";
 
-const About = props => {
+function About() {
+  const [showPerson1Info, setPerson1Info] = useState(false);
+  const [showPerson2Info, setPerson2Info] = useState(false);
+  const [showPerson3Info, setPerson3Info] = useState(false);
   return (
     <div className="container">
       <article className="story w-75">
@@ -44,9 +47,20 @@ const About = props => {
                 />
                 <h3>John Baker</h3>
                 <p>Founder</p>
-                <button className="btn btn-large btn-profile">
+                <button
+                  onClick={() => setPerson1Info(!showPerson1Info)}
+                  className="btn btn-large btn-general"
+                >
                   More about John
                 </button>
+                <p
+                  className={`${
+                    showPerson1Info ? "show" : "hide"
+                  } mt-4 slide-bottom`}
+                >
+                  Food junkie. Coffee enthusiast. Bacon advocate. Passionate
+                  entrepreneur. Travel expert.
+                </p>
               </div>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-3 offset-md-1">
@@ -58,9 +72,21 @@ const About = props => {
                 />
                 <h3>Jack Baker</h3>
                 <p>Co-founder</p>
-                <button className="btn btn-large btn-profile">
+                <button
+                  onClick={() => setPerson2Info(!showPerson2Info)}
+                  className="btn btn-large btn-general"
+                >
                   More about Jack
                 </button>
+                <p
+                  className={`${
+                    showPerson2Info ? "show" : "hide"
+                  } mt-4 slide-bottom`}
+                >
+                  Wannabe web fan. Internet trailblazer. Creator. Devoted social
+                  media enthusiast. Subtly charming bacon junkie. Zombie ninja.
+                  Alcohol guru.
+                </p>
               </div>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-3 offset-md-1">
@@ -72,9 +98,21 @@ const About = props => {
                 />
                 <h3>Jake Baker</h3>
                 <p>Co-founder</p>
-                <button className="btn btn-large btn-profile">
+                <button
+                  onClick={() => setPerson3Info(!showPerson3Info)}
+                  className="btn btn-large btn-general"
+                >
                   More about Jake
                 </button>
+                <p
+                  className={`${
+                    showPerson3Info ? "show" : "hide"
+                  } mt-4 slide-bottom`}
+                >
+                  Thinker. Infuriatingly humble pop culture buff. Entrepreneur.
+                  Professional bacon junkie. Total reader. Tv nerd. Food
+                  practitioner.
+                </p>
               </div>
             </div>
           </div>
@@ -82,6 +120,6 @@ const About = props => {
       </article>
     </div>
   );
-};
+}
 
 export default About;

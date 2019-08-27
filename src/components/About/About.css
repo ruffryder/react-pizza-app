@@ -19,14 +19,3 @@
 .profile img {
   border-radius: 50%;
 }
-
-.btn-profile {
-  color: #e5bd0a;
-  background-color: #4b3114;
-}
-
-.btn-profile:hover,
-.btn-profile:focus {
-  background-color: #e5bd0a;
-  color: #4b3114;
-}

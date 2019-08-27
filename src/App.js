@@ -2,15 +2,10 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import PizzaCatUrl from "./assets/img/pizza-cat-img.jpg";
-import PastaCatUrl from "./assets/img/pasta.jpg";
-import SaladCatUrl from "./assets/img/salads.jpg";
-import DessertCatUrl from "./assets/img/desserts.jpg";
 import CategoryList from "./components/CategoryList/CategoryList";
 import MenuList from "./components/Menu/MenuList/MenuList";
 import Modal from "./components/UI/Modal/Modal";
 import MenuItemDetails from "./components/Menu/MenuItemDetails/MenuItemDetails";
-import { dishes } from "./dishesData";
 import { configureAnchors } from "react-scrollable-anchor";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
@@ -20,6 +15,10 @@ import Catering from "./components/Catering/Catering";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import { withRouter } from "react-router-dom";
 import Contact from "./components/Contact/Contact";
+import { loadData } from "./redux/actions/ActionCreators";
+import { DataTypes } from "./redux/actions/Types";
+
+import { connect } from "react-redux";
 
 configureAnchors({
   offset: 0,
@@ -29,13 +28,6 @@ configureAnchors({
 
 class App extends Component {
   state = {
-    categories: [
-      { _id: 1, title: "Pizza", imageUrl: PizzaCatUrl },
-      { _id: 2, title: "Pasta", imageUrl: PastaCatUrl },
-      { _id: 3, title: "Salads", imageUrl: SaladCatUrl },
-      { _id: 4, title: "Desserts", imageUrl: DessertCatUrl }
-    ],
-    dishes: dishes,
     showCategories: false,
     showMenuList: false,
     selectedCategory: null,
@@ -88,6 +80,11 @@ class App extends Component {
     });
   };
 
+  componentDidMount() {
+    this.props.setCategories();
+    this.props.setDishes();
+  }
+
   render() {
     return (
       <div className="App">
@@ -100,7 +97,6 @@ class App extends Component {
             <CategoryList
               handleCategoryClick={this.handleCategoryClick}
               handleCloseClick={this.handleCloseClick}
-              categories={this.state.categories}
             />
           )}
           {this.state.showMenuList && (
@@ -108,7 +104,6 @@ class App extends Component {
               large={true}
               title={this.state.selectedCategory.title}
               category_id={this.state.selectedCategory._id}
-              dishes={this.state.dishes}
               theme="basic"
               handleMenuItemClick={this.handleMenuItemClick}
               handleMenuListBackClick={this.handleMenuListBackClick}
@@ -118,18 +113,12 @@ class App extends Component {
           )}
         </NavBar>
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => <Home categories={this.state.categories} />}
-          />
+          <Route exact path="/" render={() => <Home />} />
           <Route path="/about" component={About} />
           <Route
             path="/menu"
             render={() => (
               <Menu
-                dishes={this.state.dishes}
-                categories={this.state.categories}
                 handleMenuItemClick={this.handleMenuItemClick}
                 handleBackdropClick={this.handleBackdropClick}
                 showItemDetails={this.state.showItemDetails}
@@ -151,4 +140,14 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+const mapDispatchToProps = dispatch => ({
+  setCategories: () => dispatch(loadData(DataTypes.CATEGORIES)),
+  setDishes: () => dispatch(loadData(DataTypes.DISHES))
+});
+
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(App)
+);

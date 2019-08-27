@@ -4,6 +4,7 @@ import MenuItem from "../MenuItem/MenuItem";
 import Aux from "../../../hoc/Auxiliary";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
+import { connect } from "react-redux";
 
 const MenuList = ({
   showItemDetails,
@@ -90,4 +91,8 @@ const MenuList = ({
   }
 };
 
-export default MenuList;
+const mapStateToProps = state => ({
+  dishes: state.data.dishes
+});
+
+export default connect(mapStateToProps)(MenuList);

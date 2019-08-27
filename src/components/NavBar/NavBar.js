@@ -92,6 +92,16 @@ const NavBar = ({ handleCloseClick, handleOrderClick, ...props }) => {
                     About
                   </NavLink>
                 </li>
+                <li className="nav-item align-self-center mt-4 ">
+                  <NavLink
+                    onClick={handleCloseClick}
+                    to="/contact"
+                    activeClassName="active"
+                    className="nav-link ml-3 text-uppercase"
+                  >
+                    Contact
+                  </NavLink>
+                </li>
               </ul>
             </div>
           </div>
