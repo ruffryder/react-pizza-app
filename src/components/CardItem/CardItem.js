@@ -1,10 +1,10 @@
 import React from "react";
 import "./CardItem.css";
 
-const CardItem = ({ handleCategoryClick, item }) => {
+const CardItem = ({ handleClick, item }) => {
   return (
     <div
-      onClick={() => handleCategoryClick(item)}
+      onClick={() => handleClick(item)}
       className="card-item card"
       tabIndex="0"
     >

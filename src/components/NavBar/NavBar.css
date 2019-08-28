@@ -33,6 +33,13 @@ button:focus .empty {
 
 .Row {
   min-width: 75%;
+  position: relative;
+}
+
+.order-button-container {
+  position: absolute;
+  top: 4rem;
+  right: -5rem;
 }
 
 .Logo {

@@ -17,7 +17,7 @@ class CategoryList extends Component {
             className="col-lg-3 col-md-4 col-sm-6 text-center"
           >
             <CardItem
-              handleCategoryClick={this.props.handleCategoryClick}
+              handleClick={this.props.handleCategoryClick}
               item={item}
             />
           </div>

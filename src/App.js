@@ -17,6 +17,7 @@ import { withRouter } from "react-router-dom";
 import Contact from "./components/Contact/Contact";
 import { loadData } from "./redux/actions/ActionCreators";
 import { DataTypes } from "./redux/actions/Types";
+import Backdrop from "./components/Backdrop/Backdrop";
 
 import { connect } from "react-redux";
 
@@ -130,9 +131,15 @@ class App extends Component {
           <Route component={PageNotFound} />
         </Switch>
         {this.state.selectedItem && this.state.showItemDetails && (
-          <Modal>
-            <MenuItemDetails item={this.state.selectedItem} />
-          </Modal>
+          <React.Fragment>
+            <Backdrop
+              show={this.state.showItemDetails}
+              clicked={this.handleBackdropClick}
+            />
+            <Modal>
+              <MenuItemDetails item={this.state.selectedItem} />
+            </Modal>
+          </React.Fragment>
         )}
         <Footer />
       </div>

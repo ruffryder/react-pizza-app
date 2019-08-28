@@ -25,19 +25,21 @@ const Menu = ({
       </Header>
       <div className="container-fluid px-5 py-5">
         <div className="row justify-content-around">
-          {categories.map(category => {
-            return (
-              <div
-                key={category._id}
-                className={`col-sm-12 col-md-6 menu-col-lg ${category.title}-Menu Menu-Item`}
-              >
-                <MenuList
-                  handleMenuItemClick={handleMenuItemClick}
-                  title={category.title}
-                />
-              </div>
-            );
-          })}
+          {categories &&
+            categories.map(category => {
+              return (
+                <div
+                  key={category._id}
+                  className={`col-sm-12 col-md-6 menu-col-lg ${category.title}-Menu Menu-Item`}
+                >
+                  <MenuList
+                    handleMenuItemClick={handleMenuItemClick}
+                    title={category.title}
+                    category_id={category._id}
+                  />
+                </div>
+              );
+            })}
         </div>
       </div>
     </section>

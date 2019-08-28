@@ -5,12 +5,16 @@ import "./NavBar.css";
 import OrderButton from "../../assets/img/btn_order.png";
 import OrderButtonFocus from "../../assets/img/btn_order_focus.png";
 import { NavLink } from "react-router-dom";
+import CartIcon from "../CartIcon/CartIcon";
+import CartDropdown from "../CartDropdown/CartDropdown";
+import { connect } from "react-redux";
 
-const NavBar = ({ handleCloseClick, handleOrderClick, ...props }) => {
+const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
   let classes = "";
   if (props.jumboBackground && props.jumboBackground !== "") {
     classes = props.jumboBackground.substring(1);
   }
+
   return (
     <Jumbotron classes={classes}>
       <nav className="navbar navbar-expand-sm navbar-light">
@@ -120,10 +124,18 @@ const NavBar = ({ handleCloseClick, handleOrderClick, ...props }) => {
             </button>
           </div>
         </div>
+        <div>
+          <CartIcon />
+        </div>
       </nav>
+      {hidden ? null : <CartDropdown />}
       {props.children}
     </Jumbotron>
   );
 };
 
-export default NavBar;
+const mapStateToProps = ({ cart: { hidden } }) => ({
+  hidden
+});
+
+export default connect(mapStateToProps)(NavBar);

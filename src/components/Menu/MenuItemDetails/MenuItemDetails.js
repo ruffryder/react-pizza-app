@@ -8,7 +8,7 @@ const MenuItemDetails = props => {
         <div className="col-6">
           <img
             className="img-fluid w-75"
-            src={props.item.image}
+            src={props.item.imageUrl}
             alt={props.item.title}
           />
         </div>

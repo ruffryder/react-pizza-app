@@ -1,13 +1,16 @@
 import React from "react";
 import "./MenuItem.css";
 import Auxiliary from "../../../hoc/Auxiliary";
+import { connect } from "react-redux";
+import { addItem } from "../../../redux/actions/CartActions";
 
 const MenuItem = ({
   showItemDetails,
   handleBackdropClick,
   handleMenuItemClick,
   large,
-  dish
+  dish,
+  addItem
 }) => {
   if (large) {
     return (
@@ -27,7 +30,12 @@ const MenuItem = ({
                 <div className="container">
                   <div className="row">
                     <div className="p-0 col-5">
-                      <button className="btn btn-add">Add</button>
+                      <button
+                        className="btn btn-add"
+                        onClick={() => addItem(dish)}
+                      >
+                        Add
+                      </button>
                     </div>
                     <div className="p-0 col-5">
                       <button className="btn btn-remove">Remove</button>
@@ -55,4 +63,11 @@ const MenuItem = ({
     );
   }
 };
-export default MenuItem;
+
+const mapDispatchToProps = dispatch => ({
+  addItem: item => dispatch(addItem(item))
+});
+export default connect(
+  null,
+  mapDispatchToProps
+)(MenuItem);
