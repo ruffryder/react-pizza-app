@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import CartIcon from "../CartIcon/CartIcon";
 import CartDropdown from "../CartDropdown/CartDropdown";
 import { connect } from "react-redux";
+import { selectCartHidden } from "../../redux/CartSelectors";
 
 const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
   let classes = "";
@@ -134,8 +135,8 @@ const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
   );
 };
 
-const mapStateToProps = ({ cart: { hidden } }) => ({
-  hidden
+const mapStateToProps = state => ({
+  hidden: selectCartHidden(state)
 });
 
 export default connect(mapStateToProps)(NavBar);

@@ -18,6 +18,7 @@ import Contact from "./components/Contact/Contact";
 import { loadData } from "./redux/actions/ActionCreators";
 import { DataTypes } from "./redux/actions/Types";
 import Backdrop from "./components/Backdrop/Backdrop";
+import Checkout from "./components/Checkout/Checkout";
 
 import { connect } from "react-redux";
 
@@ -126,6 +127,7 @@ class App extends Component {
               />
             )}
           />
+          <Route exact path="/checkout" component={Checkout} />
           <Route path="/catering" component={Catering} />
           <Route path="/contact" component={Contact} />
           <Route component={PageNotFound} />
