@@ -2,8 +2,6 @@ import React from "react";
 import logo from "../../assets/img/logo.svg";
 import Jumbotron from "../Jumbotron/Jumbotron";
 import "./NavBar.css";
-import OrderButton from "../../assets/img/btn_order.png";
-import OrderButtonFocus from "../../assets/img/btn_order_focus.png";
 import { NavLink } from "react-router-dom";
 import CartIcon from "../CartIcon/CartIcon";
 import CartDropdown from "../CartDropdown/CartDropdown";
@@ -18,8 +16,8 @@ const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
 
   return (
     <Jumbotron classes={classes}>
-      <nav className="navbar navbar-expand-sm navbar-light">
-        <div className="container-fluid text-center ">
+      <nav className="navbar navbar-expand-md navbar-light">
+        <div className="container-fluid navbar-container text-center ">
           <button
             className="navbar-toggler"
             type="button"
@@ -31,10 +29,10 @@ const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="w-15" />
+
           <div className="Row row mx-auto justify-content-center">
             <div
-              className="col-sm-3 col-md-3 px-sm-0 justify-content-end collapse navbar-collapse"
+              className="col-md-4 col-sm-12 px-sm-0 justify-content-end collapse navbar-collapse"
               id="navbarNavDropdown"
             >
               <ul className="navbar-nav ">
@@ -44,25 +42,33 @@ const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
                     exact
                     activeClassName="active"
                     to="/"
-                    className="nav-link mr-3 text-uppercase"
+                    className="nav-link mr-md-3 mr-sm-0 text-uppercase"
                   >
                     Home <span className="sr-only">(current)</span>
                   </NavLink>
                 </li>
 
-                <li className="nav-item align-self-center mt-4">
+                <li className="nav-item align-self-center mt-4 BorderRight">
                   <NavLink
                     onClick={handleCloseClick}
                     activeClassName="active"
                     to="/catering"
-                    className="nav-link ml-3 text-uppercase"
+                    className="nav-link mx-md-3 mx-sm-0 text-uppercase"
                   >
                     Catering
                   </NavLink>
                 </li>
+                <li className="nav-item align-self-center mt-4">
+                  <a
+                    onClick={handleOrderClick}
+                    className="nav-link ml-md-3 ml-sm-0 text-uppercase"
+                  >
+                    Order Online
+                  </a>
+                </li>
               </ul>
             </div>
-            <div className="col-sm-4 col-md-3 px-sm-0 mx-1 align-self-center">
+            <div className="col-2 col-sm-3 px-sm-0 mx-1 align-self-center">
               <NavLink
                 to="/"
                 className="display-md-none logo-link"
@@ -72,7 +78,7 @@ const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
               </NavLink>
             </div>
             <div
-              className="col-sm-3 col-md-3 px-sm-0 collapse navbar-collapse"
+              className="col-md-4 col-sm-12 px-sm-0 collapse navbar-collapse"
               id="navbarNavDropdown"
             >
               <ul className="navbar-nav">
@@ -81,18 +87,18 @@ const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
                     onClick={handleCloseClick}
                     to="/menu"
                     activeClassName="active"
-                    className="nav-link mr-3 text-uppercase"
+                    className="nav-link mr-md-3 mr-sm-0 text-uppercase"
                   >
                     Menu
                   </NavLink>
                 </li>
 
-                <li className="nav-item align-self-center mt-4 ">
+                <li className="nav-item align-self-center mt-4 BorderRight">
                   <NavLink
                     onClick={handleCloseClick}
                     to="/about"
                     activeClassName="active"
-                    className="nav-link ml-3 text-uppercase"
+                    className="nav-link mx-md-3 mx-sm-0 text-uppercase"
                   >
                     About
                   </NavLink>
@@ -102,7 +108,7 @@ const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
                     onClick={handleCloseClick}
                     to="/contact"
                     activeClassName="active"
-                    className="nav-link ml-3 text-uppercase"
+                    className="nav-link ml-md-3 ml-sm-0 text-uppercase"
                   >
                     Contact
                   </NavLink>
@@ -110,22 +116,8 @@ const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
               </ul>
             </div>
           </div>
-          <div className="w-15">
-            <button onClick={handleOrderClick} id="order_btn" className="mt-3">
-              <img
-                className="full"
-                src={OrderButton}
-                alt="Order Button Active"
-              />
-              <img
-                className="empty"
-                src={OrderButtonFocus}
-                alt="Order Button"
-              />
-            </button>
-          </div>
         </div>
-        <div>
+        <div className="cart-icon-container">
           <CartIcon />
         </div>
       </nav>

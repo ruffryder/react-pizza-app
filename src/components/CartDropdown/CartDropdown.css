@@ -7,7 +7,7 @@
   padding: 2rem;
   border: 1px solid #000;
   background-color: #fff;
-  top: 17rem;
+  top: 19rem;
   right: 2rem;
   z-index: 5;
 }
@@ -22,4 +22,15 @@
 .empty-message {
   font-size: 1.8rem;
   margin: 3rem auto;
+}
+
+@media (min-width: 1300px) {
+  .cart-dropdown {
+    top: 21rem;
+  }
+}
+@media (min-width: 1500px) {
+  .cart-dropdown {
+    top: 23rem;
+  }
 }

@@ -19,8 +19,10 @@ import { loadData } from "./redux/actions/ActionCreators";
 import { DataTypes } from "./redux/actions/Types";
 import Backdrop from "./components/Backdrop/Backdrop";
 import Checkout from "./components/Checkout/Checkout";
+import CustomPizza from "./components/CustomPizza/CustomPizza";
 
 import { connect } from "react-redux";
+import { deselectItem } from "./redux/actions/ItemActions";
 
 configureAnchors({
   offset: 0,
@@ -33,8 +35,6 @@ class App extends Component {
     showCategories: false,
     showMenuList: false,
     selectedCategory: null,
-    showItemDetails: false,
-    selectedItem: null,
     jumboBackground: ""
   };
 
@@ -57,20 +57,6 @@ class App extends Component {
       showMenuList: true,
       showCategories: false,
       selectedCategory: category
-    });
-  };
-
-  handleMenuItemClick = dish => {
-    this.setState({
-      showItemDetails: true,
-      selectedItem: dish
-    });
-  };
-
-  handleBackdropClick = () => {
-    this.setState({
-      showItemDetails: false,
-      selectedItem: null
     });
   };
 
@@ -107,39 +93,28 @@ class App extends Component {
               title={this.state.selectedCategory.title}
               category_id={this.state.selectedCategory._id}
               theme="basic"
-              handleMenuItemClick={this.handleMenuItemClick}
               handleMenuListBackClick={this.handleMenuListBackClick}
-              handleBackdropClick={this.handleBackdropClick}
-              showItemDetails={this.state.showItemDetails}
             />
           )}
         </NavBar>
         <Switch>
           <Route exact path="/" render={() => <Home />} />
           <Route path="/about" component={About} />
-          <Route
-            path="/menu"
-            render={() => (
-              <Menu
-                handleMenuItemClick={this.handleMenuItemClick}
-                handleBackdropClick={this.handleBackdropClick}
-                showItemDetails={this.state.showItemDetails}
-              />
-            )}
-          />
+          <Route path="/menu" render={() => <Menu />} />
           <Route exact path="/checkout" component={Checkout} />
+          <Route path="/make-pizza" component={CustomPizza} />
           <Route path="/catering" component={Catering} />
           <Route path="/contact" component={Contact} />
           <Route component={PageNotFound} />
         </Switch>
-        {this.state.selectedItem && this.state.showItemDetails && (
+        {this.props.selectedItem && this.props.showItemDetails && (
           <React.Fragment>
             <Backdrop
-              show={this.state.showItemDetails}
-              clicked={this.handleBackdropClick}
+              show={this.props.showItemDetails}
+              clicked={() => this.props.deselectItem()}
             />
             <Modal>
-              <MenuItemDetails item={this.state.selectedItem} />
+              <MenuItemDetails item={this.props.selectedItem} />
             </Modal>
           </React.Fragment>
         )}
@@ -149,14 +124,20 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  selectedItem: state.item.selectedItem,
+  showItemDetails: state.item.showItemDetails
+});
+
 const mapDispatchToProps = dispatch => ({
   setCategories: () => dispatch(loadData(DataTypes.CATEGORIES)),
-  setDishes: () => dispatch(loadData(DataTypes.DISHES))
+  setDishes: () => dispatch(loadData(DataTypes.DISHES)),
+  deselectItem: () => dispatch(deselectItem())
 });
 
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )(App)
 );

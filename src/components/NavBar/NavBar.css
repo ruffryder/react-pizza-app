@@ -7,24 +7,17 @@ button {
   max-width: 15rem;
 }
 
-button img {
-  max-width: 100%;
-}
-
-#order_btn:focus {
-  outline: none;
-}
-
-.empty {
-  opacity: 0;
-}
-button:hover .empty,
-button:focus .empty {
-  opacity: 1;
-}
-
 .navbar-light {
   background: rgba(248, 249, 250, 0.85) !important;
+}
+
+.navbar-toggler {
+  border: none !important;
+  font-size: 2.5rem !important;
+}
+
+.navbar-container {
+  min-height: 15rem;
 }
 
 .BorderRight {
@@ -32,14 +25,7 @@ button:focus .empty {
 }
 
 .Row {
-  min-width: 75%;
-  position: relative;
-}
-
-.order-button-container {
-  position: absolute;
-  top: 4rem;
-  right: -5rem;
+  width: 100%;
 }
 
 .Logo {
@@ -59,10 +45,6 @@ button:focus .empty {
 
 .logo-link:focus {
   outline: none;
-}
-
-.w-15 {
-  width: 15%;
 }
 
 .nav-link:after {
@@ -98,63 +80,40 @@ li.nav-item.active {
   font-weight: bold;
 }
 
-#order_btn {
-  position: relative;
-}
-
-#order_btn .empty,
-#order_btn .full {
+.cart-icon-container {
   position: absolute;
-  left: 0;
-  top: -3rem;
-  -webkit-transition: opacity 0.4s ease-in-out;
-  -moz-transition: opacity 0.4s ease-in-out;
-  -o-transition: opacity 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out;
+  bottom: 1rem;
+  right: 4rem;
 }
 
 /* Medium devices (tablets, less than 992px) */
 
-@media (max-width: 991.98px) {
+@media (max-width: 1066px) {
   .nav-link {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 768px) {
+  .BorderRight {
+    border: none;
+  }
   .link-logo {
     padding: 0;
-    width: 14rem;
-  }
-  #OrderNowButton {
-    width: 10rem;
-    margin-left: 3rem;
   }
   .navbar {
     padding: 0 !important;
   }
-  .nav-link {
-    font-size: 0.9rem;
-    padding-left: 1rem !important;
+  .display-md-none {
+    display: none !important;
   }
 }
 
 @media (max-width: 575px) {
-  .BorderRight {
-    border: none;
-  }
   .navbar {
     padding: 0.5rem 1rem !important;
   }
-  .display-md-none {
-    display: none !important;
-  }
   .container-fluid {
     text-align: center;
-  }
-
-  #order_btn .full,
-  #order_btn .empty {
-    top: -10rem;
   }
 }

@@ -7,9 +7,6 @@ import { faShare } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 
 const MenuList = ({
-  showItemDetails,
-  handleBackdropClick,
-  handleMenuItemClick,
   handleMenuListBackClick,
   large,
   title,
@@ -49,16 +46,7 @@ const MenuList = ({
                 return dish.category_id === category_id;
               })
               .map(dish => {
-                return (
-                  <MenuItem
-                    showItemDetails={showItemDetails}
-                    handleBackdropClick={handleBackdropClick}
-                    handleMenuItemClick={handleMenuItemClick}
-                    large={large}
-                    key={dish._id}
-                    dish={dish}
-                  />
-                );
+                return <MenuItem large={large} key={dish._id} dish={dish} />;
               })}
             <div className="col-8 p-4">
               <p className="text-right total-price">Total price:</p>
@@ -79,13 +67,7 @@ const MenuList = ({
                   return dish.category_id === category_id;
                 })
                 .map(dish => {
-                  return (
-                    <MenuItem
-                      handleMenuItemClick={handleMenuItemClick}
-                      key={dish._id}
-                      dish={dish}
-                    />
-                  );
+                  return <MenuItem key={dish._id} dish={dish} />;
                 })}
             </ul>
           </div>

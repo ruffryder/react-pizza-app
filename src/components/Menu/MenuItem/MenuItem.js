@@ -3,15 +3,9 @@ import "./MenuItem.css";
 import Auxiliary from "../../../hoc/Auxiliary";
 import { connect } from "react-redux";
 import { addItem } from "../../../redux/actions/CartActions";
+import { selectItem } from "../../../redux/actions/ItemActions";
 
-const MenuItem = ({
-  showItemDetails,
-  handleBackdropClick,
-  handleMenuItemClick,
-  large,
-  dish,
-  addItem
-}) => {
+const MenuItem = ({ selectItem, large, dish, addItem }) => {
   if (large) {
     return (
       <Auxiliary>
@@ -19,7 +13,9 @@ const MenuItem = ({
           <div className="container menu-item-container">
             <div className="row ">
               <span
-                onClick={() => handleMenuItemClick(dish)}
+                onClick={() => {
+                  selectItem(dish);
+                }}
                 className="pointer col-3"
               >
                 {dish.title}
@@ -54,7 +50,7 @@ const MenuItem = ({
       <Auxiliary>
         <li
           className="list-unstyled box menu-item"
-          onClick={() => handleMenuItemClick(dish)}
+          onClick={() => selectItem(dish)}
         >
           {dish.title}
         </li>
@@ -65,7 +61,8 @@ const MenuItem = ({
 };
 
 const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item))
+  addItem: item => dispatch(addItem(item)),
+  selectItem: item => dispatch(selectItem(item))
 });
 export default connect(
   null,

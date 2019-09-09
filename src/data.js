@@ -272,5 +272,156 @@ export const data = {
     { _id: 2, title: "Pasta", imageUrl: PastaCatUrl },
     { _id: 3, title: "Salads", imageUrl: SaladCatUrl },
     { _id: 4, title: "Desserts", imageUrl: DessertCatUrl }
-  ]
+  ],
+  ingredients: {
+    doughs: {
+      id: 1,
+      name: "Doughs",
+      items: {
+        classic: {
+          id: 1,
+          name: "Classic Dough",
+          price: 1,
+          description:
+            "Classic pizza dough made from white flour, olive oil and oregano"
+        },
+        wholeGrain: {
+          id: 2,
+          name: "Whole Grain Dough",
+          price: 1.5,
+          description:
+            "Whole grain pizza dough made from 60% whole grain flour, 40% white flour and olive oil"
+        },
+        glutenFree: {
+          id: 3,
+          name: "Gluten-free Dough",
+          price: 1.8,
+          description:
+            "A gluten free pizza dough made from 30% rice flour, 50% corn flour, 20% buckwheat flour and olive oil"
+        }
+      }
+    },
+    meats: {
+      id: 2,
+      name: "Meats",
+      items: {
+        salami: {
+          id: 1,
+          name: "Salami",
+          price: 1.4,
+          description: "A classic pork salami dried at least 120 days"
+        },
+        prochuto: {
+          id: 2,
+          name: "Prochuto",
+          price: 3,
+          description: "A traditional prochuto crudo from Italy"
+        },
+        choriso: {
+          id: 3,
+          name: "Choriso",
+          price: 2,
+          description: "A spicy choriso coming from Spain"
+        }
+      }
+    },
+    sauces: {
+      id: 3,
+      name: "Sauces",
+      items: {
+        tomato: {
+          id: 1,
+          name: "Tomato Sauce",
+          price: 1.2,
+          description:
+            "Traditional tomato sauce with oregano, olive oil and basil"
+        },
+        garlic: {
+          id: 2,
+          name: "Garlic Sauce",
+          price: 1,
+          description: "A spicy garlic sauce"
+        },
+        sweet: {
+          id: 3,
+          name: "Sweet Sauce",
+          price: 1.4,
+          description:
+            "The sweetness in sweet pizza sauce comes from tomatoes and some added sugars (brown sugar works especially well for this). Sweet tomato sauces work well with vegetables, pineapple and sweet meats like bacon, and some sausages. "
+        },
+        pesto: {
+          id: 4,
+          name: "Pesto",
+          price: 1.8,
+          description:
+            "If you want a sauce that’s full of basil, but without the tomatoes, try pesto. Made from olive oil, garlic, Parmesan cheese, roasted pine nuts and whole lot of basil"
+        }
+      }
+    },
+    cheeses: {
+      id: 4,
+      name: "Cheeses",
+      items: {
+        mozzarella: {
+          id: 1,
+          name: "Mozzarella",
+          price: 2,
+          description:
+            "Mozzarella is the most popular cheese option for a pizza and it has quickly become the cheese of choice for other styles, too. "
+        },
+        provolone: {
+          id: 2,
+          name: "Provolone",
+          price: 2.2,
+          description:
+            "Semi-hard Italian cheese and is the second most popular cheese to blend with other cheese. "
+        },
+        cheddar: {
+          id: 3,
+          name: "Cheddar",
+          price: 2,
+          description:
+            "Cheddar cheese is widely loved because of the sharp taste that it has."
+        },
+        parmesan: {
+          id: 4,
+          name: "Parmesan",
+          price: 2.8,
+          description:
+            "This hard cheese, in addition to other aged Italian hard cheeses, can be shaved or shredded on top of freshly baked pizzas"
+        }
+      }
+    },
+    other: {
+      id: 5,
+      name: "Other",
+      items: {
+        mushrooms: {
+          id: 1,
+          name: "Mushrooms",
+          price: 1.2,
+          description:
+            "Together with the tomato sauce and the cheese, mushrooms form a stunning combination"
+        },
+        eggs: {
+          id: 2,
+          name: "Eggs",
+          price: 1.3,
+          description: "Eggs are full of micronutrients and rich in protein"
+        },
+        olives: {
+          id: 3,
+          name: "Olives",
+          price: 1.2,
+          description: "Black olives are always a good idea"
+        },
+        peppers: {
+          id: 4,
+          name: "Peppers",
+          price: 1.2,
+          description: "Green and red peppers in addition to your pizza pie"
+        }
+      }
+    }
+  }
 };

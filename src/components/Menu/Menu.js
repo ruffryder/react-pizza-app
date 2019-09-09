@@ -6,16 +6,12 @@ import Header from "../Heading/Heading";
 import MenuList from "./MenuList/MenuList";
 import Backdrop from "../Backdrop/Backdrop";
 import { connect } from "react-redux";
+import { deselectItem } from "../../redux/actions/ItemActions";
 
-const Menu = ({
-  showItemDetails,
-  handleBackdropClick,
-  handleMenuItemClick,
-  categories
-}) => {
+const Menu = ({ categories, showItemDetails, deselectItem }) => {
   return (
     <section>
-      <Backdrop show={showItemDetails} clicked={handleBackdropClick} />
+      <Backdrop show={showItemDetails} clicked={() => deselectItem()} />
       <Header title="Menu">
         <FontAwesomeIcon
           color="#e5bd0a"
@@ -32,11 +28,7 @@ const Menu = ({
                   key={category._id}
                   className={`col-sm-12 col-md-6 menu-col-lg ${category.title}-Menu Menu-Item`}
                 >
-                  <MenuList
-                    handleMenuItemClick={handleMenuItemClick}
-                    title={category.title}
-                    category_id={category._id}
-                  />
+                  <MenuList title={category.title} category_id={category._id} />
                 </div>
               );
             })}
@@ -47,7 +39,15 @@ const Menu = ({
 };
 
 const mapStateToProps = state => ({
-  categories: state.data.categories
+  categories: state.data.categories,
+  showItemDetails: state.item.showItemDetails
 });
 
-export default connect(mapStateToProps)(Menu);
+const mapDispatchToProps = dispatch => ({
+  deselectItem: () => dispatch(deselectItem())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Menu);
