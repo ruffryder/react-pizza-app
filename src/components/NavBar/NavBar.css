@@ -70,6 +70,7 @@ button {
   padding-bottom: 0 !important;
   transition: all 0.2s;
   position: relative;
+  cursor: pointer;
 }
 
 .nav-link:focus {

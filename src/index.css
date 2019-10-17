@@ -149,10 +149,14 @@ a:hover {
   background-color: #e5bd0a;
 }
 
-.btn-general-inverted:hover,
-.btn-general-inverted:focus {
+.btn-general-inverted:hover:not([disabled]),
+.btn-general-inverted:focus:not([disabled]) {
   background-color: #4b3114;
   color: #e5bd0a;
+}
+
+.btn-general-inverted:disabled {
+  cursor: not-allowed;
 }
 
 .pointer {

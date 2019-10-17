@@ -2,11 +2,11 @@ import React from "react";
 import "./Menu.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarMinus } from "@fortawesome/free-solid-svg-icons";
-import Header from "../Heading/Heading";
+import Header from "../../Heading/Heading";
 import MenuList from "./MenuList/MenuList";
-import Backdrop from "../Backdrop/Backdrop";
+import Backdrop from "../../UI/Backdrop/Backdrop";
 import { connect } from "react-redux";
-import { deselectItem } from "../../redux/actions/ItemActions";
+import { deselectItem } from "../../../redux/actions/ItemActions";
 
 const Menu = ({ categories, showItemDetails, deselectItem }) => {
   return (
@@ -25,10 +25,10 @@ const Menu = ({ categories, showItemDetails, deselectItem }) => {
             categories.map(category => {
               return (
                 <div
-                  key={category._id}
+                  key={category.id}
                   className={`col-sm-12 col-md-6 menu-col-lg ${category.title}-Menu Menu-Item`}
                 >
-                  <MenuList title={category.title} category_id={category._id} />
+                  <MenuList title={category.title} category_id={category.id} />
                 </div>
               );
             })}

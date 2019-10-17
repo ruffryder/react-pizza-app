@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "../../assets/img/logo.svg";
-import Jumbotron from "../Jumbotron/Jumbotron";
+import Jumbotron from "../UI/Jumbotron/Jumbotron";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
-import CartIcon from "../CartIcon/CartIcon";
-import CartDropdown from "../CartDropdown/CartDropdown";
+import CartIcon from "../Cart/CartIcon/CartIcon";
+import CartDropdown from "../Cart/CartDropdown/CartDropdown";
 import { connect } from "react-redux";
 import { selectCartHidden } from "../../redux/CartSelectors";
 

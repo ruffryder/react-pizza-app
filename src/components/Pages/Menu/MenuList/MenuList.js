@@ -1,7 +1,7 @@
 import React from "react";
 import "./MenuList.css";
 import MenuItem from "../MenuItem/MenuItem";
-import Aux from "../../../hoc/Auxiliary";
+import Aux from "../../../../hoc/Auxiliary";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
@@ -46,7 +46,7 @@ const MenuList = ({
                 return dish.category_id === category_id;
               })
               .map(dish => {
-                return <MenuItem large={large} key={dish._id} dish={dish} />;
+                return <MenuItem large={large} key={dish.id} dish={dish} />;
               })}
             <div className="col-8 p-4">
               <p className="text-right total-price">Total price:</p>
@@ -67,7 +67,7 @@ const MenuList = ({
                   return dish.category_id === category_id;
                 })
                 .map(dish => {
-                  return <MenuItem key={dish._id} dish={dish} />;
+                  return <MenuItem key={dish.id} dish={dish} />;
                 })}
             </ul>
           </div>

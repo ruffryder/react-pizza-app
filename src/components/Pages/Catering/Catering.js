@@ -7,14 +7,14 @@ import {
   faTruck,
   faUtensils
 } from "@fortawesome/free-solid-svg-icons";
-import wedding from "../../assets/img/wedding3.jpg";
-import corporate from "../../assets/img/corporate.jpg";
-import social from "../../assets/img/social2.jpg";
-import event1 from "../../assets/img/event1.jpg";
-import event2 from "../../assets/img/event2.jpg";
-import event3 from "../../assets/img/event3.jpg";
+import wedding from "../../../assets/img/wedding3.jpg";
+import corporate from "../../../assets/img/corporate.jpg";
+import social from "../../../assets/img/social2.jpg";
+import event1 from "../../../assets/img/event1.jpg";
+import event2 from "../../../assets/img/event2.jpg";
+import event3 from "../../../assets/img/event3.jpg";
 import "./Catering.css";
-import Aux from "../../hoc/Auxiliary";
+import Aux from "../../../hoc/Auxiliary";
 
 const Catering = () => {
   return (

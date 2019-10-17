@@ -2,9 +2,9 @@ import React from "react";
 import "./CartDropdown.css";
 import CartItem from "../CartItem/CartItem";
 import { connect } from "react-redux";
-import { selectCartItems } from "../../redux/CartSelectors";
+import { selectCartItems } from "../../../redux/CartSelectors";
 import { withRouter } from "react-router-dom";
-import { toggleCartHidden } from "../../redux/actions/CartActions";
+import { toggleCartHidden } from "../../../redux/actions/CartActions";
 
 function CartDropdown({ cartItems, history, dispatch }) {
   return (
@@ -12,7 +12,7 @@ function CartDropdown({ cartItems, history, dispatch }) {
       <div className="cart-items">
         {cartItems.length ? (
           cartItems.map(cartItem => {
-            return <CartItem key={cartItem._id} item={cartItem} />;
+            return <CartItem key={cartItem.id} item={cartItem} />;
           })
         ) : (
           <span className="empty-message">Your cart is empty </span>

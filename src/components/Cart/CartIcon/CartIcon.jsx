@@ -3,8 +3,8 @@ import "./CartIcon.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
-import { toggleCartHidden } from "../../redux/actions/CartActions";
-import { selectCartItemsCount } from "../../redux/CartSelectors";
+import { toggleCartHidden } from "../../../redux/actions/CartActions";
+import { selectCartItemsCount } from "../../../redux/CartSelectors";
 
 function CartIcon({ toggleCartHidden, itemCount }) {
   return (

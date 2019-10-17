@@ -8,3 +8,13 @@ export const loadData = dataType => ({
     data: phData[dataType]
   }
 });
+
+export const updateDishes = dishesData => ({
+  type: ActionTypes.UPDATE_DISHES,
+  payload: dishesData
+});
+
+export const updateCategories = categoriesData => ({
+  type: ActionTypes.UPDATE_CATEGORIES,
+  payload: categoriesData
+});

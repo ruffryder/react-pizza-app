@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./About.css";
-import john_img from "../../assets/img/person1.jpg";
-import jack_img from "../../assets/img/person2.jpg";
-import jake_img from "../../assets/img/person3.jpg";
+import john_img from "../../../assets/img/person1.jpg";
+import jack_img from "../../../assets/img/person2.jpg";
+import jake_img from "../../../assets/img/person3.jpg";
 
 function About() {
   const [showPerson1Info, setPerson1Info] = useState(false);

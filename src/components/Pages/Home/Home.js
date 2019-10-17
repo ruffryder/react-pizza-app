@@ -1,9 +1,9 @@
 import React from "react";
-import Heading from "../Heading/Heading";
-import Aux from "../../hoc/Auxiliary";
-import bgImage from "../../assets/img/1.jpg";
-import bgImage2 from "../../assets/img/2.jpg";
-import delivery from "../../assets/img/delivery.png";
+import Heading from "../../Heading/Heading";
+import Aux from "../../../hoc/Auxiliary";
+import bgImage from "../../../assets/img/1.jpg";
+import bgImage2 from "../../../assets/img/2.jpg";
+import delivery from "../../../assets/img/delivery.png";
 import { Link } from "react-router-dom";
 
 const Home = () => {

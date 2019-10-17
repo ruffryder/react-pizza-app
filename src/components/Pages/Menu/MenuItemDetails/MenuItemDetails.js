@@ -1,7 +1,7 @@
 import React from "react";
 import "./MenuItemDetails.css";
 import { connect } from "react-redux";
-import { addItem } from "../../../redux/actions/CartActions";
+import { addItem } from "../../../../redux/actions/CartActions";
 
 const MenuItemDetails = ({ item, addItem }) => {
   return (

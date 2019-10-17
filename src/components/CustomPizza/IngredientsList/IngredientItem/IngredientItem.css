@@ -1,0 +1,7 @@
+.ingredient-input-item {
+  font-size: 2rem;
+}
+
+.ingredient-input-item:first-of-type {
+  margin-top: 4rem;
+}

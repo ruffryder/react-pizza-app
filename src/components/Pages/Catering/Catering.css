@@ -17,7 +17,7 @@
 
 .sample-menu {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("../../assets/img/pizza.jpg") no-repeat;
+    url("../../../assets/img/pizza.jpg") no-repeat;
   background-size: cover;
   min-height: 800px !important;
   max-width: 100%;

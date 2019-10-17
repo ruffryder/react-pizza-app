@@ -9,7 +9,7 @@ const DishCardList = ({ dishesData }) => {
       <div className="DishCardList row justify-content-around">
         {dishesData.map(item => {
           return (
-            <div key={item._id} className="col-lg-4">
+            <div key={item.id} className="col-lg-4">
               <DishCard dish={item} />
             </div>
           );

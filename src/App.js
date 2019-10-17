@@ -3,23 +3,34 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import CategoryList from "./components/CategoryList/CategoryList";
-import MenuList from "./components/Menu/MenuList/MenuList";
+import MenuList from "./components/Pages/Menu/MenuList/MenuList";
 import Modal from "./components/UI/Modal/Modal";
-import MenuItemDetails from "./components/Menu/MenuItemDetails/MenuItemDetails";
+import MenuItemDetails from "./components/Pages/Menu/MenuItemDetails/MenuItemDetails";
 import { configureAnchors } from "react-scrollable-anchor";
 import { Switch, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Menu from "./components/Menu/Menu";
-import Catering from "./components/Catering/Catering";
-import PageNotFound from "./components/PageNotFound/PageNotFound";
+import Home from "./components/Pages/Home/Home";
+import About from "./components/Pages/About/About";
+import Menu from "./components/Pages/Menu/Menu";
+import Catering from "./components/Pages/Catering/Catering";
+import PageNotFound from "./components/Pages/PageNotFound/PageNotFound";
 import { withRouter } from "react-router-dom";
-import Contact from "./components/Contact/Contact";
-import { loadData } from "./redux/actions/ActionCreators";
+import Contact from "./components/Pages/Contact/Contact";
+import {
+  loadData,
+  updateDishes,
+  updateCategories
+} from "./redux/actions/ActionCreators";
 import { DataTypes } from "./redux/actions/Types";
-import Backdrop from "./components/Backdrop/Backdrop";
+import Backdrop from "./components/UI/Backdrop/Backdrop";
 import Checkout from "./components/Checkout/Checkout";
 import CustomPizza from "./components/CustomPizza/CustomPizza";
+import {
+  addCollectionsAndDocuments,
+  convertDishesSnapshotToMap,
+  convertCategoriesSnapshotToMap
+} from "./firebase/firebase.utils";
+import { data } from "./data";
+import { firestore } from "./firebase/firebase.utils";
 
 import { connect } from "react-redux";
 import { deselectItem } from "./redux/actions/ItemActions";
@@ -31,6 +42,7 @@ configureAnchors({
 });
 
 class App extends Component {
+  unsubscribeFromSnapshot = null;
   state = {
     showCategories: false,
     showMenuList: false,
@@ -69,8 +81,24 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.props.setCategories();
-    this.props.setDishes();
+    // this.props.setCategories();
+    const dishesRef = firestore.collection("dishes");
+    this.unsubscribeFromSnapshot = dishesRef.onSnapshot(async snapshot => {
+      const dishesMap = convertDishesSnapshotToMap(snapshot);
+      this.props.updateDishes(dishesMap);
+    });
+    const categoriesRef = firestore.collection("categories");
+    this.unsubscribeFromSnapshot = categoriesRef.onSnapshot(async snapshot => {
+      const categoriesMap = convertCategoriesSnapshotToMap(snapshot);
+      this.props.updateCategories(categoriesMap);
+    });
+    // addCollectionsAndDocuments(
+    //   "categories",
+    //   data.categories.map(({ title, imageUrl }) => ({
+    //     title,
+    //     imageUrl
+    //   }))
+    // );
   }
 
   render() {
@@ -91,7 +119,7 @@ class App extends Component {
             <MenuList
               large={true}
               title={this.state.selectedCategory.title}
-              category_id={this.state.selectedCategory._id}
+              category_id={this.state.selectedCategory.id}
               theme="basic"
               handleMenuListBackClick={this.handleMenuListBackClick}
             />
@@ -131,7 +159,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setCategories: () => dispatch(loadData(DataTypes.CATEGORIES)),
-  setDishes: () => dispatch(loadData(DataTypes.DISHES)),
+  updateDishes: dishesData => dispatch(updateDishes(dishesData)),
+  updateCategories: categoriesData =>
+    dispatch(updateCategories(categoriesData)),
   deselectItem: () => dispatch(deselectItem())
 });
 

@@ -12,10 +12,7 @@ class CategoryList extends Component {
     } else {
       return this.props.categories.map(item => {
         return (
-          <div
-            key={item._id}
-            className="col-lg-3 col-md-4 col-sm-6 text-center"
-          >
+          <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 text-center">
             <CardItem
               handleClick={this.props.handleCategoryClick}
               item={item}

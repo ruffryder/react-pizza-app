@@ -1,9 +1,9 @@
 import React from "react";
 import "./MenuItem.css";
-import Auxiliary from "../../../hoc/Auxiliary";
+import Auxiliary from "../../../../hoc/Auxiliary";
 import { connect } from "react-redux";
-import { addItem } from "../../../redux/actions/CartActions";
-import { selectItem } from "../../../redux/actions/ItemActions";
+import { addItem } from "../../../../redux/actions/CartActions";
+import { selectItem } from "../../../../redux/actions/ItemActions";
 
 const MenuItem = ({ selectItem, large, dish, addItem }) => {
   if (large) {

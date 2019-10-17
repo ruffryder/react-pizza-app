@@ -277,9 +277,11 @@ export const data = {
     doughs: {
       id: 1,
       name: "Doughs",
+      inputType: "radio",
       items: {
         classic: {
           id: 1,
+          title: "classic",
           name: "Classic Dough",
           price: 1,
           description:
@@ -287,6 +289,7 @@ export const data = {
         },
         wholeGrain: {
           id: 2,
+          title: "wholeGrain",
           name: "Whole Grain Dough",
           price: 1.5,
           description:
@@ -294,6 +297,7 @@ export const data = {
         },
         glutenFree: {
           id: 3,
+          title: "glutenFree",
           name: "Gluten-free Dough",
           price: 1.8,
           description:
@@ -304,6 +308,7 @@ export const data = {
     meats: {
       id: 2,
       name: "Meats",
+      inputType: "checkbox",
       items: {
         salami: {
           id: 1,
@@ -328,6 +333,7 @@ export const data = {
     sauces: {
       id: 3,
       name: "Sauces",
+      inputType: "checkbox",
       items: {
         tomato: {
           id: 1,
@@ -361,9 +367,11 @@ export const data = {
     cheeses: {
       id: 4,
       name: "Cheeses",
+      inputType: "checkbox",
       items: {
         mozzarella: {
           id: 1,
+          title: "mozzarella",
           name: "Mozzarella",
           price: 2,
           description:
@@ -371,6 +379,7 @@ export const data = {
         },
         provolone: {
           id: 2,
+          title: "provolone",
           name: "Provolone",
           price: 2.2,
           description:
@@ -378,6 +387,7 @@ export const data = {
         },
         cheddar: {
           id: 3,
+          title: "cheddar",
           name: "Cheddar",
           price: 2,
           description:
@@ -385,6 +395,7 @@ export const data = {
         },
         parmesan: {
           id: 4,
+          title: "parmesan",
           name: "Parmesan",
           price: 2.8,
           description:
@@ -395,6 +406,7 @@ export const data = {
     other: {
       id: 5,
       name: "Other",
+      inputType: "checkbox",
       items: {
         mushrooms: {
           id: 1,
