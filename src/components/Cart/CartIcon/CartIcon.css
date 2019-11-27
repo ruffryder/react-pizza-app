@@ -3,6 +3,16 @@
   width: 4rem;
   height: 4rem;
   cursor: pointer;
+  color: var(--secondary-color);
+  transition: transform 0.3s ease-in;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
+.cart-icon:hover .item-count {
+  transform: scale(1.1);
 }
 
 .item-count {
@@ -14,7 +24,8 @@
   font-weight: bold;
   right: -2rem;
   bottom: 1.5rem;
-  color: #fff;
-  background-color: red;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
   border-radius: 50%;
+  transition: transform 0.3s ease-in;
 }

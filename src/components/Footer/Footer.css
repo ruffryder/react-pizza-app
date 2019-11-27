@@ -2,9 +2,9 @@
   font-size: 2rem;
   padding: 3.2rem 0;
   padding-bottom: 0;
-  background-color: #4b3114;
+  background-color: var(--main-color);
   color: white;
-  border-top: 0.05rem solid #e5e5e5;
+  border-top: 0.05rem solid var(--main-grey);
   margin-top: 3rem;
   min-height: 25vh;
 }

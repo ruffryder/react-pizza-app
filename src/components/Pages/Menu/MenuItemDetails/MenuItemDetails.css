@@ -3,5 +3,5 @@
   bottom: 1rem;
   right: 2rem;
   width: 40%;
-  color: #fdeef2 !important;
+  color: var(--light-grey) !important;
 }

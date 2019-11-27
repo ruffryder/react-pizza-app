@@ -27,6 +27,23 @@
     url(./assets/fonts/GillSansMT-Condensed.eot) format("eot");
 }
 
+/* Defining css variables for the project */
+:root {
+  --main-color: #4b3114;
+  --secondary-color: #e5bd0a;
+  --main-green: #009432;
+  --main-red: #ea2027;
+  --pizza-menu-bg: rgba(252, 5, 0, 0.5);
+  --pasta-menu-bg: rgba(229, 189, 10, 0.5);
+  --salads-menu-bg: rgba(0, 84, 3, 0.5);
+  --desserts-menu-bg: rgba(255, 204, 204, 0.5);
+  --main-white: #fff;
+  --main-black: #000;
+  --main-grey: #e5e5e5;
+  --dark-grey: #212529;
+  --light-grey: #fdeef2;
+  --menu-list-bg-basic: rgba(248, 249, 250, 0.85);
+}
 html {
   /* This defines what 1rem is. (in this case, it is 10px)*/
   font-size: 62.5%;
@@ -40,17 +57,33 @@ body {
   box-sizing: border-box;
 }
 
-/* Utility Classes */
+.display-1 {
+  font-size: 9rem !important;
+}
+
+h1 {
+  font-size: 5rem !important;
+}
+
+h2 {
+  font-size: 3.5rem !important;
+}
+
+h3 {
+  font-size: 2.8rem !important;
+}
 
 a {
-  color: #fdeef2;
+  color: var(--light-grey);
   transition: 0.2s linear all;
 }
 
 a:hover {
-  color: #e5bd0a;
+  color: var(--secondary-color);
   text-decoration: none;
 }
+
+/* Utility Classes */
 
 .Heading {
   font-family: "Rockwell Condensed" !important;
@@ -100,7 +133,7 @@ a:hover {
   font-size: 5.5rem !important;
 }
 
-/* Make your own pizza button styles */
+/*Pizza button styles */
 
 .btn-pizza {
   text-decoration: none;
@@ -108,25 +141,27 @@ a:hover {
   position: absolute;
   right: 10rem;
   font-size: 2.5rem !important;
-  background: #4b3114;
-  color: #e5bd0a;
+  background: var(--main-color);
+  color: var(--secondary-color);
   font-weight: bold;
   font-size: 2.2rem;
   width: 13rem;
   height: 13rem;
   border-radius: 50%;
   text-align: center;
-  box-shadow: 0px 0px 0px 5px #4b3114;
-  border: dashed 2px #e5bd0a;
+  box-shadow: 0px 0px 0px 5px var(--main-color);
+  border: dashed 2px var(--secondary-color);
   transition: all 0.4s;
 }
 
 .btn-pizza:hover {
-  border-color: #4b3114;
-  background: #e5bd0a;
-  box-shadow: 0px 0px 0px 5px #e5bd0a;
-  color: #4b3114;
+  border-color: var(--main-color);
+  background: var(--secondary-color);
+  box-shadow: 0px 0px 0px 5px var(--secondary-color);
+  color: var(--main-color);
 }
+
+/* General button styles */
 
 .btn {
   font-size: 1.8rem;
@@ -134,25 +169,27 @@ a:hover {
 }
 
 .btn-general {
-  color: #e5bd0a;
-  background-color: #4b3114;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
 }
 
 .btn-general:hover,
 .btn-general:focus {
-  background-color: #e5bd0a;
-  color: #4b3114;
+  background-color: var(--secondary-color);
+  color: var(--main-color);
 }
 
+/* Inverted General button styles */
+
 .btn-general-inverted {
-  color: #4b3114;
-  background-color: #e5bd0a;
+  color: var(--main-color);
+  background-color: var(--secondary-color);
 }
 
 .btn-general-inverted:hover:not([disabled]),
 .btn-general-inverted:focus:not([disabled]) {
-  background-color: #4b3114;
-  color: #e5bd0a;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
 }
 
 .btn-general-inverted:disabled {

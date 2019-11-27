@@ -11,7 +11,6 @@ function CartIcon({ toggleCartHidden, itemCount }) {
     <div className="cart-icon" onClick={toggleCartHidden}>
       {" "}
       <FontAwesomeIcon
-        color="#fff"
         className="ml-2 pt-2"
         icon={faShoppingBasket}
         size="3x"
@@ -29,7 +28,4 @@ const mapDispatchToProps = dispatch => ({
   toggleCartHidden: () => dispatch(toggleCartHidden())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CartIcon);
+export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);

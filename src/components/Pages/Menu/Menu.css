@@ -3,16 +3,16 @@
 }
 
 .Pizza-Menu {
-  background-color: rgba(252, 5, 0, 0.5);
+  background-color: var(--pizza-menu-bg);
 }
 .Pasta-Menu {
-  background-color: rgba(229, 189, 10, 0.5);
+  background-color: var(--pasta-menu-bg);
 }
 .Salads-Menu {
-  background-color: rgba(0, 84, 3, 0.5);
+  background-color: var(--salads-menu-bg);
 }
 .Desserts-Menu {
-  background-color: rgba(255, 204, 204, 0.5);
+  background-color: var(--desserts-menu-bg);
 }
 
 @media screen and (min-width: 992px) {

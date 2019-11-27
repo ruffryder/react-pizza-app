@@ -41,7 +41,7 @@
 }
 
 .menu-item::before {
-  border-bottom: 2px solid #212529;
+  border-bottom: 2px solid var(--dark-grey);
   -webkit-transform-origin: 0% 100%;
   transform-origin: 0% 100%;
 }
@@ -56,16 +56,16 @@
 /*----------------- BUTTON STYLES ----------------------*/
 .btn-add,
 .btn-remove {
-  color: #fdeef2;
+  color: var(--light-grey);
   max-width: 100% !important;
   font-size: 1.8rem !important;
 }
 .btn-add {
-  background-color: #009432;
+  background-color: var(--main-green);
 }
 
 .btn-remove {
-  background-color: #ea2027;
+  background-color: var(--main-red);
 }
 
 @media screen and (min-width: 1200px) {

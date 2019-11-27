@@ -34,7 +34,7 @@ class CategoryList extends Component {
               type="button"
             >
               <FontAwesomeIcon
-                color="#4B3114 "
+                color="#4b3114"
                 className="ml-2 pt-2"
                 icon={faTimes}
                 size="4x"

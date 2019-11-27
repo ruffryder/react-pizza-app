@@ -21,7 +21,7 @@ button {
 }
 
 .BorderRight {
-  border-right: 1px solid #4b3114;
+  border-right: 1px solid var(--main-color);
 }
 
 .Row {
@@ -39,7 +39,7 @@ button {
 
 .logo-link:hover,
 .logo-link:focus {
-  border: 2px solid #4b3114;
+  border: 2px solid var(--main-color);
   border-radius: 35%;
 }
 
@@ -55,7 +55,7 @@ button {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #4b3114;
+  background: var(--main-color);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
