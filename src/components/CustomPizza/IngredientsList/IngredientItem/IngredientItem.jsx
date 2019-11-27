@@ -15,9 +15,7 @@ function IngredientInputItem({
         name={ingredientName}
         id={ingredient.name}
         value={ingredient.name}
-        onChange={e =>
-          handleInputChange(ingredient.id, ingredientType, ingredient.title, e)
-        }
+        onChange={e => handleInputChange(ingredientType, ingredient.title, e)}
       />
       <label className="form-check-label pl-3" htmlFor={ingredient.name}>
         {`${ingredient.name} (+$${ingredient.price})`}

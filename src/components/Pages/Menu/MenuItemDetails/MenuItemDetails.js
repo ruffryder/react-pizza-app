@@ -33,7 +33,4 @@ const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(MenuItemDetails);
+export default connect(null, mapDispatchToProps)(MenuItemDetails);

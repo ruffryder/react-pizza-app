@@ -25,11 +25,9 @@ import Backdrop from "./components/UI/Backdrop/Backdrop";
 import Checkout from "./components/Checkout/Checkout";
 import CustomPizza from "./components/CustomPizza/CustomPizza";
 import {
-  addCollectionsAndDocuments,
   convertDishesSnapshotToMap,
   convertCategoriesSnapshotToMap
 } from "./firebase/firebase.utils";
-import { data } from "./data";
 import { firestore } from "./firebase/firebase.utils";
 
 import { connect } from "react-redux";
@@ -81,7 +79,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    // this.props.setCategories();
     const dishesRef = firestore.collection("dishes");
     this.unsubscribeFromSnapshot = dishesRef.onSnapshot(async snapshot => {
       const dishesMap = convertDishesSnapshotToMap(snapshot);
@@ -92,13 +89,6 @@ class App extends Component {
       const categoriesMap = convertCategoriesSnapshotToMap(snapshot);
       this.props.updateCategories(categoriesMap);
     });
-    // addCollectionsAndDocuments(
-    //   "categories",
-    //   data.categories.map(({ title, imageUrl }) => ({
-    //     title,
-    //     imageUrl
-    //   }))
-    // );
   }
 
   render() {
@@ -165,9 +155,4 @@ const mapDispatchToProps = dispatch => ({
   deselectItem: () => dispatch(deselectItem())
 });
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(App)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

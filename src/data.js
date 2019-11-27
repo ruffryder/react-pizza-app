@@ -313,18 +313,21 @@ export const data = {
         salami: {
           id: 1,
           name: "Salami",
+          title: "salami",
           price: 1.4,
           description: "A classic pork salami dried at least 120 days"
         },
         prochuto: {
           id: 2,
           name: "Prochuto",
+          title: "prochuto",
           price: 3,
           description: "A traditional prochuto crudo from Italy"
         },
         choriso: {
           id: 3,
           name: "Choriso",
+          title: "choriso",
           price: 2,
           description: "A spicy choriso coming from Spain"
         }
@@ -338,6 +341,7 @@ export const data = {
         tomato: {
           id: 1,
           name: "Tomato Sauce",
+          title: "tomato",
           price: 1.2,
           description:
             "Traditional tomato sauce with oregano, olive oil and basil"
@@ -345,12 +349,14 @@ export const data = {
         garlic: {
           id: 2,
           name: "Garlic Sauce",
+          title: "garlic",
           price: 1,
           description: "A spicy garlic sauce"
         },
         sweet: {
           id: 3,
           name: "Sweet Sauce",
+          title: "sweet",
           price: 1.4,
           description:
             "The sweetness in sweet pizza sauce comes from tomatoes and some added sugars (brown sugar works especially well for this). Sweet tomato sauces work well with vegetables, pineapple and sweet meats like bacon, and some sausages. "
@@ -358,6 +364,7 @@ export const data = {
         pesto: {
           id: 4,
           name: "Pesto",
+          title: "pesto",
           price: 1.8,
           description:
             "If you want a sauce that’s full of basil, but without the tomatoes, try pesto. Made from olive oil, garlic, Parmesan cheese, roasted pine nuts and whole lot of basil"
@@ -411,6 +418,7 @@ export const data = {
         mushrooms: {
           id: 1,
           name: "Mushrooms",
+          title: "mushrooms",
           price: 1.2,
           description:
             "Together with the tomato sauce and the cheese, mushrooms form a stunning combination"
@@ -418,18 +426,21 @@ export const data = {
         eggs: {
           id: 2,
           name: "Eggs",
+          title: "eggs",
           price: 1.3,
           description: "Eggs are full of micronutrients and rich in protein"
         },
         olives: {
           id: 3,
           name: "Olives",
+          title: "olives",
           price: 1.2,
           description: "Black olives are always a good idea"
         },
         peppers: {
           id: 4,
           name: "Peppers",
+          title: "peppers",
           price: 1.2,
           description: "Green and red peppers in addition to your pizza pie"
         }

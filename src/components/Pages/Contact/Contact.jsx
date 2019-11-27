@@ -56,7 +56,7 @@ class Contact extends Component {
   validate = () => {
     const options = { abortEarly: false, allowUnknown: true };
     const result = Joi.validate(this.state, this.schema, options);
-    console.log(result);
+
     if (!result.error) return null;
     const errors = {};
     for (let item of result.error.details) {
