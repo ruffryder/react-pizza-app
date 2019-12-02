@@ -29,3 +29,9 @@
   margin-left: auto;
   font-size: 3.6rem;
 }
+
+.card-info {
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: var(--main-red);
+}

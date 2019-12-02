@@ -118,7 +118,7 @@ class Contact extends Component {
                   name="email"
                 />
                 {this.state.errors.email && (
-                  <div className="alert alert-danger w-75 mx-auto text-left">
+                  <div className="alert alert-danger w-75 mx-auto text-left my-0 py-0">
                     {this.state.errors.email}
                   </div>
                 )}
@@ -134,7 +134,7 @@ class Contact extends Component {
                   name="subject"
                 />
                 {this.state.errors.subject && (
-                  <div className="alert alert-danger w-75 mx-auto text-left">
+                  <div className="alert alert-danger w-75 mx-auto text-left my-0 py-0">
                     {this.state.errors.subject}
                   </div>
                 )}
