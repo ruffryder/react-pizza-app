@@ -8,8 +8,8 @@ export default function CartItem({
     <div className="cart-item">
       <img src={imageUrl} alt={title} />
       <div className="item-details">
-        <span className="title">{title}</span>
-        <span className="price">
+        <span className="item-details__title">{title}</span>
+        <span className="item-details__price">
           {quantity} X ${price}
         </span>
       </div>

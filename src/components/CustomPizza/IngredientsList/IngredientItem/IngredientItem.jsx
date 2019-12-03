@@ -18,7 +18,7 @@ function IngredientInputItem({
         onChange={e => handleInputChange(ingredientType, ingredient.title, e)}
       />
       <label className="form-check-label pl-3" htmlFor={ingredient.name}>
-        {`${ingredient.name} (+$${ingredient.price})`}
+        {`${ingredient.name} (+$${Number(ingredient.price).toFixed(2)})`}
       </label>
     </div>
   );

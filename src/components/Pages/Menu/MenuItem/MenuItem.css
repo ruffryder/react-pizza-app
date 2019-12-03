@@ -56,9 +56,10 @@
 /*----------------- BUTTON STYLES ----------------------*/
 .btn-add,
 .btn-remove {
+  padding: 0;
   color: var(--light-grey);
-  max-width: 100% !important;
-  font-size: 1.8rem !important;
+  max-width: 100%;
+  font-size: 1.8rem;
 }
 .btn-add {
   background-color: var(--main-green);
@@ -68,6 +69,7 @@
   background-color: var(--main-red);
 }
 
+/*--------------------------- MEDIA QUERIES STYLES -------------------------  */
 @media screen and (min-width: 1200px) {
   .menu-item-container {
     max-width: 125rem !important;

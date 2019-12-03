@@ -1,15 +1,21 @@
 import React from "react";
-import "./MenuList.css";
-import MenuItem from "../MenuItem/MenuItem";
-import Aux from "../../../../hoc/Auxiliary";
+import { connect } from "react-redux";
+import {
+  selectCartItems,
+  selectCartTotal
+} from "../../../../redux/CartSelectors";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
-import { connect } from "react-redux";
+import Aux from "../../../../hoc/Auxiliary";
+import MenuItem from "../MenuItem/MenuItem";
+import "./MenuList.css";
 
 const MenuList = ({
   handleMenuListBackClick,
   large,
   title,
+  cartItems,
+  cartTotal,
   dishes,
   category_id,
   theme
@@ -46,10 +52,18 @@ const MenuList = ({
                 return dish.category_id === category_id;
               })
               .map(dish => {
+                dish.quantity = 0;
+                cartItems.map(cartItem => {
+                  if (cartItem.id === dish.id) {
+                    dish.quantity = cartItem.quantity;
+                  }
+                });
                 return <MenuItem large={large} key={dish.id} dish={dish} />;
               })}
             <div className="col-8 p-4">
-              <p className="text-right total-price">Total price:</p>
+              <p className="text-right total-price">
+                Total price: ${Number(cartTotal).toFixed(2)}
+              </p>
             </div>
           </div>
         </div>
@@ -78,7 +92,9 @@ const MenuList = ({
 };
 
 const mapStateToProps = state => ({
-  dishes: state.data.dishes
+  dishes: state.data.dishes,
+  cartItems: selectCartItems(state),
+  cartTotal: selectCartTotal(state)
 });
 
 export default connect(mapStateToProps)(MenuList);

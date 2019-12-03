@@ -1,10 +1,10 @@
 import React from "react";
-import "./Checkout.css";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectCartItems, selectCartTotal } from "../../redux/CartSelectors";
 import CheckoutItem from "../CheckoutItem/CheckoutItem";
 import StripeButton from "../UI/StripeButton/StripeButton";
+import "./Checkout.css";
 
 const Checkout = ({ cartItems, total }) => {
   return (
@@ -30,7 +30,7 @@ const Checkout = ({ cartItems, total }) => {
         return <CheckoutItem key={item.id} cartItem={item} />;
       })}
       <div className="total">
-        <span>{total}</span>
+        <span>${total}</span>
       </div>
       <div className="card-info">
         * Use the following TEST credit card for payments *
