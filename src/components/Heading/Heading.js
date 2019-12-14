@@ -1,5 +1,6 @@
 import React from "react";
 import Aux from "../../hoc/Auxiliary";
+import PropTypes from "prop-types";
 
 const Header = props => {
   return (
@@ -23,6 +24,13 @@ const Header = props => {
       ) : null}
     </div>
   );
+};
+
+Header.propTypes = {
+  id: PropTypes.string,
+  className: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string
 };
 
 export default Header;

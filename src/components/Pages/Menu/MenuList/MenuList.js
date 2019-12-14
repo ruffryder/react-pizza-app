@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
 import Aux from "../../../../hoc/Auxiliary";
 import MenuItem from "../MenuItem/MenuItem";
+import PropTypes from "prop-types";
 import "./MenuList.css";
 
 const MenuList = ({
@@ -89,6 +90,17 @@ const MenuList = ({
       </Aux>
     );
   }
+};
+
+MenuList.propTypes = {
+  handleMenuListBackClick: PropTypes.func,
+  large: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+  cartItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  cartTotal: PropTypes.number.isRequired,
+  dishes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  category_id: PropTypes.string.isRequired,
+  theme: PropTypes.string
 };
 
 const mapStateToProps = state => ({

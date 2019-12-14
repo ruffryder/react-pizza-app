@@ -1,5 +1,6 @@
 import React from "react";
 import "./CardItem.css";
+import PropTypes from "prop-types";
 
 const CardItem = ({ handleClick, item }) => {
   return (
@@ -17,6 +18,11 @@ const CardItem = ({ handleClick, item }) => {
       </div>
     </div>
   );
+};
+
+CardItem.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  item: PropTypes.object.isRequired
 };
 
 export default CardItem;

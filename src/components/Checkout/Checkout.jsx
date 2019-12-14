@@ -4,6 +4,7 @@ import { createStructuredSelector } from "reselect";
 import { selectCartItems, selectCartTotal } from "../../redux/CartSelectors";
 import CheckoutItem from "../CheckoutItem/CheckoutItem";
 import StripeButton from "../UI/StripeButton/StripeButton";
+import PropTypes from "prop-types";
 import "./Checkout.css";
 
 const Checkout = ({ cartItems, total }) => {
@@ -40,6 +41,11 @@ const Checkout = ({ cartItems, total }) => {
       <StripeButton price={total} />
     </div>
   );
+};
+
+Checkout.propTypes = {
+  cartItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  total: PropTypes.number.isRequired
 };
 
 const mapStateToProps = createStructuredSelector({

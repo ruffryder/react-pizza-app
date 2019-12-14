@@ -1,6 +1,7 @@
 import React from "react";
 import DishCard from "./DishCard/DishCard";
 import "./DishCardList.css";
+import PropTypes from "prop-types";
 
 const DishCardList = ({ dishesData }) => {
   return (
@@ -17,6 +18,10 @@ const DishCardList = ({ dishesData }) => {
       </div>
     </div>
   );
+};
+
+DishCardList.propTypes = {
+  dishesData: PropTypes.array.isRequired
 };
 
 export default DishCardList;

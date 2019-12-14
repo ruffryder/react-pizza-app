@@ -4,6 +4,7 @@ import "./CategoryList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 class CategoryList extends Component {
   displayCategories = () => {
@@ -53,6 +54,12 @@ class CategoryList extends Component {
     );
   }
 }
+
+CategoryList.propTypes = {
+  categories: PropTypes.array.isRequired,
+  handleCloseClick: PropTypes.func.isRequired,
+  handleCategoryClick: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => ({
   categories: state.data.categories

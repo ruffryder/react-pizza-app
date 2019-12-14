@@ -6,6 +6,7 @@ import {
   addItem,
   removeItem
 } from "../../redux/actions/CartActions";
+import PropTypes from "prop-types";
 
 function CheckoutItem({ cartItem, clearItem, addItem, removeItem }) {
   const { title, imageUrl, price, quantity } = cartItem;
@@ -31,6 +32,13 @@ function CheckoutItem({ cartItem, clearItem, addItem, removeItem }) {
     </div>
   );
 }
+
+CheckoutItem.propTypes = {
+  cartItem: PropTypes.object.isRequired,
+  clearItem: PropTypes.func.isRequired,
+  addItem: PropTypes.func.isRequired,
+  removeItem: PropTypes.func.isRequired
+};
 
 const mapDispatchToProps = dispatch => ({
   clearItem: item => dispatch(clearItemFromCart(item)),

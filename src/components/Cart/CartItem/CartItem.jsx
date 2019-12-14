@@ -1,5 +1,6 @@
 import React from "react";
 import "./CartItem.css";
+import PropTypes from "prop-types";
 
 export default function CartItem({
   item: { imageUrl, price, quantity, title }
@@ -16,3 +17,7 @@ export default function CartItem({
     </div>
   );
 }
+
+CartItem.propTypes = {
+  item: PropTypes.object.isRequired
+};

@@ -7,6 +7,7 @@ import CartIcon from "../Cart/CartIcon/CartIcon";
 import CartDropdown from "../Cart/CartDropdown/CartDropdown";
 import { connect } from "react-redux";
 import { selectCartHidden } from "../../redux/CartSelectors";
+import PropTypes from "prop-types";
 
 const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
   let classes = "";
@@ -125,6 +126,13 @@ const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
       {props.children}
     </Jumbotron>
   );
+};
+
+NavBar.propTypes = {
+  hidden: PropTypes.bool.isRequired,
+  handleCloseClick: PropTypes.func.isRequired,
+  handleOrderClick: PropTypes.func.isRequired,
+  jumboBackground: PropTypes.string
 };
 
 const mapStateToProps = state => ({

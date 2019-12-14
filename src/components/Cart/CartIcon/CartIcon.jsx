@@ -5,6 +5,7 @@ import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import { toggleCartHidden } from "../../../redux/actions/CartActions";
 import { selectCartItemsCount } from "../../../redux/CartSelectors";
+import PropTypes from "prop-types";
 
 function CartIcon({ toggleCartHidden, itemCount }) {
   return (
@@ -19,6 +20,11 @@ function CartIcon({ toggleCartHidden, itemCount }) {
     </div>
   );
 }
+
+CartIcon.propTypes = {
+  toggleCartHidden: PropTypes.func.isRequired,
+  itemCount: PropTypes.number.isRequired
+};
 
 const mapStateToProps = state => ({
   itemCount: selectCartItemsCount(state)

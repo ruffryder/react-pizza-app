@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { selectCartItems } from "../../../redux/CartSelectors";
 import { withRouter } from "react-router-dom";
 import { toggleCartHidden } from "../../../redux/actions/CartActions";
+import PropTypes from "prop-types";
 
 function CartDropdown({ cartItems, history, dispatch }) {
   return (
@@ -31,6 +32,11 @@ function CartDropdown({ cartItems, history, dispatch }) {
     </div>
   );
 }
+
+CartDropdown.propTypes = {
+  cartItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  dispatch: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => ({
   cartItems: selectCartItems(state)

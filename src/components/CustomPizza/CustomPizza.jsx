@@ -8,6 +8,7 @@ import IngredientsInputList from "./IngredientsList/IngredientsInputList";
 import { transformObjectIntoArray } from "./CustomPizza.utils";
 import uuid from "uuid/v4";
 import customPizza from "../../assets/img/custom.png";
+import PropTypes from "prop-types";
 
 class CustomPizza extends Component {
   state = {
@@ -37,7 +38,6 @@ class CustomPizza extends Component {
       imageUrl: customPizza,
       ingredients: [this.state.customPizza]
     };
-    console.log(item);
     this.props.addItem(item);
   };
 
@@ -209,6 +209,12 @@ class CustomPizza extends Component {
     );
   }
 }
+
+CustomPizza.propTypes = {
+  addItem: PropTypes.func.isRequired,
+  setIngredients: PropTypes.func.isRequired,
+  ingredients: PropTypes.object
+};
 
 const mapStateToProps = state => ({
   ingredients: state.data.ingredients

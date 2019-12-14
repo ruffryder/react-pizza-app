@@ -7,6 +7,7 @@ import MenuList from "./MenuList/MenuList";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 import { connect } from "react-redux";
 import { deselectItem } from "../../../redux/actions/ItemActions";
+import PropTypes from "prop-types";
 
 const Menu = ({ categories, showItemDetails, deselectItem }) => {
   return (
@@ -36,6 +37,12 @@ const Menu = ({ categories, showItemDetails, deselectItem }) => {
       </div>
     </section>
   );
+};
+
+Menu.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.object),
+  showItemDetails: PropTypes.bool.isRequired,
+  deselectItem: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

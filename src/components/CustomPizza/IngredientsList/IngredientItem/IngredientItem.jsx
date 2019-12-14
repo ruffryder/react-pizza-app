@@ -1,5 +1,6 @@
 import React from "react";
 import "./IngredientItem.css";
+import PropTypes from "prop-types";
 
 function IngredientInputItem({
   ingredientName,
@@ -23,5 +24,13 @@ function IngredientInputItem({
     </div>
   );
 }
+
+IngredientInputItem.propTypes = {
+  ingredientName: PropTypes.string.isRequired,
+  ingredient: PropTypes.object.isRequired,
+  ingredientType: PropTypes.string.isRequired,
+  inputType: PropTypes.string.isRequired,
+  handleInputChange: PropTypes.func.isRequired
+};
 
 export default IngredientInputItem;

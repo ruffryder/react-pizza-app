@@ -2,11 +2,11 @@ import React from "react";
 import "./IngredientsList.css";
 import { transformObjectIntoArray } from "../CustomPizza.utils";
 import IngredientInputItem from "./IngredientItem/IngredientItem";
+import PropTypes from "prop-types";
 
 export default function IngredientsList({
   name,
   ingredients,
-  ingredientType,
   inputType,
   handleInputChange
 }) {
@@ -32,21 +32,9 @@ export default function IngredientsList({
   );
 }
 
-// <div class="form-check">
-//   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-//     <label class="form-check-label" for="exampleRadios1">
-//       Default radio
-//   </label>
-// </div>
-//   <div class="form-check">
-//     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-//       <label class="form-check-label" for="exampleRadios2">
-//         Second default radio
-//   </label>
-// </div>
-//     <div class="form-check">
-//       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
-//         <label class="form-check-label" for="exampleRadios3">
-//           Disabled radio
-//   </label>
-// </div>
+IngredientsList.propTypes = {
+  name: PropTypes.string.isRequired,
+  ingredients: PropTypes.object,
+  inputType: PropTypes.string.isRequired,
+  handleInputChange: PropTypes.func.isRequired
+};

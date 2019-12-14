@@ -2,6 +2,7 @@ import React from "react";
 import "./MenuItemDetails.css";
 import { connect } from "react-redux";
 import { addItem } from "../../../../redux/actions/CartActions";
+import PropTypes from "prop-types";
 
 const MenuItemDetails = ({ item, addItem }) => {
   return (
@@ -27,6 +28,11 @@ const MenuItemDetails = ({ item, addItem }) => {
       </div>
     </div>
   );
+};
+
+MenuItemDetails.propTypes = {
+  addItem: PropTypes.func.isRequired,
+  item: PropTypes.object.isRequired
 };
 
 const mapDispatchToProps = dispatch => ({

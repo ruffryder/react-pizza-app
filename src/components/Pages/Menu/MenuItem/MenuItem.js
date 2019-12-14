@@ -5,6 +5,7 @@ import { selectItem } from "../../../../redux/actions/ItemActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import Auxiliary from "../../../../hoc/Auxiliary";
+import PropTypes from "prop-types";
 import "./MenuItem.css";
 
 class MenuItem extends React.Component {
@@ -97,6 +98,14 @@ class MenuItem extends React.Component {
     }
   }
 }
+
+MenuItem.propTypes = {
+  dish: PropTypes.object.isRequired,
+  large: PropTypes.bool,
+  selectItem: PropTypes.func.isRequired,
+  addItem: PropTypes.func.isRequired,
+  removeItem: PropTypes.func.isRequired
+};
 
 const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item)),
