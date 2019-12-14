@@ -14,7 +14,7 @@ export default function IngredientsList({
 
   return (
     <React.Fragment>
-      <h2 className="text-center">{name}</h2>
+      <h2 className="text-center ingredient-title">{name}</h2>
 
       {transformedIngredients.map(ingredient => {
         return (

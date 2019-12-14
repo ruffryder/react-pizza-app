@@ -10,7 +10,8 @@ function About() {
   const [showPerson3Info, setPerson3Info] = useState(false);
   return (
     <div className="container">
-      <article className="story w-75">
+      <h1 className="text-center mb-5 about-title">About us</h1>
+      <section className="story w-75">
         <h2>
           “One bite of the crispy crust is enough for you to be brought to Italy
           where life is simple – you just have to decide whether you want a
@@ -32,17 +33,17 @@ function About() {
           from traditional ingredients only. Together with the authentic methods
           of cooking, this is a promise for a unforgettable experience.
         </p>
-      </article>
+      </section>
 
-      <article className="team w-75 text-center">
+      <section className="team w-75 text-center">
         <h2>Our Team</h2>
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-3 offset-md-1">
+            <div className="col-sm-12 col-md-4 col-lg-3 offset-lg-1">
               <div className="profile">
                 <img
                   src={john_img}
-                  className="img-fluid w-100"
+                  className="img-fluid"
                   alt="john baker profile"
                 />
                 <h3>John Baker</h3>
@@ -63,11 +64,11 @@ function About() {
                 </p>
               </div>
             </div>
-            <div className="col-xs-12 col-sm-12 col-md-3 offset-md-1">
+            <div className="col-sm-12 col-md-4 col-lg-3 offset-lg-1">
               <div className="profile">
                 <img
                   src={jack_img}
-                  className="img-fluid w-100"
+                  className="img-fluid"
                   alt="jack baker profile"
                 />
                 <h3>Jack Baker</h3>
@@ -89,11 +90,11 @@ function About() {
                 </p>
               </div>
             </div>
-            <div className="col-xs-12 col-sm-12 col-md-3 offset-md-1">
+            <div className="col-sm-12 col-md-4 col-lg-3 offset-lg-1">
               <div className="profile">
                 <img
                   src={jake_img}
-                  className="img-fluid w-100"
+                  className="img-fluid"
                   alt="jake baker profile"
                 />
                 <h3>Jake Baker</h3>
@@ -117,7 +118,7 @@ function About() {
             </div>
           </div>
         </div>
-      </article>
+      </section>
     </div>
   );
 }

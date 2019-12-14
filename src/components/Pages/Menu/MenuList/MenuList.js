@@ -34,7 +34,7 @@ const MenuList = ({
                   color="#4B3114 "
                   className="ml-2 pt-2"
                   icon={faShare}
-                  size="5x"
+                  size="4x"
                   transform="rotate-180"
                 />
               </button>

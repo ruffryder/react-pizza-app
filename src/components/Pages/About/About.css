@@ -1,3 +1,7 @@
+.about-title {
+  font-size: 8rem !important;
+}
+
 .story {
   width: 75%;
   margin: 0 auto;
@@ -9,6 +13,10 @@
 }
 
 .story p {
+  font-size: 2rem;
+}
+
+.team p {
   font-size: 1.8rem;
 }
 
@@ -16,6 +24,29 @@
   margin: 10rem auto 12rem;
 }
 
+.story h2,
+.team h2 {
+  font-size: 3rem !important;
+}
+
+.profile {
+  margin-bottom: 6rem;
+}
+
 .profile img {
+  width: 65%;
   border-radius: 50%;
+}
+
+@media screen and (min-width: 480px) {
+  .story h2,
+  .team h2 {
+    font-size: 4rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .profile img {
+    width: 100%;
+  }
 }

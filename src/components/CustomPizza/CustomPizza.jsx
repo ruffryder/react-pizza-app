@@ -177,10 +177,7 @@ class CustomPizza extends Component {
     // console.log(this.state.customPizza);
     return (
       <div className="container-fluid">
-        <form
-          className="row justify-content-between"
-          onSubmit={this.handleCustomPizzaSubmit}
-        >
+        <form className="row" onSubmit={this.handleCustomPizzaSubmit}>
           {transformedIngredients.map(ingredientsType => {
             return (
               <div key={ingredientsType.id} className="col-md-4 col-lg">
@@ -195,14 +192,14 @@ class CustomPizza extends Component {
           })}
           <div className="row col-12 mt-6">
             <div className="col-6 d-none d-md-block"></div>
-            <div className="col-12 text-center col-md-6">
+            <div className="row align-items-baseline mx-auto col-12 text-center col-md-6">
               <button
                 type="submit"
-                className="btn btn-lg btn-general-inverted mr-5"
+                className="col-12 col-md-6 col-lg-4 btn btn-lg btn-general-inverted"
               >
                 Add to Order
               </button>
-              <span className="h1">
+              <span className="col-12 col-md-6 col-lg-4 h1">
                 Price: $ {this.state.price.toFixed(2)}{" "}
               </span>
             </div>

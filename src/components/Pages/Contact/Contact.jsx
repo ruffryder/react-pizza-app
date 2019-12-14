@@ -72,10 +72,10 @@ class Contact extends Component {
           <div className="row col-12 col-md-6 mb-5 mb-md-0">
             <img
               src={interior}
-              className="col-8 col-md-12 img-fluid rounded"
+              className="col-sm-8 col-md-12 img-fluid rounded"
               alt="Bocciani pizza restaurant interior"
             />
-            <div className="col-4 col-md-12">
+            <div className="col-sm-4 col-md-12">
               <h2 className="mt-4">Open Hours:</h2>
               <p>Monday - Thursday 8am - 6pm</p>
               <p>Friday - Sunday 11am - 4pm</p>
@@ -101,12 +101,12 @@ class Contact extends Component {
         </div>
         <hr className="mt-6 text-center w-75" />
         <div className="row mt-6 text-center">
-          <div className="col-4">
+          <div className="col-12 col-md-4">
             <h2>Event Inquiries</h2>
             <p>boccianicatering@example.com</p>
             <p>For all other questions, please use the form on the right</p>
           </div>
-          <div className="col-8">
+          <div className="col-12 col-md-8">
             <form onSubmit={this.handleSubmit}>
               <div className="form-input">
                 <input
