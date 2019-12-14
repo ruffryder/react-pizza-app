@@ -20,6 +20,7 @@ const Catering = () => {
   return (
     <Aux>
       <div className="container">
+        <h1 className="text-center">Catering and Private Events</h1>
         <div className="row mb-10 mt-10">
           <div className="col-12 col-md-6 text-center ">
             <img
@@ -162,8 +163,8 @@ const Catering = () => {
       </div>
 
       <div className="sample-menu d-flex flex-column align-items-center justify-content-center">
-        <h2 className="sample-menu-title display-0 Heading">Sample Menu</h2>
-        <h2 className="sample-menu-title display-0 Heading">
+        <h2 className="sample-menu__title text-center Heading">Sample Menu</h2>
+        <h2 className="sample-menu__title text-center Heading">
           Special Events Menus
         </h2>
       </div>
