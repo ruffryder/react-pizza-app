@@ -28,22 +28,22 @@ class MenuItem extends React.Component {
                   onClick={() => {
                     selectItem(this.props.dish);
                   }}
-                  className="pointer col-3"
+                  className="pointer col-2 col-md-3"
                 >
                   {this.props.dish.title}
                 </span>
                 <span className="col-4 pl-4">
                   {this.props.dish.description}
                 </span>
-                <span className="col-1 pl-4">
+                <span className="col-2 col-md-1 pl-4">
                   ${Number(this.props.dish.price).toFixed(2)}
                 </span>
                 <div className="col-4">
                   <div className="container">
                     <div className="row justify-content-around">
-                      <div className="p-0 col-3">
+                      <div className="p-0 col-9 col-sm-3">
                         <button
-                          className="btn-add"
+                          className="btn-add py-3 py-sm-0"
                           onClick={() => {
                             this.props.addItem(this.props.dish);
                             this.updateQuantity();
@@ -55,12 +55,12 @@ class MenuItem extends React.Component {
                           />
                         </button>
                       </div>
-                      <div className="col-3 text-center">
+                      <div className="col-12 col-sm-3 text-center">
                         <span>{this.props.dish.quantity}</span>
                       </div>
-                      <div className="p-0 col-3">
+                      <div className="p-0 col-9 col-sm-3">
                         <button
-                          className="btn-remove"
+                          className="btn-remove py-3 py-sm-0"
                           onClick={() => {
                             this.props.removeItem(this.props.dish);
                             this.updateQuantity();

@@ -10,11 +10,11 @@ const Home = () => {
   return (
     <Aux>
       <Heading
-        title="You can choose."
+        title="Create your own pizza"
         subtitle="Our pizza is made with hand-tossed dough & real milk cheese. Choose between regular or thin crust. Create your own pizza."
       >
         <Link to="/make-pizza" className="btn btn-pizza">
-          Start making
+          <span className="btn-pizza__content">Start making</span>
         </Link>
       </Heading>
       <img src={bgImage2} className="img-fluid w-100" alt="delicious pizza" />
