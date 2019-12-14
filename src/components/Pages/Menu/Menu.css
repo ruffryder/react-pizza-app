@@ -15,8 +15,24 @@
   background-color: var(--desserts-menu-bg);
 }
 
+#menu-title {
+  font-size: 7rem !important;
+}
+
+@media screen and (min-width: 560px) {
+  #menu-title {
+    font-size: 10rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-col {
+    flex: 0 0 46% !important;
+  }
+}
+
 @media screen and (min-width: 992px) {
-  .menu-col-lg {
+  .menu-col {
     flex: 0 0 22% !important;
   }
 }

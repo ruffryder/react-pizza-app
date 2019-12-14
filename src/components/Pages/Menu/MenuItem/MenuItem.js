@@ -26,7 +26,7 @@ class MenuItem extends React.Component {
               <div className="row ">
                 <span
                   onClick={() => {
-                    selectItem(this.props.dish);
+                    this.props.selectItem(this.props.dish);
                   }}
                   className="pointer col-2 col-md-3"
                 >
@@ -87,7 +87,7 @@ class MenuItem extends React.Component {
         <Auxiliary>
           <li
             className="list-unstyled box menu-item"
-            onClick={() => selectItem(this.props.dish)}
+            onClick={() => this.props.selectItem(this.props.dish)}
           >
             {this.props.dish.title}
           </li>

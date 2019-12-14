@@ -12,7 +12,7 @@ const Menu = ({ categories, showItemDetails, deselectItem }) => {
   return (
     <section>
       <Backdrop show={showItemDetails} clicked={() => deselectItem()} />
-      <Header title="Menu">
+      <Header title="Menu" id="menu-title">
         <FontAwesomeIcon
           color="#e5bd0a"
           className="display-2 ml-4 pb-2"
@@ -26,7 +26,7 @@ const Menu = ({ categories, showItemDetails, deselectItem }) => {
               return (
                 <div
                   key={category.id}
-                  className={`col-sm-12 col-md-6 menu-col-lg ${category.title}-Menu Menu-Item`}
+                  className={`col-sm-12 menu-col ${category.title}-Menu Menu-Item`}
                 >
                   <MenuList title={category.title} category_id={category.id} />
                 </div>
@@ -47,7 +47,4 @@ const mapDispatchToProps = dispatch => ({
   deselectItem: () => dispatch(deselectItem())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Menu);
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);
