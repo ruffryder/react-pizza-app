@@ -122,7 +122,7 @@ const NavBar = ({ handleCloseClick, handleOrderClick, hidden, ...props }) => {
           <CartIcon />
         </div>
       </nav>
-      {hidden ? null : <CartDropdown />}
+      {hidden ? null : <CartDropdown handleCloseClick={handleCloseClick} />}
       {props.children}
     </Jumbotron>
   );

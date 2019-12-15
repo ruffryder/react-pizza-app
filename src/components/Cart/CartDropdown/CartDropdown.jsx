@@ -7,7 +7,7 @@ import { withRouter } from "react-router-dom";
 import { toggleCartHidden } from "../../../redux/actions/CartActions";
 import PropTypes from "prop-types";
 
-function CartDropdown({ cartItems, history, dispatch }) {
+function CartDropdown({ cartItems, history, dispatch, handleCloseClick }) {
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
@@ -23,6 +23,7 @@ function CartDropdown({ cartItems, history, dispatch }) {
       <button
         className="btn btn-large btn-general-inverted mx-auto mt-5"
         onClick={() => {
+          handleCloseClick();
           dispatch(toggleCartHidden());
           history.push("/checkout");
         }}
