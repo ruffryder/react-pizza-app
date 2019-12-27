@@ -12,6 +12,7 @@ import {
   convertIngredientsSnapshotToMap,
   firestore
 } from "../../firebase/firebase.utils";
+import Spinner from "../../components/Spinner/Spinner";
 
 class CustomPizza extends Component {
   unsubscribeFromSnapshot = null;
@@ -24,7 +25,8 @@ class CustomPizza extends Component {
       other: []
     },
     basePrice: 2,
-    price: 2
+    price: 2,
+    loading: true
   };
 
   componentDidMount() {
@@ -33,6 +35,7 @@ class CustomPizza extends Component {
     this.unsubscribeFromSnapshot = ingredientsRef.onSnapshot(async snapshot => {
       const ingredientsMap = convertIngredientsSnapshotToMap(snapshot);
       updateIngredients(ingredientsMap);
+      this.setState({ loading: false });
     });
   }
 
@@ -178,12 +181,11 @@ class CustomPizza extends Component {
 
   render() {
     if (!this.props.ingredients) {
-      return <div>Loading...</div>;
+      return <Spinner />;
     }
     const transformedIngredients = transformObjectIntoArray(
       this.props.ingredients
     );
-    // console.log(this.state.customPizza);
     return (
       <div className="container-fluid">
         <form className="row" onSubmit={this.handleCustomPizzaSubmit}>
