@@ -24,7 +24,6 @@ import {
   convertCategoriesSnapshotToMap
 } from "./firebase/firebase.utils";
 import { firestore } from "./firebase/firebase.utils";
-
 import { connect } from "react-redux";
 import { deselectItem } from "./redux/actions/ItemActions";
 
@@ -43,6 +42,18 @@ class App extends Component {
     jumboBackground: ""
   };
 
+  componentDidMount() {
+    const dishesRef = firestore.collection("dishes");
+    this.unsubscribeFromSnapshot = dishesRef.onSnapshot(async snapshot => {
+      const dishesMap = convertDishesSnapshotToMap(snapshot);
+      this.props.updateDishes(dishesMap);
+    });
+    const categoriesRef = firestore.collection("categories");
+    this.unsubscribeFromSnapshot = categoriesRef.onSnapshot(async snapshot => {
+      const categoriesMap = convertCategoriesSnapshotToMap(snapshot);
+      this.props.updateCategories(categoriesMap);
+    });
+  }
   handleOrderClick = () => {
     this.setState(prevState => {
       return { showCategories: !prevState.showCategories, showMenuList: false };
@@ -72,19 +83,6 @@ class App extends Component {
       selectedCategory: null
     });
   };
-
-  componentDidMount() {
-    const dishesRef = firestore.collection("dishes");
-    this.unsubscribeFromSnapshot = dishesRef.onSnapshot(async snapshot => {
-      const dishesMap = convertDishesSnapshotToMap(snapshot);
-      this.props.updateDishes(dishesMap);
-    });
-    const categoriesRef = firestore.collection("categories");
-    this.unsubscribeFromSnapshot = categoriesRef.onSnapshot(async snapshot => {
-      const categoriesMap = convertCategoriesSnapshotToMap(snapshot);
-      this.props.updateCategories(categoriesMap);
-    });
-  }
 
   render() {
     return (
