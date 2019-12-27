@@ -1,6 +1,11 @@
 import { ActionTypes } from "../actions/Types";
+const INITIAL_STATE = {
+  dishes: null,
+  categories: null,
+  ingredients: null
+};
 
-export const DataReducer = (state, action) => {
+export const DataReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ActionTypes.DATA_LOAD:
       return {
@@ -16,6 +21,11 @@ export const DataReducer = (state, action) => {
       return {
         ...state,
         categories: action.payload
+      };
+    case ActionTypes.UPDATE_INGREDIENTS:
+      return {
+        ...state,
+        ingredients: action.payload
       };
     default:
       return state || {};

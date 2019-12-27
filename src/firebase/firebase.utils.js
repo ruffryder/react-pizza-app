@@ -20,8 +20,8 @@ export const addCollectionsAndDocuments = async (
 ) => {
   const collectionRef = firestore.collection(collectionKey);
   const batch = firestore.batch();
-  console.log(objectsToAdd);
   objectsToAdd.forEach(obj => {
+    console.log(obj);
     const newDocRef = collectionRef.doc();
     batch.set(newDocRef, obj);
   });
@@ -41,6 +41,22 @@ export const convertDishesSnapshotToMap = dishes => {
     };
   });
   return transformedDishes;
+};
+
+export const convertIngredientsSnapshotToMap = ingredients => {
+  const transformedIngredients = ingredients.docs.map(doc => {
+    const { name, items } = doc.data();
+    return {
+      id: doc.id,
+      name,
+      items,
+      inputType: name.toLowerCase() === "doughs" ? "radio" : "checkbox"
+    };
+  });
+  return transformedIngredients.reduce((acc, ingredient) => {
+    acc[ingredient.name.toLowerCase()] = ingredient;
+    return acc;
+  }, {});
 };
 
 export const convertCategoriesSnapshotToMap = categories => {

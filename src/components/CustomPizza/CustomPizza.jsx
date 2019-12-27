@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import "./CustomPizza.css";
-import { DataTypes } from "../../redux/actions/Types";
 import { connect } from "react-redux";
-import { loadData } from "../../redux/actions/ActionCreators";
+import { updateIngredients } from "../../redux/actions/ActionCreators";
 import { addItem } from "../../redux/actions/CartActions";
 import IngredientsInputList from "./IngredientsList/IngredientsInputList";
 import { transformObjectIntoArray } from "./CustomPizza.utils";
 import uuid from "uuid/v4";
 import customPizza from "../../assets/img/custom.png";
 import PropTypes from "prop-types";
+import {
+  convertIngredientsSnapshotToMap,
+  firestore
+} from "../../firebase/firebase.utils";
 
 class CustomPizza extends Component {
+  unsubscribeFromSnapshot = null;
   state = {
     customPizza: {
       doughs: {},
@@ -24,7 +28,12 @@ class CustomPizza extends Component {
   };
 
   componentDidMount() {
-    this.props.setIngredients();
+    const { updateIngredients } = this.props;
+    const ingredientsRef = firestore.collection("ingredients");
+    this.unsubscribeFromSnapshot = ingredientsRef.onSnapshot(async snapshot => {
+      const ingredientsMap = convertIngredientsSnapshotToMap(snapshot);
+      updateIngredients(ingredientsMap);
+    });
   }
 
   handleCustomPizzaSubmit = e => {
@@ -212,7 +221,6 @@ class CustomPizza extends Component {
 
 CustomPizza.propTypes = {
   addItem: PropTypes.func.isRequired,
-  setIngredients: PropTypes.func.isRequired,
   ingredients: PropTypes.object
 };
 
@@ -221,7 +229,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setIngredients: () => dispatch(loadData(DataTypes.INGREDIENTS)),
+  updateIngredients: ingredientsData =>
+    dispatch(updateIngredients(ingredientsData)),
   addItem: item => dispatch(addItem(item))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(CustomPizza);

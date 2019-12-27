@@ -18,3 +18,8 @@ export const updateCategories = categoriesData => ({
   type: ActionTypes.UPDATE_CATEGORIES,
   payload: categoriesData
 });
+
+export const updateIngredients = ingredientsData => ({
+  type: ActionTypes.UPDATE_INGREDIENTS,
+  payload: ingredientsData
+});
