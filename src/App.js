@@ -15,12 +15,7 @@ import Catering from "./components/Pages/Catering/Catering";
 import PageNotFound from "./components/Pages/PageNotFound/PageNotFound";
 import { withRouter } from "react-router-dom";
 import Contact from "./components/Pages/Contact/Contact";
-import {
-  loadData,
-  updateDishes,
-  updateCategories
-} from "./redux/actions/ActionCreators";
-import { DataTypes } from "./redux/actions/Types";
+import { updateDishes, updateCategories } from "./redux/actions/ActionCreators";
 import Backdrop from "./components/UI/Backdrop/Backdrop";
 import Checkout from "./components/Checkout/Checkout";
 import CustomPizza from "./components/CustomPizza/CustomPizza";
@@ -148,7 +143,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setCategories: () => dispatch(loadData(DataTypes.CATEGORIES)),
   updateDishes: dishesData => dispatch(updateDishes(dishesData)),
   updateCategories: categoriesData =>
     dispatch(updateCategories(categoriesData)),

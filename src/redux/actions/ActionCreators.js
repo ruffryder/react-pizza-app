@@ -1,13 +1,8 @@
 import { ActionTypes } from "./Types";
-import { data as phData } from "../../data";
-
-export const loadData = dataType => ({
-  type: ActionTypes.DATA_LOAD,
-  payload: {
-    dataType: dataType,
-    data: phData[dataType]
-  }
-});
+import {
+  firestore,
+  convertIngredientsSnapshotToMap
+} from "../../firebase/firebase.utils";
 
 export const updateDishes = dishesData => ({
   type: ActionTypes.UPDATE_DISHES,
@@ -19,7 +14,32 @@ export const updateCategories = categoriesData => ({
   payload: categoriesData
 });
 
-export const updateIngredients = ingredientsData => ({
-  type: ActionTypes.UPDATE_INGREDIENTS,
-  payload: ingredientsData
+export const fetchIngredientsStart = () => ({
+  type: ActionTypes.FETCH_INGREDIENTS_START
 });
+
+export const fetchIngredientsSuccess = ingredients => ({
+  type: ActionTypes.FETCH_INGREDIENTS_SUCCESS,
+  payload: ingredients
+});
+
+export const fetchIngredientsError = error => ({
+  type: ActionTypes.FETCH_INGREDIENTS_FAIL,
+  payload: error
+});
+
+export const fetchIngredientsStartAsync = () => {
+  return dispatch => {
+    const ingredientsRef = firestore.collection("ingredients");
+    dispatch(fetchIngredientsStart);
+    ingredientsRef
+      .get()
+      .then(snapshot => {
+        const ingredientsMap = convertIngredientsSnapshotToMap(snapshot);
+        dispatch(fetchIngredientsSuccess(ingredientsMap));
+      })
+      .catch(e => {
+        dispatch(fetchIngredientsError(e.message));
+      });
+  };
+};
