@@ -26,6 +26,7 @@ import {
 import { firestore } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { deselectItem } from "./redux/actions/ItemActions";
+import { data } from "./data";
 
 configureAnchors({
   offset: 0,
@@ -43,16 +44,18 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const dishesRef = firestore.collection("dishes");
-    this.unsubscribeFromSnapshot = dishesRef.onSnapshot(async snapshot => {
-      const dishesMap = convertDishesSnapshotToMap(snapshot);
-      this.props.updateDishes(dishesMap);
-    });
-    const categoriesRef = firestore.collection("categories");
-    this.unsubscribeFromSnapshot = categoriesRef.onSnapshot(async snapshot => {
-      const categoriesMap = convertCategoriesSnapshotToMap(snapshot);
-      this.props.updateCategories(categoriesMap);
-    });
+    // const dishesRef = firestore.collection("dishes");
+    // this.unsubscribeFromSnapshot = dishesRef.onSnapshot(async snapshot => {
+    //   const dishesMap = convertDishesSnapshotToMap(snapshot);
+    //   this.props.updateDishes(dishesMap);
+    // });
+    this.props.updateCategories(data.categories);
+    this.props.updateDishes(data.dishes);
+    // const categoriesRef = firestore.collection("categories");
+    // this.unsubscribeFromSnapshot = categoriesRef.onSnapshot(async snapshot => {
+    //   const categoriesMap = convertCategoriesSnapshotToMap(snapshot);
+    //   this.props.updateCategories(categoriesMap);
+    // });
   }
   handleOrderClick = () => {
     this.setState(prevState => {

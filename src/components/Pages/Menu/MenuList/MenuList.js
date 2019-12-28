@@ -99,7 +99,7 @@ MenuList.propTypes = {
   cartItems: PropTypes.arrayOf(PropTypes.object).isRequired,
   cartTotal: PropTypes.number.isRequired,
   dishes: PropTypes.arrayOf(PropTypes.object).isRequired,
-  category_id: PropTypes.string.isRequired,
+  category_id: PropTypes.number.isRequired,
   theme: PropTypes.string
 };
 
