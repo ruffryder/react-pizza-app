@@ -35,3 +35,7 @@
   font-size: 2rem;
   color: var(--main-red);
 }
+
+.redirect-message {
+  font-size: 2rem;
+}
