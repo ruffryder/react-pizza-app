@@ -19,11 +19,6 @@ import { updateDishes, updateCategories } from "./redux/actions/ActionCreators";
 import Backdrop from "./components/UI/Backdrop/Backdrop";
 import Checkout from "./components/Checkout/Checkout";
 import CustomPizza from "./components/CustomPizza/CustomPizza";
-import {
-  convertDishesSnapshotToMap,
-  convertCategoriesSnapshotToMap
-} from "./firebase/firebase.utils";
-import { firestore } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { deselectItem } from "./redux/actions/ItemActions";
 import { data } from "./data";

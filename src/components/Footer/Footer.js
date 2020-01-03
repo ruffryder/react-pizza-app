@@ -16,8 +16,16 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-sm-3 text-center mt-xs-5">
-            <a className="d-inline-block LinkInsta" href="instagram.com" />
-            <a className="d-inline-block LinkFacebook" href="facebook.com" />
+            <a
+              className="d-inline-block LinkInsta"
+              title="instagram profile"
+              href="instagram.com"
+            />
+            <a
+              className="d-inline-block LinkFacebook"
+              title="facebook page"
+              href="facebook.com"
+            />
           </div>
         </div>
         <div className="row">
