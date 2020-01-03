@@ -201,6 +201,18 @@ a:hover {
   cursor: not-allowed;
 }
 
+.btn-success {
+  background-color: var(--main-green);
+}
+
+.btn-danger {
+  background-color: var(--main-red);
+}
+
+.color-success {
+  color: var(--main-green);
+}
+
 .pointer {
   cursor: pointer;
 }

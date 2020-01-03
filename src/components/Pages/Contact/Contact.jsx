@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import interior from "../../../assets/img/interior.jpg";
 import Joi from "joi-browser";
+import Backdrop from "../../UI/Backdrop/Backdrop";
+import Modal from "../../UI/Modal/Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 class Contact extends Component {
   state = {
     email: "",
     subject: "",
     message: "",
+    messageSent: false,
     errors: {}
   };
 
@@ -28,6 +33,13 @@ class Contact extends Component {
     this.setState({ errors: errors || {} });
     if (errors) {
       return;
+    } else {
+      this.setState({
+        messageSent: true,
+        email: "",
+        subject: "",
+        message: ""
+      });
     }
   };
 
@@ -63,6 +75,10 @@ class Contact extends Component {
       errors[item.path[0]] = item.message;
     }
     return errors;
+  };
+
+  closeModal = () => {
+    this.setState({ messageSent: false });
   };
   render() {
     return (
@@ -166,6 +182,29 @@ class Contact extends Component {
             </form>
           </div>
         </div>
+        {this.state.messageSent && (
+          <React.Fragment>
+            <Backdrop show={this.state.messageSent} clicked={this.closeModal} />
+            <Modal>
+              <div style={{ minHeight: "35vh" }} className="text-center mt-5">
+                <h3>
+                  {" "}
+                  <FontAwesomeIcon
+                    className="mr-4 color-success"
+                    icon={faCheckCircle}
+                  />
+                  Your request was sent successfully.
+                </h3>
+                <button
+                  className="btn btn-large btn-success mt-15"
+                  onClick={this.closeModal}
+                >
+                  Close
+                </button>
+              </div>
+            </Modal>
+          </React.Fragment>
+        )}
       </div>
     );
   }
