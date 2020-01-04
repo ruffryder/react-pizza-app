@@ -21,7 +21,8 @@ class CustomPizza extends Component {
       other: []
     },
     basePrice: 2,
-    price: 2
+    price: 2,
+    errors: {}
   };
 
   componentDidMount() {
@@ -30,16 +31,28 @@ class CustomPizza extends Component {
 
   handleCustomPizzaSubmit = e => {
     e.preventDefault();
-    const item = {
-      id: uuid(),
-      category_id: 0,
-      title: "Custom-made Pizza",
-      price: Number(this.state.price).toFixed(2),
-      description: "Custom-made Pizza",
-      imageUrl: customPizza,
-      ingredients: [this.state.customPizza]
-    };
-    this.props.addItem(item);
+    const errors = {};
+    // Check if at least one dough type is selected
+    if (Object.keys(this.state.customPizza.doughs).length === 0) {
+      errors["dough"] = "Please, select a type of dough";
+      this.setState({ errors });
+    } else {
+      this.setState({ errors: {} });
+    }
+    if (Object.keys(this.state.errors).length !== 0) {
+      return;
+    } else {
+      const item = {
+        id: uuid(),
+        category_id: 0,
+        title: "Custom-made Pizza",
+        price: Number(this.state.price).toFixed(2),
+        description: "Custom-made Pizza",
+        imageUrl: customPizza,
+        ingredients: [this.state.customPizza]
+      };
+      this.props.addItem(item);
+    }
   };
 
   handleInputChange = (ingredientType, ingredientTitle, e) => {
@@ -218,6 +231,13 @@ class CustomPizza extends Component {
                 Price: $ {this.state.price.toFixed(2)}{" "}
               </span>
             </div>
+          </div>
+          <div className="row col-12">
+            {this.state.errors.dough && (
+              <div className="alert alert-danger col-12 col-md-3 col-lg-2 mt-3 offset-md-6">
+                {this.state.errors.dough}
+              </div>
+            )}
           </div>
         </form>
       </div>
