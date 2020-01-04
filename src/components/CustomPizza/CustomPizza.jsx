@@ -168,12 +168,27 @@ class CustomPizza extends Component {
     }
   };
 
+  shiftArrayDoughIndexToStart = arrayIngredients => {
+    for (let i = 0; i < arrayIngredients.length; i++) {
+      if (arrayIngredients[i].inputType === "radio") {
+        let temp = arrayIngredients[0];
+        arrayIngredients[0] = arrayIngredients[i];
+        arrayIngredients[i] = temp;
+      }
+    }
+    return arrayIngredients;
+  };
+
   render() {
     if (!this.props.ingredients) {
       return <Spinner />;
     }
-    const transformedIngredients = transformObjectIntoArray(
+    let transformedIngredients = transformObjectIntoArray(
       this.props.ingredients
+    );
+    // Find the dough array index and put it first in the array of ingredients
+    transformedIngredients = this.shiftArrayDoughIndexToStart(
+      transformedIngredients
     );
     return (
       <div className="container-fluid">
