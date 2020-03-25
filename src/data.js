@@ -37,7 +37,7 @@ export const data = {
       id: 1,
       category_id: 1,
       title: "Marinara",
-      price: 2200,
+      price: 22,
       description: "Some very delicious description",
       imageUrl: pizza1
     },
@@ -45,7 +45,7 @@ export const data = {
       id: 2,
       category_id: 1,
       title: "Margherita",
-      price: 1800,
+      price: 18,
       description: "Some very delicious description",
       imageUrl: pizza2
     },
@@ -53,7 +53,7 @@ export const data = {
       id: 3,
       category_id: 1,
       title: "Romana",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: pizza3
     },
@@ -61,7 +61,7 @@ export const data = {
       id: 4,
       category_id: 1,
       title: "Siciliana",
-      price: 2200,
+      price: 22,
       description: "Some very delicious description",
       imageUrl: pizza4
     },
@@ -69,7 +69,7 @@ export const data = {
       id: 5,
       category_id: 1,
       title: "Prosciutto e funghi",
-      price: 2200,
+      price: 22,
       description: "Some very delicious description",
       imageUrl: pizza5
     },
@@ -77,7 +77,7 @@ export const data = {
       id: 6,
       category_id: 1,
       title: "Capricciosa",
-      price: 2200,
+      price: 22,
       description: "Some very delicious description",
       imageUrl: pizza6
     },
@@ -85,7 +85,7 @@ export const data = {
       id: 7,
       category_id: 1,
       title: "Tirolese",
-      price: 2200,
+      price: 22,
       description: "Some very delicious description",
       imageUrl: pizza7
     },
@@ -93,7 +93,7 @@ export const data = {
       id: 8,
       category_id: 1,
       title: "Quattro stagioni",
-      price: 2200,
+      price: 22,
       description: "Some very delicious description",
       imageUrl: pizza8
     },
@@ -101,7 +101,7 @@ export const data = {
       id: 9,
       category_id: 2,
       title: "Four Cheese Pasta",
-      price: 2100,
+      price: 21,
       description:
         "Some very delicious description Some very delicious description",
       imageUrl: pasta1
@@ -110,7 +110,7 @@ export const data = {
       id: 10,
       category_id: 2,
       title: "Pasta Carbonara",
-      price: 1900,
+      price: 19,
       description: "Some very delicious description",
       imageUrl: pasta2
     },
@@ -118,7 +118,7 @@ export const data = {
       id: 11,
       category_id: 2,
       title: "Gnocchi with Tomato Sauce",
-      price: 2100,
+      price: 21,
       description: "Some very delicious description",
       imageUrl: pasta3
     },
@@ -126,7 +126,7 @@ export const data = {
       id: 12,
       category_id: 2,
       title: "Pasta Con Pomodoro E Basilico",
-      price: 2500,
+      price: 25,
       description: "Some very delicious description",
       imageUrl: pasta4
     },
@@ -134,7 +134,7 @@ export const data = {
       id: 13,
       category_id: 2,
       title: "Home-Style Baked Pasta",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: pasta5
     },
@@ -142,7 +142,7 @@ export const data = {
       id: 14,
       category_id: 3,
       title: "Antipasto Salad with Bocconcini and Green-Olive Tapenade",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: salad1
     },
@@ -150,7 +150,7 @@ export const data = {
       id: 15,
       category_id: 3,
       title: "Chopped Italian Salad",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: salad2
     },
@@ -158,7 +158,7 @@ export const data = {
       id: 16,
       category_id: 3,
       title: "Summer Farro Salad",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: salad3
     },
@@ -166,7 +166,7 @@ export const data = {
       id: 17,
       category_id: 3,
       title: "  Warm Castelfranco with Vincotto and Blu di Bufala",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: salad4
     },
@@ -174,7 +174,7 @@ export const data = {
       id: 18,
       category_id: 3,
       title: "Anchovy and Roasted-Pepper Salad with Goat Cheese",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: salad5
     },
@@ -182,7 +182,7 @@ export const data = {
       id: 19,
       category_id: 3,
       title: "Garlicky Caesar Salad",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: salad6
     },
@@ -190,7 +190,7 @@ export const data = {
       id: 20,
       category_id: 3,
       title: " Fennel and Red-Onion Salad with Parmesan",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: salad7
     },
@@ -198,7 +198,7 @@ export const data = {
       id: 21,
       category_id: 3,
       title: "   Shaved Raw Asparagus with Parmesan Dressing",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: salad8
     },
@@ -206,7 +206,7 @@ export const data = {
       id: 22,
       category_id: 4,
       title: "Gelato",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: gelato
     },
@@ -214,7 +214,7 @@ export const data = {
       id: 23,
       category_id: 4,
       title: "Tiramisu",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: tiramisu
     },
@@ -222,7 +222,7 @@ export const data = {
       id: 24,
       category_id: 4,
       title: "Panna Cotta",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: pannaCotta
     },
@@ -230,7 +230,7 @@ export const data = {
       id: 25,
       category_id: 4,
       title: "Baba au Rhum or Rum Baba ",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: rumBaba
     },
@@ -238,7 +238,7 @@ export const data = {
       id: 26,
       category_id: 4,
       title: "Sicilian Cassata",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: cassata
     },
@@ -246,7 +246,7 @@ export const data = {
       id: 27,
       category_id: 4,
       title: "Cannoli",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: cannoli
     },
@@ -254,7 +254,7 @@ export const data = {
       id: 28,
       category_id: 4,
       title: "Semi-Freddo",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: semiFreddo
     },
@@ -262,7 +262,7 @@ export const data = {
       id: 29,
       category_id: 4,
       title: "Torta Caprese",
-      price: 2000,
+      price: 20,
       description: "Some very delicious description",
       imageUrl: caprese
     }
