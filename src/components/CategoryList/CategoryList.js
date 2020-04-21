@@ -11,7 +11,7 @@ class CategoryList extends Component {
     if (!this.props.categories || this.props.categories.length === 0) {
       return <p>No categories to show</p>;
     } else {
-      return this.props.categories.map(item => {
+      return this.props.categories.map((item) => {
         return (
           <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 text-center">
             <CardItem
@@ -28,10 +28,10 @@ class CategoryList extends Component {
       <div className="container-fluid CategoryList">
         {" "}
         <div className="row justify-content-around pb-4">
-          <div className="col-1 pr-4 pl-0 text-left">
+          <div className="col-12 pl-0 text-left">
             <button
               onClick={this.props.handleCloseClick}
-              className="btn btn-lg p-0 close-button"
+              className="btn btn-lg p-0 pl-3 close-button"
               type="button"
             >
               <FontAwesomeIcon
@@ -58,11 +58,11 @@ class CategoryList extends Component {
 CategoryList.propTypes = {
   categories: PropTypes.array.isRequired,
   handleCloseClick: PropTypes.func.isRequired,
-  handleCategoryClick: PropTypes.func.isRequired
+  handleCategoryClick: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  categories: state.data.categories
+const mapStateToProps = (state) => ({
+  categories: state.data.categories,
 });
 
 export default connect(mapStateToProps)(CategoryList);

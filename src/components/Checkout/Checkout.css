@@ -1,5 +1,5 @@
 .checkout-page {
-  width: 55%;
+  width: 90%;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -38,4 +38,10 @@
 
 .redirect-message {
   font-size: 2rem;
+}
+
+@media screen and (min-width: 576px) {
+  .checkout-page {
+    width: 55%;
+  }
 }

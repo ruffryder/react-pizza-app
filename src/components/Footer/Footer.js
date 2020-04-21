@@ -15,7 +15,7 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <div className="col-sm-3 text-center mt-xs-5">
+          <div className="col-sm-3 text-center mt-5">
             <a
               className="d-inline-block LinkInsta"
               title="instagram profile"

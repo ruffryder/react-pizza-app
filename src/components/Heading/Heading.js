@@ -2,7 +2,7 @@ import React from "react";
 import Aux from "../../hoc/Auxiliary";
 import PropTypes from "prop-types";
 
-const Header = props => {
+const Header = (props) => {
   return (
     <div className="container-fluid">
       <h1
@@ -17,7 +17,7 @@ const Header = props => {
       {props.subtitle ? (
         <Aux>
           <hr className="w-50 text-center" />
-          <h3 className="Subheading p-5 text-center w-75 mx-auto">
+          <h3 className="Subheading py-5 px-0 px-sm-3 px-md-5 text-center w-75 mx-auto">
             {props.subtitle}
           </h3>
         </Aux>
@@ -30,7 +30,7 @@ Header.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string
+  subtitle: PropTypes.string,
 };
 
 export default Header;

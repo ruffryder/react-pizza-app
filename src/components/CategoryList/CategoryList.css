@@ -2,6 +2,11 @@
   background: rgba(248, 249, 250, 0.85);
 }
 
+.close-button {
+  font-size: 1.4rem !important;
+  text-align: left !important;
+}
+
 .close-button > * {
   max-width: 12rem;
   transition: 0.3s;

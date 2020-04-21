@@ -2,12 +2,20 @@
   position: fixed;
   z-index: 500;
   background-color: white;
-  width: 70%;
+  width: 90%;
+  min-height: 20rem;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px black;
   padding: 16px;
-  left: 15%;
+  left: 5%;
   top: 30%;
   box-sizing: border-box;
   transition: all 0.3s ease-out;
+}
+
+@media screen and (min-width: 920px) {
+  .Modal {
+    width: 70%;
+    left: 15%;
+  }
 }

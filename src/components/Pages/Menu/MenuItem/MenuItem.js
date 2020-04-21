@@ -10,11 +10,11 @@ import "./MenuItem.css";
 
 class MenuItem extends React.Component {
   state = {
-    itemQuantity: this.props.dish.quantity
+    itemQuantity: this.props.dish.quantity,
   };
 
   updateQuantity = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       return { itemQuantity: prevState.itemQuantity };
     });
   };
@@ -29,17 +29,17 @@ class MenuItem extends React.Component {
                   onClick={() => {
                     this.props.selectItem(this.props.dish);
                   }}
-                  className="pointer col-2 col-md-3"
+                  className="pointer col-4 col-sm-2 align-self-center col-md-3"
                 >
                   {this.props.dish.title}
                 </span>
-                <span className="col-4 pl-4">
+                <span className="d-none d-sm-block col-4 pl-4">
                   {this.props.dish.description}
                 </span>
-                <span className="col-2 col-md-1 pl-4">
+                <span className="col-3 col-sm-2 col-md-1 pl-4 align-self-center">
                   ${Number(this.props.dish.price).toFixed(2)}
                 </span>
-                <div className="col-4">
+                <div className="col-5 col-sm-4 align-self-center">
                   <div className="container">
                     <div className="row justify-content-around">
                       <div className="p-0 col-9 col-sm-3">
@@ -104,12 +104,12 @@ MenuItem.propTypes = {
   large: PropTypes.bool,
   selectItem: PropTypes.func.isRequired,
   addItem: PropTypes.func.isRequired,
-  removeItem: PropTypes.func.isRequired
+  removeItem: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item)),
-  removeItem: item => dispatch(removeItem(item)),
-  selectItem: item => dispatch(selectItem(item))
+const mapDispatchToProps = (dispatch) => ({
+  addItem: (item) => dispatch(addItem(item)),
+  removeItem: (item) => dispatch(removeItem(item)),
+  selectItem: (item) => dispatch(selectItem(item)),
 });
 export default connect(null, mapDispatchToProps)(MenuItem);

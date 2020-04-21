@@ -18,18 +18,18 @@ class CustomPizza extends Component {
       meats: [],
       sauces: [],
       cheeses: [],
-      other: []
+      other: [],
     },
     basePrice: 2,
     price: 2,
-    errors: {}
+    errors: {},
   };
 
   componentDidMount() {
     this.props.fetchIngredientsStartAsync();
   }
 
-  handleCustomPizzaSubmit = e => {
+  handleCustomPizzaSubmit = (e) => {
     e.preventDefault();
     const errors = {};
     // Check if at least one dough type is selected
@@ -49,7 +49,7 @@ class CustomPizza extends Component {
         price: Number(this.state.price).toFixed(2),
         description: "Custom-made Pizza",
         imageUrl: customPizza,
-        ingredients: [this.state.customPizza]
+        ingredients: [this.state.customPizza],
       };
       this.props.addItem(item);
     }
@@ -69,9 +69,9 @@ class CustomPizza extends Component {
             customPizza: {
               ...customPizza,
               doughs: {
-                ...ingredients[ingredientType].items[ingredientTitle]
-              }
-            }
+                ...ingredients[ingredientType].items[ingredientTitle],
+              },
+            },
           },
           () => this.updatePrice()
         );
@@ -85,8 +85,8 @@ class CustomPizza extends Component {
           {
             customPizza: {
               ...customPizza,
-              cheeses: newCheesesValue
-            }
+              cheeses: newCheesesValue,
+            },
           },
           () => this.updatePrice()
         );
@@ -100,8 +100,8 @@ class CustomPizza extends Component {
           {
             customPizza: {
               ...customPizza,
-              meats: newMeatsValue
-            }
+              meats: newMeatsValue,
+            },
           },
           () => this.updatePrice()
         );
@@ -115,8 +115,8 @@ class CustomPizza extends Component {
           {
             customPizza: {
               ...customPizza,
-              sauces: newSaucesValue
-            }
+              sauces: newSaucesValue,
+            },
           },
           () => this.updatePrice()
         );
@@ -130,8 +130,8 @@ class CustomPizza extends Component {
           {
             customPizza: {
               ...customPizza,
-              other: newOtherValue
-            }
+              other: newOtherValue,
+            },
           },
           () => this.updatePrice()
         );
@@ -164,24 +164,24 @@ class CustomPizza extends Component {
     }
 
     this.setState({
-      price: newPrice
+      price: newPrice,
     });
   };
 
   // Check if we have the ingredient and if we do -> remove it from the array of ingredients; otherwise -> add it to the array
   checkIngredient = (ingredients, ingredientToCheck) => {
     if (
-      ingredients.find(ingredient => ingredientToCheck.id === ingredient.id)
+      ingredients.find((ingredient) => ingredientToCheck.id === ingredient.id)
     ) {
       return ingredients.filter(
-        ingredient => ingredient.id !== ingredientToCheck.id
+        (ingredient) => ingredient.id !== ingredientToCheck.id
       );
     } else {
       return ingredients.concat(ingredientToCheck);
     }
   };
 
-  shiftArrayDoughIndexToStart = arrayIngredients => {
+  shiftArrayDoughIndexToStart = (arrayIngredients) => {
     for (let i = 0; i < arrayIngredients.length; i++) {
       if (arrayIngredients[i].inputType === "radio") {
         let temp = arrayIngredients[0];
@@ -206,7 +206,7 @@ class CustomPizza extends Component {
     return (
       <div className="container-fluid">
         <form className="row" onSubmit={this.handleCustomPizzaSubmit}>
-          {transformedIngredients.map(ingredientsType => {
+          {transformedIngredients.map((ingredientsType) => {
             return (
               <div key={ingredientsType.id} className="col-md-4 col-lg">
                 <IngredientsInputList
@@ -223,11 +223,11 @@ class CustomPizza extends Component {
             <div className="row align-items-baseline mx-auto col-12 text-center col-md-6">
               <button
                 type="submit"
-                className="col-12 col-md-6 col-lg-4 btn btn-lg btn-general-inverted"
+                className="col-8 mx-auto col-sm-6 col-lg-4 btn btn-lg btn-general-inverted align-self-center"
               >
                 Add to Order
               </button>
-              <span className="col-12 col-md-6 col-lg-4 h1">
+              <span className="col-12 col-sm-6 col-lg-4 h1 mt-sm-0 mt-5 align-self-center">
                 Price: $ {this.state.price.toFixed(2)}{" "}
               </span>
             </div>
@@ -247,15 +247,15 @@ class CustomPizza extends Component {
 
 CustomPizza.propTypes = {
   addItem: PropTypes.func.isRequired,
-  ingredients: PropTypes.object
+  ingredients: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
-  ingredients: state.data.ingredients
+const mapStateToProps = (state) => ({
+  ingredients: state.data.ingredients,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchIngredientsStartAsync: () => dispatch(fetchIngredientsStartAsync()),
-  addItem: item => dispatch(addItem(item))
+  addItem: (item) => dispatch(addItem(item)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(CustomPizza);

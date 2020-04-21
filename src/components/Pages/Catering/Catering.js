@@ -5,7 +5,7 @@ import {
   faCalendar,
   faPhone,
   faTruck,
-  faUtensils
+  faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
 import wedding from "../../../assets/img/wedding3.jpg";
 import corporate from "../../../assets/img/corporate.jpg";
@@ -163,10 +163,7 @@ const Catering = () => {
       </div>
 
       <div className="sample-menu d-flex flex-column align-items-center justify-content-center">
-        <h2 className="sample-menu__title text-center Heading">Sample Menu</h2>
-        <h2 className="sample-menu__title text-center Heading">
-          Special Events Menus
-        </h2>
+        <h2 className="sample-menu__title text-center Heading">Sample Menus</h2>
       </div>
 
       <div className="container">
@@ -177,7 +174,7 @@ const Catering = () => {
               src={event1}
               alt="Special events"
             />
-            <h3 className="mt-6">Special Events Menu</h3>
+            <h2 className="mt-6">Special Events Menu</h2>
             <div className="border-separator" />
             <p className="w-75 mx-auto event-content">
               Elegant and sensual dish choices for your special day that will
@@ -191,7 +188,7 @@ const Catering = () => {
               src={event2}
               alt="Corporate events"
             />
-            <h3 className="mt-6">Corporate Events Menu</h3>
+            <h2 className="mt-6">Corporate Events Menu</h2>
             <div className="border-separator" />
             <p className="w-75 mx-auto event-content">
               Great food is a soul of every event, so our professional chefs
@@ -205,7 +202,7 @@ const Catering = () => {
               src={event3}
               alt="Social events"
             />
-            <h3 className="mt-6">Social Events Menu</h3>
+            <h2 className="mt-6">Social Events Menu</h2>
             <div className="border-separator" />
             <p className="w-75 mx-auto event-content">
               Our talented culinary team have some nice surprises for you.
